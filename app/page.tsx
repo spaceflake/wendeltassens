@@ -1,8 +1,8 @@
 const Homepage = () => {
   return (
     <div>
-      <h1>Homepage</h1>
-      <p>
+      <h1 className="text-6xl text-DarkBrown font-Tangerine">Homepage</h1>
+      <p className="text-xl font-Montserrat text-DarkBrown">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
         recusandae perspiciatis dignissimos autem fuga facere laborum reiciendis
         fugit eligendi velit, rerum eum, corrupti voluptates voluptatem ullam in
