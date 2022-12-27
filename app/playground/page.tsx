@@ -1,3 +1,4 @@
+import Button from '../../components/Button';
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 import Hero from '../../components/Hero';
@@ -10,6 +11,7 @@ const page = (props: Props) => {
       <Header />
       <Hero>
         <h1>Våra Ragdolls</h1>
+        <Button text="Kattungar" goTo="/kattungar" />
       </Hero>
       <div>
         <Footer />
