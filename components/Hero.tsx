@@ -9,7 +9,9 @@ const Hero = ({ children }: Props) => {
   return (
     <div className="relative top-0 w-full">
       <div className=" top-0 relative max-h-[900px] overflow-hidden">
-        <div className="absolute right-1/4 top-1/3">{children}</div>
+        <div className="absolute right-[15%] top-1/2 flex flex-col">
+          {children}
+        </div>
         <Image
           src={heroImg1}
           alt="hero image"
