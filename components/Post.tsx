@@ -10,8 +10,8 @@ type Props = {
 
 const Post = ({ title, text, imgUrl, date, author }: Props) => {
   return (
-    <article className="bg-WhiteBG rounded-xl overflow-hidden lg:max-h-[480px] flex flex-col-reverse lg:flex-row-reverse gap-10 shadow-xl">
-      <div className="grow pb-12 lg:py-12 px-12 lg:pl-0 pr-10">
+    <article className="bg-WhiteBG rounded-xl overflow-hidden lg:max-h-[480px] flex flex-col-reverse lg:flex-row-reverse shadow-xl">
+      <div className="grow pb-12 lg:py-12 px-12 pl-10 pr-10 pt-10">
         <div className="space-x-4 text-sm font-Montserrat font-thin text-DarkBrown">
           <span>{date}</span>
           <span>{author}</span>

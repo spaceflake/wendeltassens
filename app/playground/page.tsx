@@ -26,7 +26,7 @@ const page = (props: Props) => {
         </div>
       </Hero>
       <SectionDividerBorder title="Sektion Titel" />
-      <div>
+      <div className="space-y-4">
         <Post
           title={post.title}
           text={post.text}
@@ -34,8 +34,14 @@ const page = (props: Props) => {
           date={post.date}
           author={post.author}
         />
+        <Post
+          title={post.title}
+          text={post.text}
+          date={post.date}
+          author={post.author}
+        />
       </div>
-      <div>
+      <div className="mt-[150px]">
         <Footer />
       </div>
     </div>
