@@ -2,6 +2,7 @@ import Button from '../../components/Button';
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 import Hero from '../../components/Hero';
+import SectionDividerBorder from '../../components/SectionDividerBorder';
 
 type Props = {};
 
@@ -15,6 +16,7 @@ const page = (props: Props) => {
           <Button text="Kattungar" goTo="/kattungar" />
         </div>
       </Hero>
+      <SectionDividerBorder title="Sektion Titel" />
       <div>
         <Footer />
       </div>
