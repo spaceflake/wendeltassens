@@ -11,7 +11,9 @@ const page = (props: Props) => {
       <Header />
       <Hero>
         <h1>Våra Ragdolls</h1>
-        <Button text="Kattungar" goTo="/kattungar" />
+        <div className=" ml-auto mt-4">
+          <Button text="Kattungar" goTo="/kattungar" />
+        </div>
       </Hero>
       <div>
         <Footer />
