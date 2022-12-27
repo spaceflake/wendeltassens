@@ -5,9 +5,9 @@ type Props = {};
 
 const Footer = (props: Props) => {
   return (
-    <footer className="bg-SuperBrown text-Beige text-center pl-40 pr-40 pt-40 pb-40">
+    <footer className="bg-SuperBrown text-Beige text-center lg:py-32 sm:p-0">
       <p className="font-Tangerine text-6xl mb-5">Wendeltassens</p>
-      <nav className="flex justify-between">
+      <nav className="flex justify-between flex-col md:flex-row p-8">
         <div className="font-Montserrat flex flex-col">
           <p className="text-lg font-bold">Sitemap</p>
           <Link href="/">Hem</Link>
