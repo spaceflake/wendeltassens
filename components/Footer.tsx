@@ -5,10 +5,10 @@ type Props = {};
 
 const Footer = (props: Props) => {
   return (
-    <footer className="bg-SuperBrown text-Beige text-center lg:py-32 sm:p-0">
+    <footer className="bg-SuperBrown text-Beige text-center py-[64px]">
       <p className="font-Tangerine text-6xl mb-5">Wendeltassens</p>
-      <nav className="flex justify-between flex-col md:flex-row p-8">
-        <div className="font-Montserrat flex flex-col">
+      <nav className="flex justify-around flex-col md:flex-row">
+        <div className="font-Montserrat flex flex-col mb-8 md:mb-0">
           <p className="text-lg font-bold">Sitemap</p>
           <Link href="/">Hem</Link>
           <Link href="/kattungar">Kattungar</Link>
@@ -17,7 +17,7 @@ const Footer = (props: Props) => {
           <Link href="/kontakt">Kontakt</Link>
           <Link href="/om">Om mig</Link>
         </div>
-        <div className="font-Montserrat flex flex-col">
+        <div className="font-Montserrat flex flex-col mb-8 md:mb-0">
           <p className="text-lg font-bold">Sociala medier</p>
           <Link href="https://www.facebook.com/wendeltassens">Facebook</Link>
           <Link href="https://www.instagram.com/liselotte_wendel/">
@@ -25,7 +25,7 @@ const Footer = (props: Props) => {
           </Link>
         </div>
         <div>
-          <div className="font-Montserrat flex flex-col">
+          <div className="font-Montserrat flex flex-col mb-8 md:mb-0">
             <p className="text-lg font-bold">Kattlänkar</p>
             <Link href="https://www.sverak.se/">SVERAK</Link>
             <Link href="http://spinneriet.se">Spinneriet</Link>
