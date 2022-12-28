@@ -12,6 +12,8 @@ import TwoColumnTextSection from '../../components/TwoColumnTextSection';
 import KittenOverview from '../../components/KittenOverview';
 import CatMatchCard from '../../components/CatMatchCard';
 import catMatch1 from '../../public/cat1.jpg';
+import TextAndImage from '../../components/TextAndImage';
+import dvärgväxtImg from '../../public/dvärgväxt-image-2.jpg';
 
 type Props = {};
 
@@ -142,6 +144,9 @@ De kan bli väldigt stora, med en vikt på upp till 10 kg för hanar och 7 kg f�
           catImgUrl1={catMatchCard.catImgUrl1}
           catImgUrl2={catMatchCard.catImgUrl2}
         />
+      </div>
+      <div>
+        <TextAndImage image={dvärgväxtImg} />
       </div>
       <div className="mt-[150px]">
         <Footer />
