@@ -9,6 +9,8 @@ import SectionDividerBorder from '../../components/SectionDividerBorder';
 import postImg from '../../public/post-img-1.png';
 import adultCatImg from '../../public/adult-cat-image-1.png';
 import TwoColumnTextSection from '../../components/TwoColumnTextSection';
+import CatMatchCard from '../../components/CatMatchCard';
+import catMatch1 from '../../public/cat1.jpg';
 
 type Props = {};
 
@@ -30,6 +32,14 @@ const page = (props: Props) => {
     color: 'RAG f 03',
     other: 'Chokladbärare',
     pedigreeUrl: 'https://www.google.com',
+  };
+
+  const catMatchCard = {
+    catName1: 'Lucifer',
+    catName2: 'Mona Lisa',
+    pedigreeUrl: 'https://www.google.com',
+    catImgUrl1: adultCatImg,
+    catImgUrl2: catMatch1,
   };
   return (
     <div className="container mx-auto relative">
@@ -115,6 +125,14 @@ De kan bli väldigt stora, med en vikt på upp till 10 kg för hanar och 7 kg f�
             <Button text="Läs mer" />
           </div>
         </TwoColumnTextSection>
+      </div>
+      <div>
+        <CatMatchCard
+          name1={catMatchCard.catName1}
+          name2={catMatchCard.catName2}
+          catImgUrl1={catMatchCard.catImgUrl1}
+          catImgUrl2={catMatchCard.catImgUrl2}
+        />
       </div>
       <div className="mt-[150px]">
         <Footer />
