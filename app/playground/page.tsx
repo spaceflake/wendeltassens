@@ -1,4 +1,5 @@
 import AdultCatCard from '../../components/AdultCatCard';
+import BorderedTextbox from '../../components/BorderedTextbox';
 import Button from '../../components/Button';
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
@@ -14,7 +15,7 @@ const page = (props: Props) => {
   const post = {
     title: 'Kattungar',
     text: 'Lorem ipsum dolor sit amet consectetur. Lacus ut id ac nibh. Convallis nam mi amet ut. Fermentum et scelerisque massa proin nisi risus congue. Et penatibus ut ultrices sed. Vel eu at lorem sit ornare. Massa diam donec amet integer. Pellentesque in ultrices arcu velit at. Sed neque et mattis in scelerisque curabitur sit vitae. Orci laoreet mi facilisis aenean neque bibendum ullamcorper. In tincidunt enim aliquam proin nibh velit pellentesque nisi.',
-    imgUrl: adultCatImg,
+    imgUrl: postImg,
     date: '2022-12-28',
     author: 'Tomas Fridekrans',
   };
@@ -38,6 +39,12 @@ const page = (props: Props) => {
           <Button text="Kattungar" goTo="/kattungar" />
         </div>
       </Hero>
+      <div className="mt-[5rem]">
+        <BorderedTextbox
+          title="Intro"
+          text="En ragdoll-katt är en mycket lugn och mjuktempererad ras med en tendens att bli totalt avslappnad när den bärs eller hålls. Deras päls är lång och mjuk, och de är ofta stora och kraftigt byggda. De är kända för sin vänliga och tillgiven personlighet och är mycket kärleksfulla mot sina ägare. De är också mycket intelligenta och lätta att träna."
+        />
+      </div>
       <SectionDividerBorder title="Sektion Titel" />
       <div className="space-y-4">
         <Post
