@@ -1,3 +1,4 @@
+import BorderedTextbox from '../../components/BorderedTextbox';
 import Button from '../../components/Button';
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
@@ -25,6 +26,10 @@ const page = (props: Props) => {
           <Button text="Kattungar" goTo="/kattungar" />
         </div>
       </Hero>
+      <BorderedTextbox
+        title="Intro"
+        text="En ragdoll-katt är en mycket lugn och mjuktempererad ras med en tendens att bli totalt avslappnad när den bärs eller hålls. Deras päls är lång och mjuk, och de är ofta stora och kraftigt byggda. De är kända för sin vänliga och tillgiven personlighet och är mycket kärleksfulla mot sina ägare. De är också mycket intelligenta och lätta att träna."
+      />
       <SectionDividerBorder title="Sektion Titel" />
       <div className="space-y-4">
         <Post
