@@ -156,7 +156,7 @@ De kan bli väldigt stora, med en vikt på upp till 10 kg för hanar och 7 kg f�
         />
       </div>
       <div>
-        <SectionDividerBorder title="Frågor & svar" />
+        <SectionDividerBorder title="Frågor & Svar" />
         {FAQText.map((faq) => (
           <FAQ title={faq.title} text={faq.text} />
         ))}
