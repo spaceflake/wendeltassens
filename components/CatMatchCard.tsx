@@ -12,7 +12,7 @@ type Props = {
 
 const CatMatchCard = ({ femalename, maleName, femaleImg, maleImg }: Props) => {
   return (
-    <div className="backgroundMatchCard mr-[1rem] ml-[1rem] lg:mr-[11rem] lg:ml-[11rem]">
+    <div className="backgroundMatchCard mr-[1rem] ml-[1rem] lg:mr-[11rem] lg:ml-[11rem] text-DarkBrown">
       <div className="flex items-center">
         <Image
           src={femaleImg}
