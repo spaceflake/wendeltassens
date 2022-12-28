@@ -9,6 +9,7 @@ import SectionDividerBorder from '../../components/SectionDividerBorder';
 import postImg from '../../public/post-img-1.png';
 import adultCatImg from '../../public/adult-cat-image-1.png';
 import TwoColumnTextSection from '../../components/TwoColumnTextSection';
+import KittenOverview from '../../components/KittenOverview';
 
 type Props = {};
 
@@ -88,6 +89,14 @@ const page = (props: Props) => {
           other={adultCatCard.other}
           pedigreeUrl={adultCatCard.pedigreeUrl}
           inverted
+        />
+      </div>
+      <div className="py-8 flex flex-col items-center space-y-4">
+        <KittenOverview
+          birthDate="2022-11-24"
+          father="SE*Mångudinnan Vikings Ragnar"
+          mother="SE*Wendeltassens Mary Austin"
+          title="Månskenskullen"
         />
       </div>
       <SectionDividerBorder title="Villkor" />
