@@ -6,8 +6,8 @@ type Props = {
 
 const TwoColumnTextSection = ({ text }: Props) => {
   return (
-    <div className="columns-2 font-Montserrat italic text-lg	">
-      <div className="w-full">{text}</div>
+    <div className="columns-2	">
+      <p className="w-full font-Montserrat italic text-lg">{text}</p>
     </div>
   );
 };
