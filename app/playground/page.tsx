@@ -43,7 +43,11 @@ const page = (props: Props) => {
         <BorderedTextbox
           title="Intro"
           text="En ragdoll-katt är en mycket lugn och mjuktempererad ras med en tendens att bli totalt avslappnad när den bärs eller hålls. Deras päls är lång och mjuk, och de är ofta stora och kraftigt byggda. De är kända för sin vänliga och tillgiven personlighet och är mycket kärleksfulla mot sina ägare. De är också mycket intelligenta och lätta att träna."
-        />
+        >
+          <div className=" flex justify-center mb-[2rem]">
+            <Button text="Läs mer" />
+          </div>
+        </BorderedTextbox>
       </div>
       <SectionDividerBorder title="Sektion Titel" />
       <div className="space-y-4">
