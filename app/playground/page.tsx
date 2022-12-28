@@ -14,6 +14,7 @@ import CatMatchCard from '../../components/CatMatchCard';
 import catMatch1 from '../../public/cat1.jpg';
 import TextAndImage from '../../components/TextAndImage';
 import dvärgväxtImg from '../../public/dvärgväxt-image-2.jpg';
+import FAQ, { FAQProps } from '../../components/FAQ';
 
 type Props = {};
 
@@ -38,12 +39,23 @@ const page = (props: Props) => {
   };
 
   const catMatchCard = {
-    catName1: 'Lucifer',
-    catName2: 'Mona Lisa',
+    femaleName: 'Lucifer',
+    maleName: 'Mona Lisa',
     pedigreeUrl: 'https://www.google.com',
     catImgUrl1: adultCatImg,
     catImgUrl2: catMatch1,
   };
+
+  const FAQText: FAQProps[] = [
+    {
+      title: 'Hur lång är processen för att adoptera en ragdoll-kattunge?',
+      text: 'Processen varierar från djurhem till djurhem, men det är vanligt att det finns en ansökningsformulär att fylla i, samt att djurhemmet vill träffa potentiella ägare för att se till att de är lämpliga för en kattunge.',
+    },
+    {
+      title: 'Kan jag adoptera en vuxen ragdoll-katt?',
+      text: 'Ja, många djurhem har både kattungar och vuxna katter tillgängliga för adoption.',
+    },
+  ];
   return (
     <div className="container mx-auto relative">
       <Header />
@@ -139,14 +151,20 @@ De kan bli väldigt stora, med en vikt på upp till 10 kg för hanar och 7 kg f�
       </div>
       <div>
         <CatMatchCard
-          name1={catMatchCard.catName1}
-          name2={catMatchCard.catName2}
-          catImgUrl1={catMatchCard.catImgUrl1}
-          catImgUrl2={catMatchCard.catImgUrl2}
+          femalename={catMatchCard.femaleName}
+          maleName={catMatchCard.maleName}
+          femaleImg={catMatchCard.catImgUrl1}
+          maleImg={catMatchCard.catImgUrl2}
         />
       </div>
       <div>
         <TextAndImage image={dvärgväxtImg} />
+      </div>
+      <div>
+        <SectionDividerBorder title="Frågor & Svar" />
+        {FAQText.map((faq) => (
+          <FAQ title={faq.title} text={faq.text} />
+        ))}
       </div>
       <div className="mt-[150px]">
         <Footer />
