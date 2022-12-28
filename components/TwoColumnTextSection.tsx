@@ -1,15 +1,13 @@
 import React from 'react';
 
 type Props = {
-  text1: string;
-  text2: string;
+  text: string;
 };
 
-const TwoColumnTextSection = ({ text1, text2 }: Props) => {
+const TwoColumnTextSection = ({ text }: Props) => {
   return (
-    <div className="columns-2">
-      <div className="w-full">{text1}</div>
-      <div className="w-full">{text2}</div>
+    <div className="columns-2 font-Montserrat italic text-lg	">
+      <div className="w-full">{text}</div>
     </div>
   );
 };
