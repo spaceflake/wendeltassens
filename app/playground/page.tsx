@@ -8,6 +8,7 @@ import Post from '../../components/Post';
 import SectionDividerBorder from '../../components/SectionDividerBorder';
 import postImg from '../../public/post-img-1.png';
 import adultCatImg from '../../public/adult-cat-image-1.png';
+import TwoColumnTextSection from '../../components/TwoColumnTextSection';
 
 type Props = {};
 
@@ -42,8 +43,13 @@ const page = (props: Props) => {
       <div className="mt-[5rem]">
         <BorderedTextbox
           title="Intro"
-          text="En ragdoll-katt är en mycket lugn och mjuktempererad ras med en tendens att bli totalt avslappnad när den bärs eller hålls. Deras päls är lång och mjuk, och de är ofta stora och kraftigt byggda. De är kända för sin vänliga och tillgiven personlighet och är mycket kärleksfulla mot sina ägare. De är också mycket intelligenta och lätta att träna."
-        />
+          text='Jag är stolt över att presentera mina vuxna Ragdoll honor och hanar som jag använder för avel. Mina katter är alla vackra exemplar av den här unika rasen, med sina blå ögon och mjuka, fluffiga pälsar. De är kända för sin lugna och lättsamma personlighet, och är ofta beskrivna som "valpliknande" i sin kärleksfulla natur. De är också kända för sin intelligens och förmåga att lära sig tricks.
+          Jag har Ragdoll katter i flera olika färger och mönster, inklusive seal, blue, chocolate, lilac och red point. De kan också ha mönster som bicolor, mitted och lynx.'
+        >
+          <div className=" flex justify-center mb-[2rem]">
+            <Button text="Läs mer" />
+          </div>
+        </BorderedTextbox>
       </div>
       <SectionDividerBorder title="Sektion Titel" />
       <div className="space-y-4 flex flex-col items-center">
@@ -72,6 +78,27 @@ const page = (props: Props) => {
           other={adultCatCard.other}
           pedigreeUrl={adultCatCard.pedigreeUrl}
         />
+      </div>
+      <div>
+        <TwoColumnTextSection
+          text="Om du överväger att adoptera en ragdoll-katt, finns det några saker du kan tänka på:
+
+Se till att du har tillräckligt med utrymme i hemmet för en stor katt.
+Se till att du har tid att ge din ragdoll-katt den socialisering och uppmärksamhet den behöver.
+Se till att du har råd med den regelbundna vård och förnödenheter som katten behöver, inklusive mat, litter, vaccinationskostnader och eventuella veterinärbesök.
+
+
+Om du har ytterligare frågor om att adoptera en ragdoll-katt, tveka inte att kontakta oss. Vi är här för att hjälpa dig att hitta den perfekta katten för just dig och din familj! Ragdoll-katter är en mycket kärleksfull och lugn ras, och är kända för sin avslappnade attityd och sin förmåga att bli helt slapp när de blir lyckliga eller nöjda. Här är några fakta om ragdoll-katter:
+
+Ragdoll-katter är en relativt ny ras, som skapades på 1960-talet i USA.
+Deras päls är mjuk och silkeslen, och kräver minimal borstning.
+Ragdoll-katter är mycket sociala och gillar att hänga med sin ägare och andra djur i hemmet.
+De är ofta mycket lekfulla och kan vara väldigt roliga att leka med.
+Ragdoll-katter är inte kända för att vara skrikande eller skrikiga, och är oftast mycket lågmälda.
+De kan bli väldigt stora, med en vikt på upp till 10 kg för hanar och 7 kg för honor.
+
+"
+        ></TwoColumnTextSection>
       </div>
       <div className="mt-[150px]">
         <Footer />
