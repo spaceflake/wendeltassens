@@ -9,6 +9,9 @@
   h4 {
     @apply text-4xl font-Montserrat font-bold italic text-DarkBrown;
   }
+  h5 {
+    @apply text-4xl font-Tangerine font-bold text-DarkBrown;
+  }
 }
 
 .backgroundPattern {
