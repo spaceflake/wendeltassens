@@ -10,6 +10,7 @@ type Props = {
   color: string;
   other?: string;
   pedigreeUrl?: string;
+  inverted?: boolean;
 };
 
 const AdultCatCard = ({
@@ -21,9 +22,14 @@ const AdultCatCard = ({
   color,
   other,
   pedigreeUrl,
+  inverted,
 }: Props) => {
   return (
-    <article className="font-Montserrat p-5 lg:p-9 bg-WhiteBG rounded-xl shadow-lg flex flex-col lg:flex-row lg:max-h-[500px] w-full max-w-[1000px]">
+    <article
+      className={`font-Montserrat p-5 lg:p-9 bg-WhiteBG rounded-xl shadow-lg flex flex-col lg:max-h-[500px] w-full max-w-[1000px] ${
+        inverted ? 'lg:flex-row-reverse' : 'lg:flex-row'
+      }`}
+    >
       <Image
         src={catImgUrl}
         alt={catName}
