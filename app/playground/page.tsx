@@ -67,7 +67,7 @@ const page = (props: Props) => {
           author={post.author}
         />
       </div>
-      <div className="py-8 flex flex-col items-center">
+      <div className="py-8 flex flex-col items-center space-y-4">
         <AdultCatCard
           catName={adultCatCard.catName}
           catImgUrl={adultCatCard.catImgUrl}
@@ -77,6 +77,17 @@ const page = (props: Props) => {
           color={adultCatCard.color}
           other={adultCatCard.other}
           pedigreeUrl={adultCatCard.pedigreeUrl}
+        />
+        <AdultCatCard
+          catName={adultCatCard.catName}
+          catImgUrl={adultCatCard.catImgUrl}
+          born={adultCatCard.born}
+          mother={adultCatCard.mother}
+          father={adultCatCard.father}
+          color={adultCatCard.color}
+          other={adultCatCard.other}
+          pedigreeUrl={adultCatCard.pedigreeUrl}
+          inverted
         />
       </div>
       <SectionDividerBorder title="Villkor" />
