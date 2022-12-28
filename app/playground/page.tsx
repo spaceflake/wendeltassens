@@ -52,7 +52,7 @@ const page = (props: Props) => {
         </BorderedTextbox>
       </div>
       <SectionDividerBorder title="Sektion Titel" />
-      <div className="space-y-4">
+      <div className="space-y-4 flex flex-col items-center">
         <Post
           title={post.title}
           text={post.text}
@@ -67,7 +67,7 @@ const page = (props: Props) => {
           author={post.author}
         />
       </div>
-      <div className="py-8">
+      <div className="py-8 flex flex-col items-center">
         <AdultCatCard
           catName={adultCatCard.catName}
           catImgUrl={adultCatCard.catImgUrl}
