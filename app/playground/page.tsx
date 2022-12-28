@@ -12,7 +12,7 @@ import TwoColumnTextSection from '../../components/TwoColumnTextSection';
 import KittenOverview from '../../components/KittenOverview';
 import CatMatchCard from '../../components/CatMatchCard';
 import catMatch1 from '../../public/cat1.jpg';
-import FAQ from '../../components/FAQ';
+import FAQ, { FAQProps } from '../../components/FAQ';
 
 type Props = {};
 
@@ -43,6 +43,17 @@ const page = (props: Props) => {
     catImgUrl1: adultCatImg,
     catImgUrl2: catMatch1,
   };
+
+  const FAQText: FAQProps[] = [
+    {
+      title: 'Hur lång är processen för att adoptera en ragdoll-kattunge?',
+      text: 'Processen varierar från djurhem till djurhem, men det är vanligt att det finns en ansökningsformulär att fylla i, samt att djurhemmet vill träffa potentiella ägare för att se till att de är lämpliga för en kattunge.',
+    },
+    {
+      title: 'Kan jag adoptera en vuxen ragdoll-katt?',
+      text: 'Ja, många djurhem har både kattungar och vuxna katter tillgängliga för adoption.',
+    },
+  ];
   return (
     <div className="container mx-auto relative">
       <Header />
@@ -145,7 +156,10 @@ De kan bli väldigt stora, med en vikt på upp till 10 kg för hanar och 7 kg f�
         />
       </div>
       <div>
-        <FAQ />
+        <SectionDividerBorder title="Frågor & svar" />
+        {FAQText.map((faq) => (
+          <FAQ title={faq.title} text={faq.text} />
+        ))}
       </div>
       <div className="mt-[150px]">
         <Footer />
