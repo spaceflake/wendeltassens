@@ -79,6 +79,7 @@ const page = (props: Props) => {
           pedigreeUrl={adultCatCard.pedigreeUrl}
         />
       </div>
+      <SectionDividerBorder title="Villkor" />
       <div>
         <TwoColumnTextSection
           text="Om du överväger att adoptera en ragdoll-katt, finns det några saker du kan tänka på:
@@ -98,7 +99,11 @@ Ragdoll-katter är inte kända för att vara skrikande eller skrikiga, och är o
 De kan bli väldigt stora, med en vikt på upp till 10 kg för hanar och 7 kg för honor.
 
 "
-        ></TwoColumnTextSection>
+        >
+          <div className="flex justify-center mt-[2rem]">
+            <Button text="Läs mer" />
+          </div>
+        </TwoColumnTextSection>
       </div>
       <div className="mt-[150px]">
         <Footer />
