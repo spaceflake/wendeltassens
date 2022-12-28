@@ -80,7 +80,26 @@ const page = (props: Props) => {
         />
       </div>
       <div>
-        <TwoColumnTextSection></TwoColumnTextSection>
+        <TwoColumnTextSection
+          text1="Om du överväger att adoptera en ragdoll-katt, finns det några saker du kan tänka på:
+
+Se till att du har tillräckligt med utrymme i hemmet för en stor katt.
+Se till att du har tid att ge din ragdoll-katt den socialisering och uppmärksamhet den behöver.
+Se till att du har råd med den regelbundna vård och förnödenheter som katten behöver, inklusive mat, litter, vaccinationskostnader och eventuella veterinärbesök.
+
+
+Om du har ytterligare frågor om att adoptera en ragdoll-katt, tveka inte att kontakta oss. Vi är här för att hjälpa dig att hitta den perfekta katten för just dig och din familj!"
+          text2="Ragdoll-katter är en mycket kärleksfull och lugn ras, och är kända för sin avslappnade attityd och sin förmåga att bli helt slapp när de blir lyckliga eller nöjda. Här är några fakta om ragdoll-katter:
+
+Ragdoll-katter är en relativt ny ras, som skapades på 1960-talet i USA.
+Deras päls är mjuk och silkeslen, och kräver minimal borstning.
+Ragdoll-katter är mycket sociala och gillar att hänga med sin ägare och andra djur i hemmet.
+De är ofta mycket lekfulla och kan vara väldigt roliga att leka med.
+Ragdoll-katter är inte kända för att vara skrikande eller skrikiga, och är oftast mycket lågmälda.
+De kan bli väldigt stora, med en vikt på upp till 10 kg för hanar och 7 kg för honor.
+
+"
+        ></TwoColumnTextSection>
       </div>
       <div className="mt-[150px]">
         <Footer />
