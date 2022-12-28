@@ -14,7 +14,7 @@ const BorderedTextbox = ({ title, text, children }: Props) => {
         {title}
       </h2>
       <div className="p-[4rem]">
-        <p className="font-Montserrat italic">{text}</p>
+        <p className="font-Montserrat italic text-2xl">{text}</p>
       </div>
       {children}
     </article>
