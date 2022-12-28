@@ -34,8 +34,9 @@ const KittenOverview = ({ title, birthDate, mother, father }: Props) => {
             <span className="font-bold text-right">{father}</span>
           </div>
         </div>
-        <div>
+        <div className="space-x-4">
           <Button text="Stamtavla" goTo="https://google.com" />
+          <Button text="Förfrågan" goTo="/kontakt" />
         </div>
       </div>
       <div className="p-6 grid grid-cols-3 gap-4 place-items-center">
