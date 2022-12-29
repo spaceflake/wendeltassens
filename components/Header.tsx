@@ -13,10 +13,10 @@ const Header = (props: Props) => {
           Hem
         </Link>
         <Link href={'/kontakt'}>Kontakt</Link>
-        <Link href={'/varakatter'} className="break-keep">
-          Våra Katter
+        <Link href={'/katter'} className="break-keep">
+          Katter
         </Link>
-        <Link href={'/om'}>Om</Link>
+        <Link href={'/om-mig'}>Om</Link>
       </nav>
     </header>
   );

@@ -17,7 +17,9 @@ const Post = ({ title, text, imgUrl, date, author }: Props) => {
           <span>{author}</span>
         </div>
         <h4>{title}</h4>
-        <p className="font-Montserrat text-DarkBrown mt-7">{text}</p>
+        <p className="font-Montserrat text-DarkBrown mt-4 lg:mt-7 text-sm lg:text-base">
+          {text}
+        </p>
       </div>
       {imgUrl && (
         <Image
