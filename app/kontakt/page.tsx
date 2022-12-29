@@ -28,7 +28,7 @@ const Contact = () => {
           </div>
           <form
             action=""
-            className="flex flex-col text-DarkBrown space-y-4 font-bold pt-10 lg:pl-10 lg:pt-0 mx-auto"
+            className="flex flex-col text-DarkBrown space-y-4 font-bold pt-10 lg:pl-10 lg:pt-0"
           >
             <label htmlFor="name" className="block">
               <span>Ditt namn</span>
