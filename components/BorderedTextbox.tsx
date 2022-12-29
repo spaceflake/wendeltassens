@@ -9,11 +9,11 @@ type Props = {
 
 const BorderedTextbox = ({ title, text, children }: Props) => {
   return (
-    <article className="border border-DarkBrown rounded relative bg-WhiteBG text-DarkBrown">
+    <article className="border border-DarkBrown rounded relative bg-WhiteBG text-DarkBrown mr-4 ml-4">
       <h2 className=" font-Tangerine text-5xl absolute top-[-1.5rem] bg-WhiteBG ml-8 px-4">
         {title}
       </h2>
-      <div className="p-16">
+      <div className="pt-16 pr-8 pl-8 py-8 md:p-16">
         <p className="font-Montserrat italic text-2xl">{text}</p>
       </div>
       {children}
