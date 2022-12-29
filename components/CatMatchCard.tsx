@@ -13,29 +13,31 @@ type Props = {
 
 const CatMatchCard = ({ femalename, maleName, femaleImg, maleImg }: Props) => {
   return (
-    <div className="text-DarkBrown pt-6 pb-6 w-full md:w-[40%] md:m-auto">
-      <div className="flex items-center ml-6">
-        <Image
-          src={femaleImg}
-          alt={femalename}
-          className="h-[250px] w-[250px] rounded-full object-cover object-top aspect-video"
-        />
-        <p className="ml-[1rem] md:ml-[3rem] font-Montserrat font-semibold italic">
-          {femalename}
-        </p>
+    <div className="text-DarkBrown py-12 w-full md:w-[40%] md:m-auto">
+      <div className="relative">
+        <div className="flex items-start lg:items-center ml-6">
+          <Image
+            src={femaleImg}
+            alt={femalename}
+            className="h-28 w-28 lg:h-[250px] lg:w-[250px] rounded-full object-cover object-top aspect-video"
+          />
+          <p className="ml-[1rem] md:ml-[3rem] font-Montserrat font-semibold italic">
+            {femalename}
+          </p>
+        </div>
+        <Image src={catMatchSvg} alt="" className="absolute inset-0" />
+        <div className="flex items-end lg:items-center flex-row-reverse mr-6">
+          <Image
+            src={maleImg}
+            alt={maleName}
+            className="h-28 w-28 lg:h-[250px] lg:w-[250px] rounded-full	 object-cover object-top aspect-video"
+          />
+          <p className="mr-[1rem] md:mr-[3rem]  font-Montserrat font-semibold italic">
+            {maleName}
+          </p>
+        </div>
       </div>
-      <Image src={catMatchSvg} alt="" />
-      <div className="flex items-center flex-row-reverse mr-6">
-        <Image
-          src={maleImg}
-          alt={maleName}
-          className="h-[250px] w-[250px] rounded-full	 object-cover object-top aspect-video"
-        />
-        <p className="mr-[1rem] md:mr-[3rem]  font-Montserrat font-semibold italic">
-          {maleName}
-        </p>
-      </div>
-      <div className="flex justify-center mt-[5rem]">
+      <div className="flex justify-center mt-4">
         <Button
           text="Stamtavla"
           goTo="https://stambok.sverak.se/Stambok/Visa/506242"
