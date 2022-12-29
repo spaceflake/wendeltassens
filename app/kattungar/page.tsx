@@ -22,7 +22,7 @@ const catMatchCard = {
 
 const Kittens = () => {
   return (
-    <div>
+    <div className="text-DarkBrown">
       <Hero>
         <h1 className="text-center">Kattungar</h1>
         <div className=" ml-auto mt-4"></div>
@@ -53,8 +53,8 @@ const Kittens = () => {
         />
       </div>
       <SectionDividerBorder title="Planerade kullar" />
-      <div className="w-[80%] md:w-[50%] m-auto">
-        <p className=" first-letter:text-8xl first-letter:font-Tangerine font-Montserrat font-semibold italic text-2xl text-center text-DarkBrown">
+      <div className="w-[80%] lg:w-[50%] m-auto">
+        <p className=" first-letter:text-8xl first-letter:font-Tangerine font-Montserrat font-semibold italic text.xl lg:text-2xl text-center">
           Vi är glada att kunna meddelar att vi har planer på att para samman
           våra två vackra ragdoll-katter. Vi tror att deras unika egenskaper
           kommer att resultera i vackra och hälsosamma kattungar, och vi ser
