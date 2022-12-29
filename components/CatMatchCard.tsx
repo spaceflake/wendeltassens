@@ -1,6 +1,7 @@
 import React from 'react';
 import Image, { StaticImageData } from 'next/image';
 import Button from './Button';
+import catMatchSvg from '../public/catmatch.svg';
 
 type Props = {
   femalename: string;
@@ -12,8 +13,8 @@ type Props = {
 
 const CatMatchCard = ({ femalename, maleName, femaleImg, maleImg }: Props) => {
   return (
-    <div className="backgroundMatchCard  text-DarkBrown pt-6 pb-6 w-full md:w-[40%] md:m-auto">
-      <div className="flex items-center">
+    <div className="text-DarkBrown pt-6 pb-6 w-full md:w-[40%] md:m-auto">
+      <div className="flex items-center ml-6">
         <Image
           src={femaleImg}
           alt={femalename}
@@ -23,7 +24,8 @@ const CatMatchCard = ({ femalename, maleName, femaleImg, maleImg }: Props) => {
           {femalename}
         </p>
       </div>
-      <div className="flex items-center flex-row-reverse mt-[20rem]">
+      <Image src={catMatchSvg} alt="" />
+      <div className="flex items-center flex-row-reverse mr-6">
         <Image
           src={maleImg}
           alt={maleName}
