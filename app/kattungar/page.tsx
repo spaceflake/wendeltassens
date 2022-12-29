@@ -24,7 +24,7 @@ const Kittens = () => {
   return (
     <div className="text-DarkBrown">
       <Hero>
-        <h1 className="text-center">Kattungar</h1>
+        <h1 className="text-center text-AngelBlue">Kattungar</h1>
         <div className=" ml-auto mt-4"></div>
       </Hero>
       <div className="mt-36">
