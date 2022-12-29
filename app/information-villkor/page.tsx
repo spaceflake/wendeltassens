@@ -41,7 +41,7 @@ const FAQPage = () => {
   };
 
   return (
-    <div>
+    <div className="text-DarkBrown">
       <Hero>
         <h1>Ragdolls</h1>
         <div className=" ml-auto mt-4"></div>
