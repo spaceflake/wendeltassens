@@ -9,7 +9,7 @@ type Props = {
 const Section = ({ children, color, rounded }: Props) => {
   return (
     <section
-      className={`container mx-auto flex justify-center pt-16 lg:pt-36 ${
+      className={`container mx-auto flex justify-center py-16 lg:py-32 ${
         color && 'bg-Beige'
       } ${rounded && 'rounded-xl'}}`}
     >
