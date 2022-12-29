@@ -3,6 +3,7 @@ import Button from '../../components/Button';
 import CatMatchCard from '../../components/CatMatchCard';
 import Hero from '../../components/Hero';
 import KittenOverview from '../../components/KittenOverview';
+import Section from '../../components/Section';
 import SectionDividerBorder from '../../components/SectionDividerBorder';
 import adultCatImg from '../../public/adult-cat-image-1.png';
 import catMatch1 from '../../public/cat1.jpg';
@@ -27,7 +28,7 @@ const Kittens = () => {
         <h1 className="text-center text-AngelBlue">Kattungar</h1>
         <div className=" ml-auto mt-4"></div>
       </Hero>
-      <div className="mt-36">
+      <Section>
         <BorderedTextbox
           title={borderedTextboxText.title}
           text={borderedTextboxText.text}
@@ -36,7 +37,7 @@ const Kittens = () => {
             <Button text="Läs mer" />
           </div>
         </BorderedTextbox>
-      </div>
+      </Section>
       <div className="py-[150px] bg-[#80756B]/10 shadow-inner flex flex-col items-center space-y-4">
         <h2>Tillgängliga kattungar</h2>
         <KittenOverview
@@ -52,22 +53,26 @@ const Kittens = () => {
           title="Månskenskullen"
         />
       </div>
-      <SectionDividerBorder title="Planerade kullar" />
-      <div className="w-[80%] lg:w-[50%] m-auto">
-        <p className=" first-letter:text-8xl first-letter:font-Tangerine font-Montserrat font-semibold italic text.xl lg:text-2xl text-center">
-          Vi är glada att kunna meddelar att vi har planer på att para samman
-          våra två vackra ragdoll-katter. Vi tror att deras unika egenskaper
-          kommer att resultera i vackra och hälsosamma kattungar, och vi ser
-          mycket fram emot att få följa deras utveckling. Vi kommer att vara
-          mycket noga med att välja rätt parningar för att säkerställa att
-          kattungarna får den bästa möjliga starten i livet, och vi kommer att
-          ge dem all kärlek och omtanke de behöver under deras första veckor. Om
-          du är intresserad av att adoptera en kattunge från oss, vänligen hör
-          av dig så kan vi ge dig mer information och lägga dig på vår
-          intresselista. Tack för att du visar intresse för våra vackra
-          ragdoll-katter!
-        </p>
+      <div className="mt-10">
+        <SectionDividerBorder title="Planerade kullar" />
       </div>
+      <Section>
+        <div className="w-[80%] lg:w-[50%] m-auto">
+          <p className=" first-letter:text-8xl first-letter:font-Tangerine font-Montserrat font-semibold italic text.xl lg:text-2xl text-center">
+            Vi är glada att kunna meddelar att vi har planer på att para samman
+            våra två vackra ragdoll-katter. Vi tror att deras unika egenskaper
+            kommer att resultera i vackra och hälsosamma kattungar, och vi ser
+            mycket fram emot att få följa deras utveckling. Vi kommer att vara
+            mycket noga med att välja rätt parningar för att säkerställa att
+            kattungarna får den bästa möjliga starten i livet, och vi kommer att
+            ge dem all kärlek och omtanke de behöver under deras första veckor.
+            Om du är intresserad av att adoptera en kattunge från oss, vänligen
+            hör av dig så kan vi ge dig mer information och lägga dig på vår
+            intresselista. Tack för att du visar intresse för våra vackra
+            ragdoll-katter!
+          </p>
+        </div>
+      </Section>
       <section className="bg-Beige/50 m-auto">
         <div className="mt-10 mb-10">
           <CatMatchCard
