@@ -1,13 +1,92 @@
+import AdultCatCard from '../../components/AdultCatCard';
+import BorderedTextbox from '../../components/BorderedTextbox';
+import Hero from '../../components/Hero';
+import Section from '../../components/Section';
+import SectionDividerBorder from '../../components/SectionDividerBorder';
+import adultCatImg from '../../public/adult-cat-image-1.png';
+
 const AdultCats = () => {
+  const borderedTextboxText = {
+    title: 'Avelskatter',
+    text: 'Jag är stolt över att presentera mina vuxna Ragdoll honor och hanar som jag använder för avel. Mina katter är alla vackra exemplar av den här unika rasen, med sina blå ögon och mjuka, fluffiga pälsar. De är kända för sin lugna och lättsamma personlighet, och är ofta beskrivna som "valpliknande" i sin kärleksfulla natur. De är också kända för sin intelligens och förmåga att lära sig tricks. Jag har Ragdoll katter i flera olika färger och mönster, inklusive seal, blue, chocolate, lilac och red point. De kan också ha mönster som bicolor, mitted och lynx.',
+  };
+
+  const adultCatCard = {
+    catName: 'Friend Adele',
+    catImgUrl: adultCatImg,
+    born: '2020-07-19',
+    mother: 'SE*Wendeltassens Mary Austin',
+    father: 'SE*Mångudinnan Vikings Ragnar',
+    color: 'RAG f 03',
+    other: 'Chokladbärare',
+    pedigreeUrl: 'https://www.google.com',
+  };
+
   return (
     <div>
-      <h1 className="text-6xl text-DarkBrown font-Tangerine">Vuxna katter</h1>
-      <p className="text-xl font-Montserrat text-DarkBrown">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
-        recusandae perspiciatis dignissimos autem fuga facere laborum reiciendis
-        fugit eligendi velit, rerum eum, corrupti voluptates voluptatem ullam in
-        quas at nihil.
-      </p>
+      <Hero>
+        <h1 className="text-AngelBlue text-center">
+          Våra Kungar
+          <br /> &<br /> Drottningar
+        </h1>
+        <div className=" ml-auto mt-4"></div>
+      </Hero>
+      <Section>
+        <BorderedTextbox
+          title={borderedTextboxText.title}
+          text={borderedTextboxText.text}
+        ></BorderedTextbox>
+      </Section>
+      <SectionDividerBorder title="Våra Kungar/Hanar" />
+      <Section>
+        <div className="space-y-4">
+          <AdultCatCard
+            catName={adultCatCard.catName}
+            catImgUrl={adultCatCard.catImgUrl}
+            born={adultCatCard.born}
+            mother={adultCatCard.mother}
+            father={adultCatCard.father}
+            color={adultCatCard.color}
+            other={adultCatCard.other}
+            pedigreeUrl={adultCatCard.pedigreeUrl}
+          />
+          <AdultCatCard
+            catName={adultCatCard.catName}
+            catImgUrl={adultCatCard.catImgUrl}
+            born={adultCatCard.born}
+            mother={adultCatCard.mother}
+            father={adultCatCard.father}
+            color={adultCatCard.color}
+            other={adultCatCard.other}
+            pedigreeUrl={adultCatCard.pedigreeUrl}
+          />
+        </div>
+      </Section>
+      <SectionDividerBorder title="Våra Drottningar/Honor" />
+      <Section>
+        <div className="space-y-4">
+          <AdultCatCard
+            catName={adultCatCard.catName}
+            catImgUrl={adultCatCard.catImgUrl}
+            born={adultCatCard.born}
+            mother={adultCatCard.mother}
+            father={adultCatCard.father}
+            color={adultCatCard.color}
+            other={adultCatCard.other}
+            pedigreeUrl={adultCatCard.pedigreeUrl}
+          />
+          <AdultCatCard
+            catName={adultCatCard.catName}
+            catImgUrl={adultCatCard.catImgUrl}
+            born={adultCatCard.born}
+            mother={adultCatCard.mother}
+            father={adultCatCard.father}
+            color={adultCatCard.color}
+            other={adultCatCard.other}
+            pedigreeUrl={adultCatCard.pedigreeUrl}
+          />
+        </div>
+      </Section>
     </div>
   );
 };
