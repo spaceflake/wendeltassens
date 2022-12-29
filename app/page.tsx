@@ -1,13 +1,15 @@
+import Button from '../components/Button';
+import Hero from '../components/Hero';
+
 const Homepage = () => {
   return (
     <div>
-      <h1 className="text-6xl text-DarkBrown font-Tangerine">Homepage</h1>
-      <p className="text-xl font-Montserrat text-DarkBrown">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
-        recusandae perspiciatis dignissimos autem fuga facere laborum reiciendis
-        fugit eligendi velit, rerum eum, corrupti voluptates voluptatem ullam in
-        quas at nihil.
-      </p>
+      <Hero>
+        <h1>Våra Ragdolls</h1>
+        <div className=" ml-auto mt-4">
+          <Button text="Kattungar" goTo="/kattungar" />
+        </div>
+      </Hero>
     </div>
   );
 };
