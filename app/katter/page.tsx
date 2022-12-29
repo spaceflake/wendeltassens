@@ -59,6 +59,31 @@ const AdultCats = () => {
           />
         </div>
       </Section>
+      <SectionDividerBorder title="Våra Drottningar/Honor" />
+      <Section>
+        <div className="space-y-4">
+          <AdultCatCard
+            catName={adultCatCard.catName}
+            catImgUrl={adultCatCard.catImgUrl}
+            born={adultCatCard.born}
+            mother={adultCatCard.mother}
+            father={adultCatCard.father}
+            color={adultCatCard.color}
+            other={adultCatCard.other}
+            pedigreeUrl={adultCatCard.pedigreeUrl}
+          />
+          <AdultCatCard
+            catName={adultCatCard.catName}
+            catImgUrl={adultCatCard.catImgUrl}
+            born={adultCatCard.born}
+            mother={adultCatCard.mother}
+            father={adultCatCard.father}
+            color={adultCatCard.color}
+            other={adultCatCard.other}
+            pedigreeUrl={adultCatCard.pedigreeUrl}
+          />
+        </div>
+      </Section>
     </div>
   );
 };
