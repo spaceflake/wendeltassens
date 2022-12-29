@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${montserrat.variable} ${tangerine.variable}`}>
       <head />
-      <body>{children}</body>
+      <body className="backgroundPattern">{children}</body>
     </html>
   );
 }
