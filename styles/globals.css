@@ -7,7 +7,7 @@
     @apply text-6xl lg:text-8xl font-Tangerine font-bold text-DarkBrown;
   }
   h2 {
-    @apply text-5xl lg:text-[5.25rem] font-Tangerine font-bold text-DarkBrown;
+    @apply text-6xl lg:text-8xl font-Tangerine font-bold text-DarkBrown;
   }
   h4 {
     @apply text-3xl lg:text-4xl font-Montserrat font-bold italic text-DarkBrown;
