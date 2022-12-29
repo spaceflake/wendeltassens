@@ -9,7 +9,7 @@ const Button = ({ text, goTo }: Props) => {
   return (
     <Link
       href={goTo || '/'}
-      className="rounded border border-DarkBrown text-DarkBrown px-5 py-2 hover:bg-DarkBrown hover:text-Beige text-center font-Montserrat italic"
+      className="rounded border border-DarkBrown text-DarkBrown px-5 py-2 hover:bg-DarkBrown hover:text-Beige text-center font-Montserrat italic text-sm lg:text-base"
     >
       {text || 'Knapptext'}
     </Link>

@@ -7,7 +7,7 @@ const Footer = (props: Props) => {
   return (
     <footer className="bg-SuperBrown text-Beige text-center py-[64px]">
       <p className="font-Tangerine text-6xl mb-5">Wendeltassens</p>
-      <nav className="flex justify-around flex-col md:flex-row">
+      <nav className="flex justify-around flex-col md:flex-row text-sm lg:text-base">
         <div className="font-Montserrat flex flex-col mb-8 md:mb-0">
           <p className="text-lg font-bold">Sitemap</p>
           <Link href="/">Hem</Link>
