@@ -17,7 +17,7 @@ const KittenOverview = ({ title, birthDate, mother, father }: Props) => {
     status: 'Tillgänglig',
   };
   return (
-    <div className="rounded-xl bg-WhiteBG p-8 flex max-w[700px] justify-between shadow-lg text-DarkBrown">
+    <div className="rounded-xl bg-WhiteBG p-8 flex flex-col lg:flex-row max-w[700px] justify-between shadow-lg text-DarkBrown">
       <div className="flex flex-col pt-6">
         <h5>{title}</h5>
         <div className="divide-y divide-dashed divide-[#E1DFDE] grow">
@@ -34,7 +34,7 @@ const KittenOverview = ({ title, birthDate, mother, father }: Props) => {
             <span className="font-bold text-right">{father}</span>
           </div>
         </div>
-        <div className="space-x-4">
+        <div className="space-x-4 mx-auto mt-4 lg:mr-auto lg:ml-0">
           <Button text="Stamtavla" goTo="https://google.com" />
           <Button text="Förfrågan" goTo="/kontakt" />
         </div>
