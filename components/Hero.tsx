@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import heroImg1 from '../public/hero-Img-1.png';
+import heroImg1 from '../public/hero-img-1.png';
 
 type Props = {
   children?: React.ReactNode;
