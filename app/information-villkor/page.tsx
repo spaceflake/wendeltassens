@@ -46,7 +46,9 @@ const FAQPage = () => {
         <h1>Ragdolls</h1>
         <div className=" ml-auto mt-4"></div>
       </Hero>
-      <SectionDividerBorder title="Om Ragdolls" />
+      <div className="mt-28">
+        <SectionDividerBorder title="Om Ragdolls" />
+      </div>
       <Section>
         <TwoColumnTextSection
           text={aboutRagdollsText.text}
