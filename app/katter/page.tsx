@@ -25,7 +25,10 @@ const AdultCats = () => {
   return (
     <div>
       <Hero>
-        <h1>Våra Ragdolls</h1>
+        <h1 className="text-AngelBlue text-center">
+          Våra Kungar
+          <br /> &<br /> Drottningar
+        </h1>
         <div className=" ml-auto mt-4"></div>
       </Hero>
       <Section>
