@@ -38,7 +38,7 @@ const Kittens = () => {
           </div>
         </BorderedTextbox>
       </Section>
-      <div className="py-[150px] bg-[#80756B]/10 shadow-inner flex flex-col items-center space-y-4">
+      <div className="py-[150px] mt-16 lg:mt-36 bg-[#80756B]/10 shadow-inner flex flex-col items-center space-y-4">
         <h2>Tillgängliga kattungar</h2>
         <KittenOverview
           birthDate="2022-11-24"
@@ -71,7 +71,7 @@ const Kittens = () => {
         </p>
       </Section>
       <section className="bg-Beige/50 m-auto">
-        <div className="mb-10">
+        <div className="mb-10 mt-16 lg:mt-36">
           <CatMatchCard
             femalename={catMatchCard.femaleName}
             maleName={catMatchCard.maleName}
