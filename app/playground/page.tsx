@@ -159,7 +159,7 @@ De kan bli väldigt stora, med en vikt på upp till 10 kg för hanar och 7 kg f�
         />
       </div>
       <div>
-        <TextAndImage image={dvärgväxtImg} />
+        <TextAndImage image={dvärgväxtImg} text="" />
       </div>
       <div>
         <SectionDividerBorder title="Frågor & Svar" />
