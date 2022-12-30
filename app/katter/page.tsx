@@ -37,9 +37,9 @@ const AdultCats = () => {
           text={borderedTextboxText.text}
         ></BorderedTextbox>
       </Section>
-      <SectionDividerBorder title="Våra Kungar/Hanar" />
       <Section>
-        <div className="space-y-4">
+        <SectionDividerBorder title="Våra Kungar/Hanar" />
+        <div className="space-y-4 flex flex-col items-center">
           <AdultCatCard
             catName={adultCatCard.catName}
             catImgUrl={adultCatCard.catImgUrl}
@@ -62,9 +62,9 @@ const AdultCats = () => {
           />
         </div>
       </Section>
-      <SectionDividerBorder title="Våra Drottningar/Honor" />
       <Section>
-        <div className="space-y-4">
+        <SectionDividerBorder title="Våra Drottningar/Honor" />
+        <div className="space-y-4 flex flex-col items-center">
           <AdultCatCard
             catName={adultCatCard.catName}
             catImgUrl={adultCatCard.catImgUrl}
