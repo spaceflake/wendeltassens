@@ -40,46 +40,47 @@ const FAQPage = () => {
     text: 'Att katten hålls som innekatt och enbart får vistas ute i rastgård/innätad balkong eller promenad i koppel. Att du har en bra veterinärförsäkring och revaccinerar enl. rekommendation. Viktigt att tänka efter före när det gäller hur man löser semestrar osv. Ibland kommer jag att söka fodervärdar för att kunna komma vidare i mitt avelsarbete. Är du intresserad av att ta hand om en katt och ha kattungar hemma hos dig, med stöd och hjälp av mig förstås, så anmäl gärna intresse för det. Vi skriver kontrakt, och när det är fullföljt, så övergår katten till dig. Detta kan vara en bra början om man vill satsa på egen avel. Jag kommer att behöva fodervärdar både för honor och hanar. Vad detta innebär diskuterar vi noga igenom innan. Jag har aldrig ångrat att jag har givit mitt hjärta till denna underbara ras. Och jag hoppas på att någon av mina katter kan förgylla även din tillvaro. Jag tar 10 000:- för en kattunge till sällskap. Då får du en väl socialiserad, välgosad, miljötränad kattunge, uppfödd på kvalitetsfoder och kärlek. Avelspris diskuteras indivduellt. Jag vill inte att du avlar på en katt som inte är såld med avelsrätt! Berätta gärna om ditt intresse, så kan vi tillsammans välja ut en katt som passar för att avla på. Vill då veta lite om hur dina avelsplaner ser ut, och att du har stamnamn.',
   };
 
+  const dvärgväxtText = {
+    text: "Ibland är det väldigt svårt att vara uppfödare, och man får vara med om saker och göra val som är tuffa. Vi har två katter som fäst sig extra djupt i våra hjärtan, och som inte finns kvar hos oss längre. Det är S*FunHouse's MiQeela By Hector och hennes dotterdotter Adele. Jag klistrar här in en länk till Scandinavian Ragdoll Club.s hemsida där det står mycket att läsa om s.k Dvärgväxt som har drabbat vår ras. Adele var en sådan här liten ljuvlig kattunge, som vi fick ha kvar tills hon var 20 veckor. MiQeela vet vi inte riktigt vad som hände med. Hon blev sjuk väldigt fort och rasade i vikt. Hon fick även diabetes. Tanken att medicinera henne varje dag och tvinga i mat kändes inte som ett alternativ, så hon fick somna in, och ligger bredvid Adele på en plats där vi minns dem.",
+  };
+
   return (
     <div className="text-DarkBrown">
       <Hero>
         <h1>Ragdolls</h1>
         <div className=" ml-auto mt-4"></div>
       </Hero>
-      <div className="mt-28">
-        <SectionDividerBorder title="Om Ragdolls" />
-      </div>
       <Section>
+        <SectionDividerBorder title="Om Ragdolls" />
         <TwoColumnTextSection
           text={aboutRagdollsText.text}
         ></TwoColumnTextSection>
       </Section>
-      <SectionDividerBorder title="Frågor & Svar" />
       <Section>
-        <div>
+        <SectionDividerBorder title="Frågor & Svar" />
+        <div className="flex flex-col items-center justify-center">
           {FAQText.map((faq) => (
             <FAQ title={faq.title} text={faq.text} />
           ))}
-          <Section>
+          <div className="mt-10">
             <Button text="Kontakta mig" goTo="/kontakt" />
-          </Section>
+          </div>
         </div>
       </Section>
-      <SectionDividerBorder title="Villkor" />
       <Section>
+        <SectionDividerBorder title="Villkor" />
         <TwoColumnTextSection text={termsText.text}></TwoColumnTextSection>
       </Section>
 
-      <SectionDividerBorder title="Dvärgväxt" />
       <Section>
-        <TextAndImage image={dvärgväxtImg}></TextAndImage>
-      </Section>
-      <div className="flex justify-center mb-10">
-        <Button
-          text="Läs mer"
-          goTo="/https://scandinavianragdoll.com/dvargvaxt/"
+        <SectionDividerBorder title="Dvärgväxt" />
+        <TextAndImage
+          image={dvärgväxtImg}
+          text={dvärgväxtText.text}
+          hasLink
+          linkUrl="https://scandinavianragdoll.com/dvargvaxt/"
         />
-      </div>
+      </Section>
     </div>
   );
 };

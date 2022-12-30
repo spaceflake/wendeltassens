@@ -38,7 +38,7 @@ const Kittens = () => {
           </div>
         </BorderedTextbox>
       </Section>
-      <div className="py-[150px] bg-[#80756B]/10 shadow-inner flex flex-col items-center space-y-4">
+      <div className="py-[150px] mt-16 lg:mt-36 bg-[#80756B]/10 shadow-inner flex flex-col items-center space-y-4">
         <h2>Tillgängliga kattungar</h2>
         <KittenOverview
           birthDate="2022-11-24"
@@ -53,28 +53,25 @@ const Kittens = () => {
           title="Månskenskullen"
         />
       </div>
-      <div className="mt-10">
-        <SectionDividerBorder title="Planerade kullar" />
-      </div>
+      <div className="mt-10"></div>
       <Section>
-        <div className="w-[80%] lg:w-[50%] m-auto">
-          <p className=" first-letter:text-8xl first-letter:font-Tangerine font-Montserrat font-semibold italic text.xl lg:text-2xl text-center">
-            Vi är glada att kunna meddelar att vi har planer på att para samman
-            våra två vackra ragdoll-katter. Vi tror att deras unika egenskaper
-            kommer att resultera i vackra och hälsosamma kattungar, och vi ser
-            mycket fram emot att få följa deras utveckling. Vi kommer att vara
-            mycket noga med att välja rätt parningar för att säkerställa att
-            kattungarna får den bästa möjliga starten i livet, och vi kommer att
-            ge dem all kärlek och omtanke de behöver under deras första veckor.
-            Om du är intresserad av att adoptera en kattunge från oss, vänligen
-            hör av dig så kan vi ge dig mer information och lägga dig på vår
-            intresselista. Tack för att du visar intresse för våra vackra
-            ragdoll-katter!
-          </p>
-        </div>
+        <SectionDividerBorder title="Planerade kullar" />
+        <p className=" first-letter:text-8xl first-letter:font-Tangerine font-Montserrat font-semibold italic text.xl lg:text-2xl text-center max-w-prose mx-auto mt-10">
+          Vi är glada att kunna meddelar att vi har planer på att para samman
+          våra två vackra ragdoll-katter. Vi tror att deras unika egenskaper
+          kommer att resultera i vackra och hälsosamma kattungar, och vi ser
+          mycket fram emot att få följa deras utveckling. Vi kommer att vara
+          mycket noga med att välja rätt parningar för att säkerställa att
+          kattungarna får den bästa möjliga starten i livet, och vi kommer att
+          ge dem all kärlek och omtanke de behöver under deras första veckor. Om
+          du är intresserad av att adoptera en kattunge från oss, vänligen hör
+          av dig så kan vi ge dig mer information och lägga dig på vår
+          intresselista. Tack för att du visar intresse för våra vackra
+          ragdoll-katter!
+        </p>
       </Section>
       <section className="bg-Beige/50 m-auto">
-        <div className="mt-10 mb-10">
+        <div className="mb-10 mt-16 lg:mt-36">
           <CatMatchCard
             femalename={catMatchCard.femaleName}
             maleName={catMatchCard.maleName}

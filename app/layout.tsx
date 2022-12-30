@@ -24,7 +24,7 @@ export default function RootLayout({
       <head />
       <body className="backgroundPattern">
         <Header />
-        {children}
+        <main className="container mx-auto">{children}</main>
         <Footer />
       </body>
     </html>

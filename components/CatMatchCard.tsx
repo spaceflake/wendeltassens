@@ -19,20 +19,24 @@ const CatMatchCard = ({ femalename, maleName, femaleImg, maleImg }: Props) => {
           <Image
             src={femaleImg}
             alt={femalename}
-            className="h-28 w-28 lg:h-[250px] lg:w-[250px] rounded-full object-cover object-top aspect-video"
+            className="h-28 w-28 md:max-lg:h-36 md:max-lg:w-36 xl:h-[250px] xl:w-[250px] rounded-full object-cover object-top aspect-video"
           />
-          <p className="ml-[1rem] md:ml-[3rem] font-Montserrat font-semibold italic">
+          <p className="ml-4 md:ml-4 font-Montserrat font-semibold italic">
             {femalename}
           </p>
         </div>
-        <Image src={catMatchSvg} alt="" className="absolute inset-0" />
+        <Image
+          src={catMatchSvg}
+          alt=""
+          className="absolute inset-0 object-contain object-center h-full w-full"
+        />
         <div className="flex items-end lg:items-center flex-row-reverse mr-6">
           <Image
             src={maleImg}
             alt={maleName}
-            className="h-28 w-28 lg:h-[250px] lg:w-[250px] rounded-full	 object-cover object-top aspect-video"
+            className="h-28 w-28 md:max-lg:h-36 md:max-lg:w-36 xl:h-[250px] xl:w-[250px] rounded-full	 object-cover object-top aspect-video"
           />
-          <p className="mr-[1rem] md:mr-[3rem]  font-Montserrat font-semibold italic">
+          <p className="mr-4 md:mr-4  font-Montserrat font-semibold italic">
             {maleName}
           </p>
         </div>

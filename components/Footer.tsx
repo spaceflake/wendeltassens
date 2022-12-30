@@ -5,7 +5,7 @@ type Props = {};
 
 const Footer = (props: Props) => {
   return (
-    <div>
+    <div className="mt-10">
       <footer className="bg-SuperBrown text-Beige py-[64px] relative text-center md:text-left">
         <h2 className="font-Tangerine text-6xl mb-5 text-center text-Beige">
           Wendeltassens

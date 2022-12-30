@@ -25,20 +25,26 @@ const Homepage = () => {
         </div>
       </Hero>
       <Section>
-        <Image src={swirl} alt="Swirl" className="self-end hidden lg:block" />
-        <div className="text-center max-w-[436px]">
-          <h2 className="text-3xl lg:text-[4rem] leading-none">
-            Välkommen till Wendeltassesns Ragdolls!
-          </h2>
-          <p className="text-center text-DarkBrown font-Montserrat text-sm lg:text-2xl px-3 lg:px-0 mt-4">
-            Vi är stolta över att presentera våra vackra och hälsosamma katter
-            av den här unika rasen. Med sin lugna och lättsamma personlighet,
-            och deras mjuka, fluffiga pälsar är Ragdoll katter en dröm för alla
-            kattälskare. Låt oss hjälpa dig att hitta den perfekta katten för
-            din familj. Kontakta oss idag för mer information.
-          </p>
+        <div className="flex mx-auto">
+          <Image src={swirl} alt="Swirl" className="self-end hidden lg:block" />
+          <div className="text-center max-w-[436px]">
+            <h2 className="text-3xl lg:text-[4rem] leading-none">
+              Välkommen till Wendeltassesns Ragdolls!
+            </h2>
+            <p className="text-center text-DarkBrown font-Montserrat text-sm lg:text-2xl px-3 lg:px-0 mt-4">
+              Vi är stolta över att presentera våra vackra och hälsosamma katter
+              av den här unika rasen. Med sin lugna och lättsamma personlighet,
+              och deras mjuka, fluffiga pälsar är Ragdoll katter en dröm för
+              alla kattälskare. Låt oss hjälpa dig att hitta den perfekta katten
+              för din familj. Kontakta oss idag för mer information.
+            </p>
+          </div>
+          <Image
+            src={swirl2}
+            alt="Swirl"
+            className="self-end hidden lg:block"
+          />
         </div>
-        <Image src={swirl2} alt="Swirl" className="self-end hidden lg:block" />
       </Section>
       <Section>
         <BorderedTextbox
