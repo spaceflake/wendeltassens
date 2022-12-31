@@ -1,20 +1,20 @@
 import AdultCatCard from '../../../components/AdultCatCard';
 import BorderedTextbox from '../../../components/BorderedTextbox';
 import Button from '../../../components/Button';
+import CatMatchCard from '../../../components/CatMatchCard';
+import FAQ, { FAQProps } from '../../../components/FAQ';
 import Footer from '../../../components/Footer';
 import Header from '../../../components/Header';
 import Hero from '../../../components/Hero';
+import KittenOverview from '../../../components/KittenOverview';
 import Post from '../../../components/Post';
 import SectionDividerBorder from '../../../components/SectionDividerBorder';
-import postImg from '../../public/post-img-1.png';
-import adultCatImg from '../../public/adult-cat-image-1.png';
-import TwoColumnTextSection from '../../../components/TwoColumnTextSection';
-import KittenOverview from '../../../components/KittenOverview';
-import CatMatchCard from '../../../components/CatMatchCard';
-import catMatch1 from '../../public/cat1.jpg';
 import TextAndImage from '../../../components/TextAndImage';
-import dvärgväxtImg from '../../public/dvärgväxt-image-2.jpg';
-import FAQ, { FAQProps } from '../../../components/FAQ';
+import TwoColumnTextSection from '../../../components/TwoColumnTextSection';
+import adultCatImg from '../../../public/adult-cat-image-1.png';
+import catMatch1 from '../../../public/cat1.jpg';
+import dvärgväxtImg from '../../../public/dvärgväxt-image-2.jpg';
+import postImg from '../../../public/post-img-1.png';
 
 type Props = {};
 
