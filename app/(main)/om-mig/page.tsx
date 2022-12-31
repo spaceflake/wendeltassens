@@ -1,9 +1,9 @@
 import Image from 'next/image';
-import BorderedTextbox from '../../components/BorderedTextbox';
-import Button from '../../components/Button';
-import Section from '../../components/Section';
-import mammaBild from '../../public/mammakatt.jpg';
-import pappaBild from '../../public/pappakatt.jpg';
+import BorderedTextbox from '../../../components/BorderedTextbox';
+import Button from '../../../components/Button';
+import Section from '../../../components/Section';
+import mammaBild from '../../../public/mammakatt.jpg';
+import pappaBild from '../../../public/pappakatt.jpg';
 
 const About = () => {
   const borderedTextboxText = {
@@ -12,7 +12,7 @@ const About = () => {
   };
   return (
     <div className="r">
-      <div className="mt-56 mb-24 flex center justify-center">
+      <div className="flex justify-center mt-56 mb-24 center">
         <Image
           className="rounded-md origin-bottom -rotate-12 w-[110px] h-[160px] md:w-[200px] md:h-[240px]"
           width={110}

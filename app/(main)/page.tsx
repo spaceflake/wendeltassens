@@ -1,12 +1,12 @@
-import BorderedTextbox from '../components/BorderedTextbox';
-import Button from '../components/Button';
-import Hero from '../components/Hero';
-import postImg from '../public/post-img-1.png';
-import Post from '../components/Post';
+import BorderedTextbox from '../../components/BorderedTextbox';
+import Button from '../../components/Button';
+import Hero from '../../components/Hero';
+import postImg from '../../public/post-img-1.png';
+import Post from '../../components/Post';
 import Image from 'next/image';
-import swirl from '../public/swirl.svg';
-import swirl2 from '../public/swirl2.svg';
-import Section from '../components/Section';
+import swirl from '../../public/swirl.svg';
+import swirl2 from '../../public/swirl2.svg';
+import Section from '../../components/Section';
 
 const Homepage = () => {
   const post = {
@@ -20,7 +20,7 @@ const Homepage = () => {
     <div>
       <Hero>
         <h1>Våra Ragdolls</h1>
-        <div className=" ml-auto mt-4">
+        <div className="mt-4 ml-auto ">
           <Button text="Kattungar" goTo="/kattungar" />
         </div>
       </Hero>
@@ -31,7 +31,7 @@ const Homepage = () => {
             <h2 className="text-3xl lg:text-[4rem] leading-none">
               Välkommen till Wendeltassesns Ragdolls!
             </h2>
-            <p className="text-center text-DarkBrown font-Montserrat text-sm lg:text-2xl px-3 lg:px-0 mt-4">
+            <p className="px-3 mt-4 text-sm text-center text-DarkBrown font-Montserrat lg:text-2xl lg:px-0">
               Vi är stolta över att presentera våra vackra och hälsosamma katter
               av den här unika rasen. Med sin lugna och lättsamma personlighet,
               och deras mjuka, fluffiga pälsar är Ragdoll katter en dröm för
@@ -59,7 +59,7 @@ const Homepage = () => {
       <Section>
         <div className="flex flex-col justify-center px-3">
           <h2 className="text-center">Senaste uppdateringar</h2>
-          <div className="space-y-4 flex flex-col items-center mt-8 lg:mt-16">
+          <div className="flex flex-col items-center mt-8 space-y-4 lg:mt-16">
             <Post
               title={post.title}
               text={post.text}

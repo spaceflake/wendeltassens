@@ -1,12 +1,12 @@
-import BorderedTextbox from '../../components/BorderedTextbox';
-import Button from '../../components/Button';
-import CatMatchCard from '../../components/CatMatchCard';
-import Hero from '../../components/Hero';
-import KittenOverview from '../../components/KittenOverview';
-import Section from '../../components/Section';
-import SectionDividerBorder from '../../components/SectionDividerBorder';
-import adultCatImg from '../../public/adult-cat-image-1.png';
-import catMatch1 from '../../public/cat1.jpg';
+import BorderedTextbox from '../../../components/BorderedTextbox';
+import Button from '../../../components/Button';
+import CatMatchCard from '../../../components/CatMatchCard';
+import Hero from '../../../components/Hero';
+import KittenOverview from '../../../components/KittenOverview';
+import Section from '../../../components/Section';
+import SectionDividerBorder from '../../../components/SectionDividerBorder';
+import adultCatImg from '../../../public/adult-cat-image-1.png';
+import catMatch1 from '../../../public/cat1.jpg';
 
 const borderedTextboxText = {
   title: 'Våra katter',
@@ -26,7 +26,7 @@ const Kittens = () => {
     <div className="text-DarkBrown">
       <Hero>
         <h1 className="text-center text-AngelBlue">Kattungar</h1>
-        <div className=" ml-auto mt-4"></div>
+        <div className="mt-4 ml-auto "></div>
       </Hero>
       <Section>
         <BorderedTextbox
@@ -70,8 +70,8 @@ const Kittens = () => {
           ragdoll-katter!
         </p>
       </Section>
-      <section className="bg-Beige/50 m-auto">
-        <div className="mb-10 mt-16 lg:mt-36">
+      <section className="m-auto bg-Beige/50">
+        <div className="mt-16 mb-10 lg:mt-36">
           <CatMatchCard
             femalename={catMatchCard.femaleName}
             maleName={catMatchCard.maleName}

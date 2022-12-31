@@ -1,8 +1,5 @@
 import '../styles/globals.css';
 import { Tangerine, Montserrat } from '@next/font/google';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-
 const tangerine = Tangerine({
   weight: ['400', '700'],
   variable: '--font-tangerine',
@@ -13,7 +10,6 @@ const montserrat = Montserrat({
   variable: '--font-montserrat',
   subsets: ['latin'],
 });
-
 export default function RootLayout({
   children,
 }: {
@@ -21,12 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${montserrat.variable} ${tangerine.variable}`}>
-      <head />
-      <body className="backgroundPattern">
-        <Header />
-        <main className="container mx-auto">{children}</main>
-        <Footer />
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

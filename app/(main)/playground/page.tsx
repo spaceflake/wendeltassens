@@ -1,20 +1,20 @@
-import AdultCatCard from '../../components/AdultCatCard';
-import BorderedTextbox from '../../components/BorderedTextbox';
-import Button from '../../components/Button';
-import Footer from '../../components/Footer';
-import Header from '../../components/Header';
-import Hero from '../../components/Hero';
-import Post from '../../components/Post';
-import SectionDividerBorder from '../../components/SectionDividerBorder';
+import AdultCatCard from '../../../components/AdultCatCard';
+import BorderedTextbox from '../../../components/BorderedTextbox';
+import Button from '../../../components/Button';
+import Footer from '../../../components/Footer';
+import Header from '../../../components/Header';
+import Hero from '../../../components/Hero';
+import Post from '../../../components/Post';
+import SectionDividerBorder from '../../../components/SectionDividerBorder';
 import postImg from '../../public/post-img-1.png';
 import adultCatImg from '../../public/adult-cat-image-1.png';
-import TwoColumnTextSection from '../../components/TwoColumnTextSection';
-import KittenOverview from '../../components/KittenOverview';
-import CatMatchCard from '../../components/CatMatchCard';
+import TwoColumnTextSection from '../../../components/TwoColumnTextSection';
+import KittenOverview from '../../../components/KittenOverview';
+import CatMatchCard from '../../../components/CatMatchCard';
 import catMatch1 from '../../public/cat1.jpg';
-import TextAndImage from '../../components/TextAndImage';
+import TextAndImage from '../../../components/TextAndImage';
 import dvärgväxtImg from '../../public/dvärgväxt-image-2.jpg';
-import FAQ, { FAQProps } from '../../components/FAQ';
+import FAQ, { FAQProps } from '../../../components/FAQ';
 
 type Props = {};
 
@@ -57,11 +57,11 @@ const page = (props: Props) => {
     },
   ];
   return (
-    <div className="container mx-auto relative">
+    <div className="container relative mx-auto">
       <Header />
       <Hero>
         <h1>Våra Ragdolls</h1>
-        <div className=" ml-auto mt-4">
+        <div className="mt-4 ml-auto ">
           <Button text="Kattungar" goTo="/kattungar" />
         </div>
       </Hero>
@@ -77,7 +77,7 @@ const page = (props: Props) => {
         </BorderedTextbox>
       </div>
       <SectionDividerBorder title="Sektion Titel" />
-      <div className="space-y-4 flex flex-col items-center">
+      <div className="flex flex-col items-center space-y-4">
         <Post
           title={post.title}
           text={post.text}
@@ -92,7 +92,7 @@ const page = (props: Props) => {
           author={post.author}
         />
       </div>
-      <div className="py-8 flex flex-col items-center space-y-4">
+      <div className="flex flex-col items-center py-8 space-y-4">
         <AdultCatCard
           catName={adultCatCard.catName}
           catImgUrl={adultCatCard.catImgUrl}
