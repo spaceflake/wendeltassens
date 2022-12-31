@@ -7,7 +7,7 @@ export default function SiteLayout({
   children: React.ReactNode;
 }) {
   return (
-    <section>
+    <section className="backgroundPattern">
       <Header />
       <main className="container mx-auto">{children}</main>
       <Footer />
