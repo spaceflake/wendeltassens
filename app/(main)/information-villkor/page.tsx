@@ -1,11 +1,11 @@
-import Button from '../../components/Button';
-import FAQ, { FAQProps } from '../../components/FAQ';
-import Hero from '../../components/Hero';
-import Section from '../../components/Section';
-import SectionDividerBorder from '../../components/SectionDividerBorder';
-import TextAndImage from '../../components/TextAndImage';
-import TwoColumnTextSection from '../../components/TwoColumnTextSection';
-import dvärgväxtImg from '../../public/dvärgväxt-image-2.jpg';
+import Button from '../../../components/Button';
+import FAQ, { FAQProps } from '../../../components/FAQ';
+import Hero from '../../../components/Hero';
+import Section from '../../../components/Section';
+import SectionDividerBorder from '../../../components/SectionDividerBorder';
+import TextAndImage from '../../../components/TextAndImage';
+import TwoColumnTextSection from '../../../components/TwoColumnTextSection';
+import dvärgväxtImg from '../../../public/dvärgväxt-image-2.jpg';
 
 const FAQPage = () => {
   const aboutRagdollsText = {
@@ -48,7 +48,7 @@ const FAQPage = () => {
     <div className="text-DarkBrown">
       <Hero>
         <h1>Ragdolls</h1>
-        <div className=" ml-auto mt-4"></div>
+        <div className="mt-4 ml-auto "></div>
       </Hero>
       <Section>
         <SectionDividerBorder title="Om Ragdolls" />

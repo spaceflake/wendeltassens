@@ -1,9 +1,9 @@
-import AdultCatCard from '../../components/AdultCatCard';
-import BorderedTextbox from '../../components/BorderedTextbox';
-import Hero from '../../components/Hero';
-import Section from '../../components/Section';
-import SectionDividerBorder from '../../components/SectionDividerBorder';
-import adultCatImg from '../../public/adult-cat-image-1.png';
+import AdultCatCard from '../../../components/AdultCatCard';
+import BorderedTextbox from '../../../components/BorderedTextbox';
+import Hero from '../../../components/Hero';
+import Section from '../../../components/Section';
+import SectionDividerBorder from '../../../components/SectionDividerBorder';
+import adultCatImg from '../../../public/adult-cat-image-1.png';
 
 const AdultCats = () => {
   const borderedTextboxText = {
@@ -25,11 +25,11 @@ const AdultCats = () => {
   return (
     <div>
       <Hero>
-        <h1 className="text-AngelBlue text-center">
+        <h1 className="text-center text-AngelBlue">
           Våra Kungar
           <br /> &<br /> Drottningar
         </h1>
-        <div className=" ml-auto mt-4"></div>
+        <div className="mt-4 ml-auto "></div>
       </Hero>
       <Section>
         <BorderedTextbox
@@ -39,7 +39,7 @@ const AdultCats = () => {
       </Section>
       <Section>
         <SectionDividerBorder title="Våra Kungar/Hanar" />
-        <div className="space-y-4 flex flex-col items-center">
+        <div className="flex flex-col items-center space-y-4">
           <AdultCatCard
             catName={adultCatCard.catName}
             catImgUrl={adultCatCard.catImgUrl}
@@ -64,7 +64,7 @@ const AdultCats = () => {
       </Section>
       <Section>
         <SectionDividerBorder title="Våra Drottningar/Honor" />
-        <div className="space-y-4 flex flex-col items-center">
+        <div className="flex flex-col items-center space-y-4">
           <AdultCatCard
             catName={adultCatCard.catName}
             catImgUrl={adultCatCard.catImgUrl}
