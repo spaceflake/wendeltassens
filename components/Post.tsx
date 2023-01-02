@@ -5,19 +5,17 @@ type Props = {
   text: string;
   imgUrl?: string | StaticImageData;
   date?: string;
-  author?: string;
 };
 
-const Post = ({ title, text, imgUrl, date, author }: Props) => {
+const Post = ({ title, text, imgUrl, date }: Props) => {
   return (
     <article className="bg-WhiteBG rounded-xl overflow-hidden lg:max-h-[480px] lg:max-w-[1000px] flex flex-col-reverse lg:flex-row-reverse shadow-xl">
-      <div className="grow pb-12 lg:py-12 px-12 pl-10 pr-10 pt-10">
-        <div className="space-x-4 text-sm font-Montserrat font-thin text-DarkBrown">
+      <div className="px-12 pt-10 pb-12 pl-10 pr-10 grow lg:py-12">
+        <div className="space-x-4 text-sm font-thin font-Montserrat text-DarkBrown">
           <span>{date}</span>
-          <span>{author}</span>
         </div>
         <h4>{title}</h4>
-        <p className="font-Montserrat text-DarkBrown mt-4 lg:mt-7 text-sm lg:text-base">
+        <p className="mt-4 text-sm font-Montserrat text-DarkBrown lg:mt-7 lg:text-base">
           {text}
         </p>
       </div>
@@ -25,7 +23,7 @@ const Post = ({ title, text, imgUrl, date, author }: Props) => {
         <Image
           src={imgUrl}
           alt={title}
-          className="object-cover aspect-square w-auto h-auto"
+          className="object-cover w-auto h-auto aspect-square"
         />
       )}
     </article>
