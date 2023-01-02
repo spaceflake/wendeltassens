@@ -1,6 +1,13 @@
-import blockContent from './blockContent'
-import category from './category'
-import post from './post'
-import author from './author'
+import introTextHome from './componentSchemas/introTextHome';
+import textboxBordered from './componentSchemas/textboxBordered';
+import page from './page';
+import post from './post';
+import postContainer from './postContainer';
 
-export const schemaTypes = [post, author, category, blockContent]
+export const schemaTypes = [
+  postContainer,
+  post,
+  page,
+  introTextHome,
+  textboxBordered,
+];
