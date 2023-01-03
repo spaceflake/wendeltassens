@@ -27,6 +27,9 @@ export default defineType({
       name: 'publishedAt',
       title: 'Publicerad',
       type: 'datetime',
+      options: {
+        dateFormat: 'YYYY-MM-DD',
+      },
     }),
   ],
   preview: {
