@@ -19,6 +19,8 @@ const Homepage = async () => {
   const posts: Post[] = await client.fetch(postQuery);
   const pageMeta: Page = await client.fetch(pageQuery);
 
+  const { heroImgUrl, heroTitle, heroBtnPath } = pageMeta[0];
+
   const components = pageMeta.map((page) => page.components);
 
   const introbox = components[0].find(
@@ -33,10 +35,10 @@ const Homepage = async () => {
 
   return (
     <div>
-      <Hero heroImgUrl={pageMeta[0].heroImgUrl}>
-        <h1>{pageMeta[0].heroTitle}</h1>
+      <Hero heroImgUrl={heroImgUrl}>
+        <h1>{heroTitle}</h1>
         <div className="mt-4 ml-auto ">
-          <Button text="Kattungar" goTo={pageMeta[0].heroBtnPath} />
+          <Button text="Kattungar" goTo={heroBtnPath} />
         </div>
       </Hero>
       <Section>
