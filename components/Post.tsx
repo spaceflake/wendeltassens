@@ -23,6 +23,8 @@ const Post = ({ title, text, imgUrl, date }: Props) => {
         <Image
           src={imgUrl}
           alt={title}
+          width={500}
+          height={500}
           className="object-cover w-auto h-auto aspect-square"
         />
       )}

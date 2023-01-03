@@ -7,15 +7,18 @@ import PostContainer from '../../components/PostContainer';
 import IntroTextHome from '../../components/IntroTextHome';
 import { client } from '../../lib/sanity.client';
 import { groq } from 'next-sanity';
+import { SanityImageSource } from '@sanity/image-url/lib/types/types';
+import { StaticImageData } from 'next/image';
 
 type Post = {
+  _id: string;
   title: string;
   text: string;
-  image: string;
+  imageUrl: string;
   publishedAt: string;
 };
 
-const postQuery = groq`*[_type == "post"] | order(_createdAt asc) {title, text, image, publishedAt}`;
+const postQuery = groq`*[_type == "post"] | order(_createdAt asc) {_id, title, text, "imageUrl": image.asset->url, publishedAt}`;
 
 const Homepage = async () => {
   const posts: Post[] = await client.fetch(postQuery);
@@ -51,10 +54,10 @@ const Homepage = async () => {
         <PostContainer title={postContainerTitle}>
           {posts.map((post) => (
             <Post
-              key={post.title}
+              key={post._id}
               title={post.title}
               text={post.text}
-              imgUrl={post.image}
+              imgUrl={post.imageUrl}
               date={post.publishedAt}
             />
           ))}
