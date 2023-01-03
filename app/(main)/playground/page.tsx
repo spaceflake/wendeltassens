@@ -23,7 +23,6 @@ const page = (props: Props) => {
     text: 'Lorem ipsum dolor sit amet consectetur. Lacus ut id ac nibh. Convallis nam mi amet ut. Fermentum et scelerisque massa proin nisi risus congue. Et penatibus ut ultrices sed. Vel eu at lorem sit ornare. Massa diam donec amet integer. Pellentesque in ultrices arcu velit at. Sed neque et mattis in scelerisque curabitur sit vitae. Orci laoreet mi facilisis aenean neque bibendum ullamcorper. In tincidunt enim aliquam proin nibh velit pellentesque nisi.',
     imgUrl: '',
     date: '2022-12-28',
-    author: 'Tomas Fridekrans',
   };
 
   const adultCatCard = {
@@ -77,12 +76,7 @@ const page = (props: Props) => {
       </div>
       <SectionDividerBorder title="Sektion Titel" />
       <div className="flex flex-col items-center space-y-4">
-        <Post
-          title={post.title}
-          text={post.text}
-          imgUrl={post.imgUrl}
-          date={post.date}
-        />
+        <Post title={post.title} text={post.text} date={post.date} />
         <Post title={post.title} text={post.text} date={post.date} />
       </div>
       <div className="flex flex-col items-center py-8 space-y-4">

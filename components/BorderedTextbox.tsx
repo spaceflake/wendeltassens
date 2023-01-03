@@ -2,24 +2,24 @@ import React from 'react';
 import Button from './Button';
 
 type Props = {
-  title: string;
-  text: string;
+  title: string | null;
+  text: string | null | undefined;
   children?: React.ReactNode;
 };
 
 const BorderedTextbox = ({ title, text, children }: Props) => {
   return (
-    <article className="border border-DarkBrown rounded relative bg-WhiteBG text-DarkBrown mr-4 ml-4">
+    <article className="relative ml-4 mr-4 border rounded border-DarkBrown bg-WhiteBG text-DarkBrown">
       <h2 className=" font-Tangerine text-3xl lg:text-5xl absolute top-[-1.5rem] bg-WhiteBG ml-8 px-4">
-        {title}
+        {title || 'Title'}
       </h2>
-      <div className="pt-16 pr-8 pl-8 py-8 md:p-16">
+      <div className="py-8 pt-16 pl-8 pr-8 md:p-16">
         <p
           className={`font-Montserrat italic text-sm lg:text-2xl ${
-            text.length > 500 && 'lg:columns-2'
+            text && text.length > 500 && 'lg:columns-2'
           }`}
         >
-          {text}
+          {text || 'Text'}
         </p>
       </div>
       <div className="flex justify-center pb-8">{children}</div>

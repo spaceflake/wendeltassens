@@ -1,16 +1,24 @@
-import React from 'react';
+import Post from './Post';
 
 type Props = {
-  children: React.ReactNode;
-  title: string;
+  title: string | null | undefined;
+  posts: Post[];
 };
 
-const PostContainer = ({ children, title }: Props) => {
+const PostContainer = ({ title, posts }: Props) => {
   return (
     <div className="flex flex-col justify-center px-3">
-      <h2 className="text-center">{title}</h2>
+      <h2 className="text-center">{title || 'Rubrik'}</h2>
       <div className="flex flex-col items-center mt-8 space-y-4 lg:mt-16">
-        {children}
+        {posts.map((post) => (
+          <Post
+            key={post._id}
+            title={post.title}
+            text={post.text}
+            imgUrl={post.imageUrl}
+            date={post.publishedAt}
+          />
+        ))}
       </div>
     </div>
   );
