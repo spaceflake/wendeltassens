@@ -7,11 +7,12 @@ import PostContainer from '../../components/PostContainer';
 import Section from '../../components/Section';
 import { client } from '../../lib/sanity.client';
 
-const postQuery = groq`*[_type == "post"][0..2] | order(_createdAt asc) {_id, title, text, "imageUrl": image.asset->url, publishedAt}`;
-const pageQuery = groq`*[_type == "page"] {
+const postQuery = groq`*[_type == "post"][0..2] | order(publishedAt desc) {_id, title, text, "imageUrl": image.asset->url, publishedAt}`;
+const pageQuery = groq`*[_type == "page" && title == "Hem"] {
   heroTitle,
   "heroImgUrl": heroImage.asset->url,
-  "heroBtnPath": heroButton,
+  "heroBtnPath": heroButtonPath,
+  "heroBtnText": heroButtonText,
   "components": component[]->{_type, title, text}
 }`;
 
@@ -19,7 +20,7 @@ const Homepage = async () => {
   const posts: Post[] = await client.fetch(postQuery);
   const pageMeta: Page = await client.fetch(pageQuery);
 
-  const { heroImgUrl, heroTitle, heroBtnPath } = pageMeta[0];
+  const { heroImgUrl, heroTitle, heroBtnPath, heroBtnText } = pageMeta[0];
 
   const components = pageMeta.map((page) => page.components);
 
@@ -38,7 +39,7 @@ const Homepage = async () => {
       <Hero heroImgUrl={heroImgUrl}>
         <h1>{heroTitle}</h1>
         <div className="mt-4 ml-auto ">
-          <Button text="Kattungar" goTo={heroBtnPath} />
+          <Button text={heroBtnText} goTo={heroBtnPath} />
         </div>
       </Hero>
       <Section>
