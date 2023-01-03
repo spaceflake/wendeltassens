@@ -2,7 +2,7 @@ import Image from 'next/image';
 import heroImg1 from '../public/hero-img-1.png';
 
 type Props = {
-  heroImgUrl: string;
+  heroImgUrl?: string;
   children?: React.ReactNode;
 };
 
