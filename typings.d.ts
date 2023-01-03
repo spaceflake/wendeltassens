@@ -24,5 +24,6 @@ type Page = {
   heroTitle: string;
   heroImgUrl: string;
   heroBtnPath: string;
+  heroBtnText: string;
   components: Component[];
 }[];
