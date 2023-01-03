@@ -24,9 +24,21 @@ export default defineType({
       type: 'string',
     }),
     defineField({
-      name: 'heroButton',
-      title: 'Sid Knapp',
+      name: 'addButton',
+      title: 'Lägg till knapp',
+      type: 'boolean',
+    }),
+    defineField({
+      name: 'heroButtonPath',
+      title: 'Sid Knapp adress',
       type: 'string',
+      hidden: ({ parent }) => !parent?.addButton,
+    }),
+    defineField({
+      name: 'heroButtonText',
+      title: 'Sid Knapp text',
+      type: 'string',
+      hidden: ({ parent }) => !parent?.addButton,
     }),
     defineField({
       name: 'component',
