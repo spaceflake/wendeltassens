@@ -14,7 +14,6 @@ import TwoColumnTextSection from '../../../components/TwoColumnTextSection';
 import adultCatImg from '../../../public/adult-cat-image-1.png';
 import catMatch1 from '../../../public/cat1.jpg';
 import dvärgväxtImg from '../../../public/dvärgväxt-image-2.jpg';
-import postImg from '../../../public/post-img-1.png';
 
 type Props = {};
 
@@ -22,7 +21,7 @@ const page = (props: Props) => {
   const post = {
     title: 'Kattungar',
     text: 'Lorem ipsum dolor sit amet consectetur. Lacus ut id ac nibh. Convallis nam mi amet ut. Fermentum et scelerisque massa proin nisi risus congue. Et penatibus ut ultrices sed. Vel eu at lorem sit ornare. Massa diam donec amet integer. Pellentesque in ultrices arcu velit at. Sed neque et mattis in scelerisque curabitur sit vitae. Orci laoreet mi facilisis aenean neque bibendum ullamcorper. In tincidunt enim aliquam proin nibh velit pellentesque nisi.',
-    imgUrl: postImg,
+    imgUrl: '',
     date: '2022-12-28',
     author: 'Tomas Fridekrans',
   };
@@ -83,14 +82,8 @@ const page = (props: Props) => {
           text={post.text}
           imgUrl={post.imgUrl}
           date={post.date}
-          author={post.author}
         />
-        <Post
-          title={post.title}
-          text={post.text}
-          date={post.date}
-          author={post.author}
-        />
+        <Post title={post.title} text={post.text} date={post.date} />
       </div>
       <div className="flex flex-col items-center py-8 space-y-4">
         <AdultCatCard
