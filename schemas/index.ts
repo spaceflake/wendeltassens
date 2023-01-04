@@ -1,10 +1,10 @@
 import catSection from './catSection';
 import catCard from './componentSchemas/catCard';
-import introMatches from './componentSchemas/introMatches';
 import introTextHome from './componentSchemas/introTextHome';
 import kitten from './componentSchemas/kitten';
 import kittenOverview from './componentSchemas/kittenOverview';
 import match from './componentSchemas/match';
+import textblock from './componentSchemas/textblock';
 import textboxBordered from './componentSchemas/textboxBordered';
 import kittenSection from './kittenSection';
 import matchSection from './matchSection';
@@ -21,7 +21,7 @@ export const schemaTypes = [
   kittenSection,
   kittenOverview,
   kitten,
-  introMatches,
+  textblock,
   matchSection,
   match,
   catCard,
