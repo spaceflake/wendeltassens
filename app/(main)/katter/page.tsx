@@ -1,15 +1,47 @@
+import { groq } from 'next-sanity';
 import AdultCatCard from '../../../components/AdultCatCard';
 import BorderedTextbox from '../../../components/BorderedTextbox';
 import Hero from '../../../components/Hero';
 import Section from '../../../components/Section';
 import SectionDividerBorder from '../../../components/SectionDividerBorder';
+import { client } from '../../../lib/sanity.client';
 import adultCatImg from '../../../public/adult-cat-image-1.png';
 
-const AdultCats = () => {
-  const borderedTextboxText = {
-    title: 'Avelskatter',
-    text: 'Jag är stolt över att presentera mina vuxna Ragdoll honor och hanar som jag använder för avel. Mina katter är alla vackra exemplar av den här unika rasen, med sina blå ögon och mjuka, fluffiga pälsar. De är kända för sin lugna och lättsamma personlighet, och är ofta beskrivna som "valpliknande" i sin kärleksfulla natur. De är också kända för sin intelligens och förmåga att lära sig tricks. Jag har Ragdoll katter i flera olika färger och mönster, inklusive seal, blue, chocolate, lilac och red point. De kan också ha mönster som bicolor, mitted och lynx.',
-  };
+const pageQuery = groq`*[_type == "page" && title == "Katter"] {
+  heroTitle,
+  "heroImgUrl": heroImage.asset->url,
+  "components": component[]->{
+    _type,
+    title,
+    text,
+    
+    _type == 'catSection' => {
+      cats[]->{
+        ...,
+        "catImgUrl": catImgUrl.asset->url,
+      }
+    }
+  }
+}`;
+
+const AdultCats = async () => {
+  const pageMeta: Page = await client.fetch(pageQuery);
+
+  console.log(pageMeta[0].components);
+
+  const { heroImgUrl, heroTitle } = pageMeta[0];
+
+  const components = pageMeta.map((page) => page.components);
+
+  const textBox = components[0].find(
+    (component) => component._type === 'textboxBordered'
+  );
+
+  const catSections: CatSection[] = components[0].filter(
+    (component) => component._type === 'catSection'
+  ) as CatSection[];
+
+  console.log(catSections[0].cats);
 
   const adultCatCard = {
     catName: 'Friend Adele',
@@ -24,67 +56,54 @@ const AdultCats = () => {
 
   return (
     <div>
-      <Hero>
-        <h1 className="text-center text-AngelBlue">
-          Våra Kungar
-          <br /> &<br /> Drottningar
-        </h1>
+      <Hero heroImgUrl={heroImgUrl}>
+        <h1 className="text-center text-AngelBlue">{heroTitle}</h1>
         <div className="mt-4 ml-auto "></div>
       </Hero>
       <Section>
         <BorderedTextbox
-          title={borderedTextboxText.title}
-          text={borderedTextboxText.text}
+          title={textBox!.title}
+          text={textBox?.text}
         ></BorderedTextbox>
       </Section>
       <Section>
         <SectionDividerBorder title="Våra Kungar/Hanar" />
         <div className="flex flex-col items-center space-y-4">
-          <AdultCatCard
-            catName={adultCatCard.catName}
-            catImgUrl={adultCatCard.catImgUrl}
-            born={adultCatCard.born}
-            mother={adultCatCard.mother}
-            father={adultCatCard.father}
-            color={adultCatCard.color}
-            other={adultCatCard.other}
-            pedigreeUrl={adultCatCard.pedigreeUrl}
-          />
-          <AdultCatCard
-            catName={adultCatCard.catName}
-            catImgUrl={adultCatCard.catImgUrl}
-            born={adultCatCard.born}
-            mother={adultCatCard.mother}
-            father={adultCatCard.father}
-            color={adultCatCard.color}
-            other={adultCatCard.other}
-            pedigreeUrl={adultCatCard.pedigreeUrl}
-          />
+          {catSections.map((catSection) =>
+            catSection.cats.map((cat) => (
+              <AdultCatCard
+                breeder={cat.breeder}
+                catName={cat.name}
+                catImgUrl={cat.catImgUrl}
+                born={cat.birthDate.split('T')[0]}
+                mother={cat.motherName}
+                father={cat.fatherName}
+                color={cat.colorCode}
+                other={cat.information}
+                pedigreeUrl={cat.pedigreeUrl}
+              />
+            ))
+          )}
         </div>
       </Section>
       <Section>
         <SectionDividerBorder title="Våra Drottningar/Honor" />
         <div className="flex flex-col items-center space-y-4">
-          <AdultCatCard
-            catName={adultCatCard.catName}
-            catImgUrl={adultCatCard.catImgUrl}
-            born={adultCatCard.born}
-            mother={adultCatCard.mother}
-            father={adultCatCard.father}
-            color={adultCatCard.color}
-            other={adultCatCard.other}
-            pedigreeUrl={adultCatCard.pedigreeUrl}
-          />
-          <AdultCatCard
-            catName={adultCatCard.catName}
-            catImgUrl={adultCatCard.catImgUrl}
-            born={adultCatCard.born}
-            mother={adultCatCard.mother}
-            father={adultCatCard.father}
-            color={adultCatCard.color}
-            other={adultCatCard.other}
-            pedigreeUrl={adultCatCard.pedigreeUrl}
-          />
+          {catSections.map((catSection) =>
+            catSection.cats.map((cat) => (
+              <AdultCatCard
+                breeder={cat.breeder}
+                catName={cat.name}
+                catImgUrl={cat.catImgUrl}
+                born={cat.birthDate.split('T')[0]}
+                mother={cat.motherName}
+                father={cat.fatherName}
+                color={cat.colorCode}
+                other={cat.information}
+                pedigreeUrl={cat.pedigreeUrl}
+              />
+            ))
+          )}
         </div>
       </Section>
     </div>
