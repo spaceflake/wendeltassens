@@ -14,11 +14,29 @@ interface Post extends Base {
   publishedAt: string;
 }
 
-type Component = {
+type BaseComponent = {
   _type: string | null;
   title: string;
   text: string | null;
 };
+
+type Cat = {
+  catImgUrl: string;
+  breeder: string;
+  name: string;
+  birthDate: string;
+  motherName: string;
+  fatherName: string;
+  colorCode: string;
+  information: string;
+  pedigreeUrl: string;
+};
+
+interface CatSection extends BaseComponent {
+  cats: Cat[];
+}
+
+type Component = BaseComponent | CatSection;
 
 type Page = {
   heroTitle: string;
