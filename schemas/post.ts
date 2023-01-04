@@ -1,65 +1,48 @@
-import {defineField, defineType} from 'sanity'
+import { defineField, defineType } from 'sanity';
 
 export default defineType({
   name: 'post',
-  title: 'Post',
+  title: 'Inlägg',
   type: 'document',
   fields: [
     defineField({
       name: 'title',
-      title: 'Title',
+      title: 'Rubrik',
       type: 'string',
     }),
     defineField({
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
-      options: {
-        source: 'title',
-        maxLength: 96,
-      },
+      name: 'text',
+      title: 'Text',
+      type: 'string',
     }),
     defineField({
-      name: 'author',
-      title: 'Author',
-      type: 'reference',
-      to: {type: 'author'},
-    }),
-    defineField({
-      name: 'mainImage',
-      title: 'Main image',
+      name: 'image',
+      title: 'Bild',
       type: 'image',
       options: {
         hotspot: true,
       },
     }),
     defineField({
-      name: 'categories',
-      title: 'Categories',
-      type: 'array',
-      of: [{type: 'reference', to: {type: 'category'}}],
-    }),
-    defineField({
       name: 'publishedAt',
-      title: 'Published at',
+      title: 'Publicerad',
       type: 'datetime',
-    }),
-    defineField({
-      name: 'body',
-      title: 'Body',
-      type: 'blockContent',
+      options: {
+        dateFormat: 'YYYY-MM-DD',
+      },
     }),
   ],
-
   preview: {
     select: {
       title: 'title',
-      author: 'author.name',
-      media: 'mainImage',
+      media: 'image',
     },
     prepare(selection) {
-      const {author} = selection
-      return {...selection, subtitle: author && `by ${author}`}
+      const { title, media } = selection;
+      return {
+        title,
+        media,
+      };
     },
   },
-})
+});

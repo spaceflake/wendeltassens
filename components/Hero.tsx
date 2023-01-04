@@ -2,10 +2,11 @@ import Image from 'next/image';
 import heroImg1 from '../public/hero-img-1.png';
 
 type Props = {
+  heroImgUrl?: string;
   children?: React.ReactNode;
 };
 
-const Hero = ({ children }: Props) => {
+const Hero = ({ children, heroImgUrl }: Props) => {
   return (
     <div className="relative top-0 w-full">
       <div className=" top-0 relative max-h-[900px] overflow-hidden">
@@ -13,9 +14,11 @@ const Hero = ({ children }: Props) => {
           {children}
         </div>
         <Image
-          src={heroImg1}
+          src={heroImgUrl || heroImg1}
+          width={1920}
+          height={1080}
           alt="hero image"
-          className="w-full object-contain"
+          className="object-contain w-full h-auto"
         />
       </div>
     </div>
