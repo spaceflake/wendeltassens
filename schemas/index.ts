@@ -1,5 +1,6 @@
 import catSection from './catSection';
 import catCard from './componentSchemas/catCard';
+import faqText from './componentSchemas/faqText';
 import introTextHome from './componentSchemas/introTextHome';
 import kitten from './componentSchemas/kitten';
 import kittenOverview from './componentSchemas/kittenOverview';
@@ -26,4 +27,5 @@ export const schemaTypes = [
   match,
   catCard,
   catSection,
+  faqText,
 ];
