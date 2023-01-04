@@ -1,19 +1,19 @@
 import { defineField, defineType } from 'sanity';
 
 export default defineType({
-  name: 'introTextHome',
-  title: 'Intro Text Hemsida',
+  name: 'faq',
+  title: 'Fråga och svar',
   type: 'document',
   fields: [
     defineField({
       name: 'title',
-      title: 'Rubrik',
+      title: 'Fråga',
       type: 'string',
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'text',
-      title: 'Text',
+      title: 'Svar',
       type: 'text',
       validation: (Rule) => Rule.required(),
     }),

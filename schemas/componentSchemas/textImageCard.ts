@@ -1,8 +1,8 @@
 import { defineField, defineType } from 'sanity';
 
 export default defineType({
-  name: 'introTextHome',
-  title: 'Intro Text Hemsida',
+  name: 'textImageCard',
+  title: 'Text och bild kort',
   type: 'document',
   fields: [
     defineField({
@@ -15,6 +15,21 @@ export default defineType({
       name: 'text',
       title: 'Text',
       type: 'text',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'image',
+      title: 'Bild',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'link',
+      title: 'Länk',
+      type: 'url',
       validation: (Rule) => Rule.required(),
     }),
   ],

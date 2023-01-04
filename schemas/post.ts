@@ -9,11 +9,13 @@ export default defineType({
       name: 'title',
       title: 'Rubrik',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'text',
       title: 'Text',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'image',
@@ -30,6 +32,7 @@ export default defineType({
       options: {
         dateFormat: 'YYYY-MM-DD',
       },
+      validation: (Rule) => Rule.required(),
     }),
   ],
   preview: {
