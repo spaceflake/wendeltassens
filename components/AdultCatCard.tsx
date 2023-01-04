@@ -2,6 +2,7 @@ import Image, { StaticImageData } from 'next/image';
 import Button from './Button';
 
 type Props = {
+  breeder?: string;
   catName: string;
   catImgUrl: string | StaticImageData;
   born: string;
@@ -14,6 +15,7 @@ type Props = {
 };
 
 const AdultCatCard = ({
+  breeder,
   catName,
   catImgUrl,
   born,
@@ -33,10 +35,12 @@ const AdultCatCard = ({
       <Image
         src={catImgUrl}
         alt={catName}
+        width={500}
+        height={500}
         className="h-auto w-auto rounded-md grow object-cover object-top aspect-video"
       ></Image>
       <div className="p-4 lg:p-8 pb-0 flex flex-col grow">
-        <span className="font-thin">SE*Wendeltassens</span>
+        <span className="font-thin">{breeder}</span>
         <h4 className="not-italic text-2xl lg:text-4xl">{catName}</h4>
         <div className="divide-y divide-dashed divide-[#E1DFDE] text-sm text-DarkBrown grow mt-5">
           <div className="flex justify-between py-2 gap-3">
