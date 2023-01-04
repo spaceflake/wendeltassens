@@ -1,3 +1,4 @@
+import introMatches from './componentSchemas/introMatches';
 import introTextHome from './componentSchemas/introTextHome';
 import kitten from './componentSchemas/kitten';
 import kittenOverview from './componentSchemas/kittenOverview';
@@ -16,4 +17,5 @@ export const schemaTypes = [
   kittenSection,
   kittenOverview,
   kitten,
+  introMatches,
 ];
