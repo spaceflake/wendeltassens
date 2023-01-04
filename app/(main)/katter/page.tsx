@@ -27,8 +27,6 @@ const pageQuery = groq`*[_type == "page" && title == "Katter"] {
 const AdultCats = async () => {
   const pageMeta: Page = await client.fetch(pageQuery);
 
-  console.log(pageMeta[0].components);
-
   const { heroImgUrl, heroTitle } = pageMeta[0];
 
   const components = pageMeta.map((page) => page.components);
@@ -40,19 +38,6 @@ const AdultCats = async () => {
   const catSections: CatSection[] = components[0].filter(
     (component) => component._type === 'catSection'
   ) as CatSection[];
-
-  console.log(catSections[0].cats);
-
-  const adultCatCard = {
-    catName: 'Friend Adele',
-    catImgUrl: adultCatImg,
-    born: '2020-07-19',
-    mother: 'SE*Wendeltassens Mary Austin',
-    father: 'SE*Mångudinnan Vikings Ragnar',
-    color: 'RAG f 03',
-    other: 'Chokladbärare',
-    pedigreeUrl: 'https://www.google.com',
-  };
 
   return (
     <div>
