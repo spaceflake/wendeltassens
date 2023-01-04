@@ -14,11 +14,10 @@ interface Post extends Base {
   publishedAt: string;
 }
 
-type Component = {
-  _type: string | null;
+interface Component extends Base {
   title: string;
   text: string | null;
-};
+}
 
 type Page = {
   heroTitle: string;
