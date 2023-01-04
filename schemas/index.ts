@@ -7,6 +7,7 @@ import kittenOverview from './componentSchemas/kittenOverview';
 import match from './componentSchemas/match';
 import textblock from './componentSchemas/textblock';
 import textboxBordered from './componentSchemas/textboxBordered';
+import textImageCard from './componentSchemas/textImageCard';
 import kittenSection from './kittenSection';
 import matchSection from './matchSection';
 import page from './page';
@@ -28,4 +29,5 @@ export const schemaTypes = [
   catCard,
   catSection,
   faqText,
+  textImageCard,
 ];
