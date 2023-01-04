@@ -12,16 +12,19 @@ export default defineType({
       options: {
         hotspot: true,
       },
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'breeder',
       title: 'Uppfödare',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'name',
       title: 'Namn',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'birthDate',
@@ -30,22 +33,26 @@ export default defineType({
       options: {
         dateFormat: 'YYYY-MM-DD',
       },
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'motherName',
       title: 'Moder namn',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'fatherName',
       title: 'Fader namn',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     }),
 
     defineField({
       name: 'colorCode',
       title: 'Täckning',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'information',
@@ -56,6 +63,7 @@ export default defineType({
       name: 'pedigreeUrl',
       title: 'Länk till stamtavla',
       type: 'url',
+      validation: (Rule) => Rule.required(),
     }),
   ],
 });

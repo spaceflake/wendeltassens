@@ -9,11 +9,13 @@ export default defineType({
       name: 'title',
       title: 'Rubrik',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'text',
       title: 'Text',
       type: 'text',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'image',
@@ -22,11 +24,13 @@ export default defineType({
       options: {
         hotspot: true,
       },
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'link',
       title: 'Länk',
       type: 'url',
+      validation: (Rule) => Rule.required(),
     }),
   ],
 });

@@ -9,11 +9,13 @@ export default defineType({
       name: 'title',
       title: 'Rubrik',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'text',
       title: 'Text',
       type: 'text',
+      validation: (Rule) => Rule.required(),
     }),
   ],
 });

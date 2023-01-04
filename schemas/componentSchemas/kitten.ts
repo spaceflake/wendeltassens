@@ -12,6 +12,7 @@ export default defineType({
       options: {
         hotspot: true,
       },
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'status',
@@ -23,16 +24,19 @@ export default defineType({
           { title: 'Tingad', value: 'tinged' },
         ],
       },
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'name',
       title: 'Kattunge namn',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'colorCode',
       title: 'Täckning',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     }),
   ],
 });

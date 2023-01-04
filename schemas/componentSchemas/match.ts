@@ -12,6 +12,7 @@ export default defineType({
       options: {
         hotspot: true,
       },
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'fatherImgUrl',
@@ -20,21 +21,25 @@ export default defineType({
       options: {
         hotspot: true,
       },
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'motherName',
       title: 'Moder namn',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'fatherName',
       title: 'Fader namn',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'pedigreeUrl',
       title: 'Länk till stamtavla',
       type: 'url',
+      validation: (Rule) => Rule.required(),
     }),
   ],
 });
