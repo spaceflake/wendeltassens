@@ -23,6 +23,10 @@ interface Component extends Base {
   text: string | null;
 }
 
+interface AboutCarousel extends Component {
+  carouselImage: string[];
+}
+
 interface Cat extends Component {
   catImgUrl: string;
   breeder: string;
@@ -112,6 +116,7 @@ type Component =
   | Textblock
   | TextboxBordered
   | TextImageCard
+  | AboutCarousel
   | PostContainer;
 
 interface Page extends Base {
