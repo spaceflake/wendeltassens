@@ -11,6 +11,7 @@ const pageQuery = groq`*[_type == "page" && title == "Katter"] {
   "heroImgUrl": heroImage.asset->url,
   "components": component[]->{
     _type,
+    _id,
     title,
     text,
     
@@ -50,46 +51,16 @@ const AdultCats = async () => {
           text={borderedTextboxText.text}
         ></BorderedTextbox>
       </Section>
-      <Section>
-        <SectionDividerBorder title="Våra Kungar/Hanar" />
-        <div className="flex flex-col items-center space-y-4">
-          {catSections.map((catSection) =>
-            catSection.cats.map((cat) => (
-              <AdultCatCard
-                breeder={cat.breeder}
-                catName={cat.name}
-                catImgUrl={cat.catImgUrl}
-                born={cat.birthDate.split('T')[0]}
-                mother={cat.motherName}
-                father={cat.fatherName}
-                color={cat.colorCode}
-                other={cat.information}
-                pedigreeUrl={cat.pedigreeUrl}
-              />
-            ))
-          )}
-        </div>
-      </Section>
-      <Section>
-        <SectionDividerBorder title="Våra Drottningar/Honor" />
-        <div className="flex flex-col items-center space-y-4">
-          {catSections.map((catSection) =>
-            catSection.cats.map((cat) => (
-              <AdultCatCard
-                breeder={cat.breeder}
-                catName={cat.name}
-                catImgUrl={cat.catImgUrl}
-                born={cat.birthDate.split('T')[0]}
-                mother={cat.motherName}
-                father={cat.fatherName}
-                color={cat.colorCode}
-                other={cat.information}
-                pedigreeUrl={cat.pedigreeUrl}
-              />
-            ))
-          )}
-        </div>
-      </Section>
+      {catSections.map((catSection) => (
+        <Section key={catSection._id}>
+          <SectionDividerBorder title={catSection.title} />
+          <div className="flex flex-col items-center space-y-4">
+            {catSection.cats.map((cat) => (
+              <AdultCatCard key={cat._id} cat={cat} />
+            ))}
+          </div>
+        </Section>
+      ))}
     </div>
   );
 };
