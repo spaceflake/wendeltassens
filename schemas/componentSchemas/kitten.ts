@@ -20,8 +20,8 @@ export default defineType({
       type: 'string',
       options: {
         list: [
-          { title: 'Tillgänlig', value: 'available' },
-          { title: 'Tingad', value: 'tinged' },
+          { title: 'Tillgänglig', value: 'Tillgänglig' },
+          { title: 'Tingad', value: 'Tingad' },
         ],
       },
       validation: (Rule) => Rule.required(),

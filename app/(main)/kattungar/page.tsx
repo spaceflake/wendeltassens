@@ -1,22 +1,11 @@
 import { groq } from 'next-sanity';
 import BorderedTextbox from '../../../components/BorderedTextbox';
 import Button from '../../../components/Button';
-import CatMatchCard from '../../../components/CatMatchCard';
 import Hero from '../../../components/Hero';
 import KittenSection from '../../../components/KittenSection';
+import MatchSection from '../../../components/MatchSection';
 import Section from '../../../components/Section';
-import SectionDividerBorder from '../../../components/SectionDividerBorder';
 import { client } from '../../../lib/sanity.client';
-import adultCatImg from '../../../public/adult-cat-image-1.png';
-import catMatch1 from '../../../public/cat1.jpg';
-
-const catMatchCard = {
-  femaleName: 'Lucifer',
-  maleName: 'Mona Lisa',
-  pedigreeUrl: 'https://www.google.com',
-  catImgUrl1: adultCatImg,
-  catImgUrl2: catMatch1,
-};
 
 const pageQuery = groq`*[_type == "page" && title == "kattungar"] {
   heroTitle,
@@ -37,6 +26,8 @@ const pageQuery = groq`*[_type == "page" && title == "kattungar"] {
       ...,
       "matches": matches[]->{
         ...,
+        "fatherImgUrl": fatherImgUrl.asset->url,
+        "motherImgUrl": motherImgUrl.asset->url,
       },
   }
   }
@@ -59,7 +50,7 @@ const Kittens = async () => {
     (component) => component._type === 'textblock'
   ) as Textblock;
   const matchsection: MatchSection = components[0].find(
-    (component) => component._type === 'matchsection'
+    (component) => component._type === 'matchSection'
   ) as MatchSection;
 
   return (
@@ -79,31 +70,10 @@ const Kittens = async () => {
         </BorderedTextbox>
       </Section>
       <KittenSection litters={kittensection.litters} />
-      <div className="mt-10"></div>
-      <Section>
-        <SectionDividerBorder title="Planerade kullar" />
-        <p className=" first-letter:text-8xl first-letter:font-Tangerine font-Montserrat font-semibold italic text.xl lg:text-2xl text-center max-w-prose mx-auto mt-10">
-          {introMatchText.text}
-        </p>
-      </Section>
-      <section className="m-auto bg-Beige/50">
-        <div className="mt-16 mb-10 lg:mt-36">
-          <CatMatchCard
-            femalename={catMatchCard.femaleName}
-            maleName={catMatchCard.maleName}
-            femaleImg={catMatchCard.catImgUrl1}
-            maleImg={catMatchCard.catImgUrl2}
-          />
-        </div>
-        <div className="mt-10 mb-10">
-          <CatMatchCard
-            femalename={catMatchCard.femaleName}
-            maleName={catMatchCard.maleName}
-            femaleImg={catMatchCard.catImgUrl1}
-            maleImg={catMatchCard.catImgUrl2}
-          />
-        </div>
-      </section>
+      <MatchSection
+        introMatchText={introMatchText}
+        matches={matchsection.matches}
+      />
     </div>
   );
 };
