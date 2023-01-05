@@ -1,8 +1,8 @@
 import { defineField, defineType } from 'sanity';
 
 export default defineType({
-  name: 'kittenOverview',
-  title: 'Kull kort',
+  name: 'litter',
+  title: 'Kull',
   type: 'document',
   fields: [
     defineField({
