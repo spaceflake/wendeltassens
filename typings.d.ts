@@ -103,6 +103,10 @@ interface KittenSection extends Component {
   litters: Litter[];
 }
 
+interface FAQSection extends Component {
+  faqs: Faq[];
+}
+
 type Component =
   | CatSection
   | MatchSection
@@ -112,7 +116,8 @@ type Component =
   | Textblock
   | TextboxBordered
   | TextImageCard
-  | PostContainer;
+  | PostContainer
+  | FAQSection;
 
 interface Page extends Base {
   title: string;
