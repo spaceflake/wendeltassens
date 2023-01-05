@@ -80,8 +80,8 @@ const page = (props: Props) => {
         <Post title={post.title} text={post.text} date={post.date} />
       </div>
       <div className="flex flex-col items-center py-8 space-y-4">
-        <AdultCatCard
-          catName={adultCatCard.catName}
+        {/* <AdultCatCard
+          name={adultCatCard.catName}
           catImgUrl={adultCatCard.catImgUrl}
           born={adultCatCard.born}
           mother={adultCatCard.mother}
@@ -100,7 +100,7 @@ const page = (props: Props) => {
           other={adultCatCard.other}
           pedigreeUrl={adultCatCard.pedigreeUrl}
           inverted
-        />
+        /> */}
       </div>
       <div className="py-[150px] bg-[#80756B]/10 shadow-inner flex flex-col items-center space-y-4">
         <h2>Tillgängliga kattungar</h2>
