@@ -65,5 +65,17 @@ export default defineType({
       type: 'url',
       validation: (Rule) => Rule.required(),
     }),
+    {
+      name: 'gender',
+      title: 'Kön',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Hane', value: 'male' },
+          { title: 'Hona', value: 'female' },
+        ],
+        layout: 'radio',
+      },
+    },
   ],
 });

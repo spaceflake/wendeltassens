@@ -6,6 +6,11 @@ export default defineType({
   type: 'document',
   fields: [
     defineField({
+      name: 'title',
+      title: 'Titel',
+      type: 'string',
+    }),
+    defineField({
       name: 'matches',
       title: 'Matchningar',
       type: 'array',

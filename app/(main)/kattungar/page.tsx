@@ -1,18 +1,14 @@
+import { groq } from 'next-sanity';
 import BorderedTextbox from '../../../components/BorderedTextbox';
 import Button from '../../../components/Button';
 import CatMatchCard from '../../../components/CatMatchCard';
 import Hero from '../../../components/Hero';
-import KittenOverview from '../../../components/KittenOverview';
 import KittenSection from '../../../components/KittenSection';
 import Section from '../../../components/Section';
 import SectionDividerBorder from '../../../components/SectionDividerBorder';
+import { client } from '../../../lib/sanity.client';
 import adultCatImg from '../../../public/adult-cat-image-1.png';
 import catMatch1 from '../../../public/cat1.jpg';
-
-const borderedTextboxText = {
-  title: 'Våra katter',
-  text: ' De är alla vackra exemplar av den här unika rasen, med sina blå ögon och mjuka, fluffiga pälsar. De är kända för sin lugna och lättsamma personlighet, och är ofta beskrivna som "valpliknande" i sin kärleksfulla natur. Min kattungar är väldigt sociala och lekfulla, och kommer att bli utmärkta familjemedlemmar. De är också lätta att sköta om, eftersom Ragdoll katter är en lågvårdsraser. Jag har kattungar i flera olika färger och mönster, inklusive seal, blue, chocolate, lilac och red point. De kan också ha mönster som bicolor, mitted och lynx.Om du är intresserad av att adoptera en av mina Ragdoll kattungar, vänligen kontakta mig för mer information. Jag ser fram emot att hjälpa dig att hitta den perfekta katten för din familj.',
-};
 
 const catMatchCard = {
   femaleName: 'Lucifer',
@@ -22,11 +18,54 @@ const catMatchCard = {
   catImgUrl2: catMatch1,
 };
 
-const Kittens = () => {
+const pageQuery = groq`*[_type == "page" && title == "kattungar"] {
+  heroTitle,
+  "heroImgUrl": heroImage.asset->url,
+  "components": component[]->{
+    ...,
+    _type == 'kittenSection' => {
+      ...,
+      "litters": litters[]->{
+        ...,
+        "kittens": kittens[]->{
+          ...,
+          "catImgUrl": catImgUrl.asset->url,
+          },
+        },
+    },
+    _type == 'matchSection' => {
+      ...,
+      "matches": matches[]->{
+        ...,
+      },
+  }
+  }
+}`;
+
+const Kittens = async () => {
+  const pageData: Page[] = await client.fetch(pageQuery);
+
+  const { heroImgUrl, heroTitle } = pageData[0];
+
+  const components = pageData.map((page) => page.components) as Component[][];
+
+  const borderedTextboxText: TextboxBordered = components[0].find(
+    (component) => component._type === 'textboxBordered'
+  ) as TextboxBordered;
+  const kittensection: KittenSection = components[0].find(
+    (component) => component._type === 'kittenSection'
+  ) as KittenSection;
+  const introMatchText: Textblock = components[0].find(
+    (component) => component._type === 'textblock'
+  ) as Textblock;
+  const matchsection: MatchSection = components[0].find(
+    (component) => component._type === 'matchsection'
+  ) as MatchSection;
+
   return (
     <div className="text-DarkBrown">
-      <Hero>
-        <h1 className="text-center text-AngelBlue">Kattungar</h1>
+      <Hero heroImgUrl={heroImgUrl}>
+        <h1 className="text-center text-AngelBlue">{heroTitle}</h1>
         <div className="mt-4 ml-auto "></div>
       </Hero>
       <Section>
@@ -39,22 +78,12 @@ const Kittens = () => {
           </div>
         </BorderedTextbox>
       </Section>
-      <KittenSection />
+      <KittenSection litters={kittensection.litters} />
       <div className="mt-10"></div>
       <Section>
         <SectionDividerBorder title="Planerade kullar" />
         <p className=" first-letter:text-8xl first-letter:font-Tangerine font-Montserrat font-semibold italic text.xl lg:text-2xl text-center max-w-prose mx-auto mt-10">
-          Vi är glada att kunna meddelar att vi har planer på att para samman
-          våra två vackra ragdoll-katter. Vi tror att deras unika egenskaper
-          kommer att resultera i vackra och hälsosamma kattungar, och vi ser
-          mycket fram emot att få följa deras utveckling. Vi kommer att vara
-          mycket noga med att välja rätt parningar för att säkerställa att
-          kattungarna får den bästa möjliga starten i livet, och vi kommer att
-          ge dem all kärlek och omtanke de behöver under deras första veckor. Om
-          du är intresserad av att adoptera en kattunge från oss, vänligen hör
-          av dig så kan vi ge dig mer information och lägga dig på vår
-          intresselista. Tack för att du visar intresse för våra vackra
-          ragdoll-katter!
+          {introMatchText.text}
         </p>
       </Section>
       <section className="m-auto bg-Beige/50">

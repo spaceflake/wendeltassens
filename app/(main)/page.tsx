@@ -18,11 +18,11 @@ const pageQuery = groq`*[_type == "page" && title == "Hem"] {
 
 const Homepage = async () => {
   const posts: Post[] = await client.fetch(postQuery);
-  const pageMeta: Page = await client.fetch(pageQuery);
+  const pageMeta: Page[] = await client.fetch(pageQuery);
 
   const { heroImgUrl, heroTitle, heroBtnPath, heroBtnText } = pageMeta[0];
 
-  const components = pageMeta.map((page) => page.components);
+  const components = pageMeta.map((page) => page.components) as Component[][];
 
   const introbox = components[0].find(
     (component) => component._type === 'introTextHome'
