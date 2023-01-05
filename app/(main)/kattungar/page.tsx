@@ -21,28 +21,46 @@ const catMatchCard = {
 const pageQuery = groq`*[_type == "page" && title == "kattungar"] {
   heroTitle,
   "heroImgUrl": heroImage.asset->url,
-  "components": component[]->{...}
+  "components": component[]->{
+    ...,
+    _type == 'kittenSection' => {
+      ...,
+      "litters": litters[]->{
+        ...,
+        "kittens": kittens[]->{
+          ...,
+          "catImgUrl": catImgUrl.asset->url,
+          },
+        },
+    },
+    _type == 'matchSection' => {
+      ...,
+      "matches": matches[]->{
+        ...,
+      },
+  }
+  }
 }`;
 
 const Kittens = async () => {
-  const pageData: Page = await client.fetch(pageQuery);
+  const pageData: Page[] = await client.fetch(pageQuery);
 
   const { heroImgUrl, heroTitle } = pageData[0];
 
-  const components = pageData.map((page) => page.components);
+  const components = pageData.map((page) => page.components) as Component[][];
 
-  const borderedTextboxText = components[0].find(
+  const borderedTextboxText: TextboxBordered = components[0].find(
     (component) => component._type === 'textboxBordered'
-  );
-  const kittensection = components[0].find(
-    (component) => component._type === 'kittensection'
-  );
-  const introMatchText = components[0].find(
+  ) as TextboxBordered;
+  const kittensection: KittenSection = components[0].find(
+    (component) => component._type === 'kittenSection'
+  ) as KittenSection;
+  const introMatchText: Textblock = components[0].find(
     (component) => component._type === 'textblock'
-  );
-  const matchsection = components[0].find(
+  ) as Textblock;
+  const matchsection: MatchSection = components[0].find(
     (component) => component._type === 'matchsection'
-  );
+  ) as MatchSection;
 
   return (
     <div className="text-DarkBrown">
@@ -52,20 +70,20 @@ const Kittens = async () => {
       </Hero>
       <Section>
         <BorderedTextbox
-          title={borderedTextboxText!.title}
-          text={borderedTextboxText!.text}
+          title={borderedTextboxText.title}
+          text={borderedTextboxText.text}
         >
           <div className=" flex justify-center mb-[2rem]">
             <Button text="Läs mer" />
           </div>
         </BorderedTextbox>
       </Section>
-      <KittenSection />
+      <KittenSection litters={kittensection.litters} />
       <div className="mt-10"></div>
       <Section>
         <SectionDividerBorder title="Planerade kullar" />
         <p className=" first-letter:text-8xl first-letter:font-Tangerine font-Montserrat font-semibold italic text.xl lg:text-2xl text-center max-w-prose mx-auto mt-10">
-          {introMatchText!.text}
+          {introMatchText.text}
         </p>
       </Section>
       <section className="m-auto bg-Beige/50">
