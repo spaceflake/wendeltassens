@@ -33,6 +33,7 @@ interface Cat extends Component {
   colorCode: string;
   information: string;
   pedigreeUrl: string;
+  gender: string;
 }
 interface Kitten extends Component {
   catImgUrl: string;
