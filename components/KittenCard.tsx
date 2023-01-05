@@ -12,6 +12,8 @@ const KittenCard = ({ catName, catImgUrl, colorCode, status }: Props) => {
     <div className="rounded-lg overflow-hidden w-[100px] relative">
       <Image
         src={catImgUrl}
+        width={100}
+        height={100}
         alt="Kattunge"
         className="w-[100px] aspect-square col-span-1"
       />
