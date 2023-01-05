@@ -11,10 +11,10 @@ export default defineType({
       type: 'string',
     }),
     defineField({
-      name: 'litterContainer',
+      name: 'litters',
       title: 'Kullar',
       type: 'array',
-      of: [{ type: 'reference', to: { type: 'kittenOverview' } }],
+      of: [{ type: 'reference', to: { type: 'litter' } }],
     }),
   ],
 });
