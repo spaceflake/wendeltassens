@@ -32,7 +32,6 @@ interface Cat extends Component {
   fatherName: string;
   colorCode: string;
   information: string;
-  gender: string;
   pedigreeUrl: string;
 }
 interface Kitten extends Component {
@@ -91,6 +90,7 @@ interface Litter extends Component {
 }
 
 interface CatSection extends Component {
+  title: string;
   cats: Cat[];
 }
 
