@@ -38,5 +38,18 @@ export default defineType({
       type: 'string',
       validation: (Rule) => Rule.required(),
     }),
+    defineField({
+      name: 'gender',
+      title: 'Kön',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Hane', value: 'male' },
+          { title: 'Hona', value: 'female' },
+        ],
+        layout: 'radio',
+      },
+      validation: (Rule) => Rule.required(),
+    }),
   ],
 });
