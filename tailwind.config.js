@@ -17,7 +17,24 @@ module.exports = {
       Montserrat: ['var(--font-montserrat)'],
       Tangerine: ['var(--font-tangerine)'],
     },
-    extend: {},
+    extend: {
+      animation: {
+        'carousel-slide-current':
+          '0.5s linear 4.5s 1 normal forwards carousel-slide-current',
+        'carousel-slide-next':
+          '0.5s linear 4.5s 1 normal forwards carousel-slide-next',
+      },
+      keyframes: {
+        'carousel-slide-current': {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
+        'carousel-slide-next': {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
+      },
+    },
   },
   plugins: [require('@tailwindcss/forms')],
 };
