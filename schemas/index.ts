@@ -1,4 +1,5 @@
 import catSection from './catSection';
+import carousel from './componentSchemas/carousel';
 import catCard from './componentSchemas/catCard';
 import contactInformation from './componentSchemas/contactInformation';
 import faqText from './componentSchemas/faqText';
@@ -32,6 +33,7 @@ export const schemaTypes = [
   catSection,
   faqText,
   textImageCard,
+  carousel,
   FAQSection,
   contactInformation,
 ];
