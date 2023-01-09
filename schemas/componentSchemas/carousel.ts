@@ -1,8 +1,8 @@
 import { defineType, defineField } from 'sanity';
 
 export default defineType({
-  name: 'aboutCarousel',
-  title: 'Karusell',
+  name: 'carousel',
+  title: 'Bildspel',
   type: 'document',
   fields: [
     defineField({
@@ -10,13 +10,11 @@ export default defineType({
       title: 'Titel',
       type: 'string',
     }),
-
-    // Nedan borde vara en array av image eller en array av reference till bilder
     defineField({
-      name: 'carouselImage',
-      title: 'Karusell bild',
+      name: 'imageList',
+      title: 'Bild',
       type: 'array',
-      of: [{ type: 'image' }],
+      of: [{ type: 'image', title: 'string' }],
     }),
   ],
 });

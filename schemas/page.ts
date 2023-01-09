@@ -57,7 +57,7 @@ export default defineType({
             { type: 'textblock' },
             { type: 'faq' },
             { type: 'catSection' },
-            { type: 'aboutCarousel' },
+            { type: 'carousel' },
           ],
         },
       ],

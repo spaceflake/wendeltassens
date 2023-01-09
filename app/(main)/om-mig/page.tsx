@@ -1,12 +1,10 @@
 import { groq } from 'next-sanity';
-import Image from 'next/image';
-import AboutCarousel from '../../../components/AboutCarousel';
+import Carousel from '../../../components/Carousel';
 import BorderedTextbox from '../../../components/BorderedTextbox';
 import Button from '../../../components/Button';
 import Section from '../../../components/Section';
 import { client } from '../../../lib/sanity.client';
-import mammaBild from '../../../public/mammakatt.jpg';
-import pappaBild from '../../../public/pappakatt.jpg';
+import AboutCarousel from '../../../components/Carousel';
 
 const pageQuery = groq`*[_type == "page" && title == "Om mig"] {
   "components": component[]->{
@@ -15,8 +13,8 @@ const pageQuery = groq`*[_type == "page" && title == "Om mig"] {
     _type,
     _id,
 
-    _type == 'aboutCarousel' => {
-     "carouselImage": carouselImage[].asset->url,
+    _type == 'carousel' => {
+     "imageList": imageList[].asset->url,
     }
   }
 }`;
@@ -30,16 +28,14 @@ const About = async () => {
     (component) => component._type === 'textboxBordered'
   ) as TextboxBordered;
 
-  const aboutCarousel: AboutCarousel = components[0].find(
-    (component) => component._type === 'aboutCarousel'
-  ) as AboutCarousel;
+  const aboutCarousel: Carousel = components[0].find(
+    (component) => component._type === 'carousel'
+  ) as Carousel;
 
   return (
-    <div className="r">
+    <div>
       <div className="flex justify-center center">
-        <AboutCarousel
-          carouselImages={aboutCarousel.carouselImage}
-        ></AboutCarousel>
+        <AboutCarousel imageList={aboutCarousel.imageList}></AboutCarousel>
       </div>
       <Section>
         <BorderedTextbox

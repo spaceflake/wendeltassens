@@ -3,12 +3,12 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 type Props = {
-  carouselImages: string[];
+  imageList: string[];
 };
 
-const AboutCarousel = ({ carouselImages }: Props) => {
+const Carousel = ({ imageList }: Props) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const nextIndex = (currentIndex + 1) % carouselImages.length;
+  const nextIndex = (currentIndex + 1) % imageList.length;
 
   useEffect(() => {
     const id = setTimeout(() => setCurrentIndex(nextIndex), 5000);
@@ -18,7 +18,7 @@ const AboutCarousel = ({ carouselImages }: Props) => {
   return (
     <div className="relative top-0 w-full">
       <div className="top-0 relative aspect-video overflow-hidden">
-        {carouselImages.map((image, index) => {
+        {imageList.map((image, index) => {
           let className =
             'object-cover w-full h-auto aspect-video absolute top-0';
 
@@ -46,4 +46,4 @@ const AboutCarousel = ({ carouselImages }: Props) => {
   );
 };
 
-export default AboutCarousel;
+export default Carousel;
