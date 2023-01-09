@@ -9,6 +9,7 @@ import match from './componentSchemas/match';
 import textblock from './componentSchemas/textblock';
 import textboxBordered from './componentSchemas/textboxBordered';
 import textImageCard from './componentSchemas/textImageCard';
+import FAQSection from './FAQSection';
 import kittenSection from './kittenSection';
 import matchSection from './matchSection';
 import page from './page';
@@ -32,4 +33,5 @@ export const schemaTypes = [
   faqText,
   textImageCard,
   carousel,
+  FAQSection,
 ];
