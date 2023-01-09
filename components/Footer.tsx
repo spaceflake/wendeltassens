@@ -1,11 +1,14 @@
 import Link from 'next/link';
 import React from 'react';
+import footerSvg from '../public/footerClipPath.svg';
+import Image from 'next/image';
 
 type Props = {};
 
 const Footer = (props: Props) => {
   return (
-    <div className="mt-10">
+    <div className="mt-10 h-full">
+      <Image src={footerSvg} alt="Footer svg" className="w-full" />
       <footer className="bg-SuperBrown text-Beige py-[64px] relative text-center md:text-left">
         <h2 className="font-Tangerine text-6xl mb-5 text-center text-Beige">
           Wendeltassens
@@ -97,7 +100,7 @@ const Footer = (props: Props) => {
       </footer>
       <div className="bg-Beige h-8 w-full">
         <p className="text-DarkBrown text-center">
-          Copyright &copy; 2022 Wendeltassens
+          Copyright &copy; 2023 Wendeltassens
         </p>
       </div>
     </div>
