@@ -107,6 +107,12 @@ interface FAQSection extends Component {
   faqs: Faq[];
 }
 
+interface ContactInformation extends Component {
+  name: string;
+  email: string;
+  phoneNumber: string;
+}
+
 type Component =
   | CatSection
   | MatchSection
@@ -117,7 +123,8 @@ type Component =
   | TextboxBordered
   | TextImageCard
   | PostContainer
-  | FAQSection;
+  | FAQSection
+  | ContactInformation;
 
 interface Page extends Base {
   title: string;

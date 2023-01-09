@@ -58,6 +58,7 @@ export default defineType({
             { type: 'faq' },
             { type: 'catSection' },
             { type: 'FAQSection' },
+            { type: 'contactInformation' },
           ],
         },
       ],

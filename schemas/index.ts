@@ -1,5 +1,6 @@
 import catSection from './catSection';
 import catCard from './componentSchemas/catCard';
+import contactInformation from './componentSchemas/contactInformation';
 import faqText from './componentSchemas/faqText';
 import introTextHome from './componentSchemas/introTextHome';
 import kitten from './componentSchemas/kitten';
@@ -32,4 +33,5 @@ export const schemaTypes = [
   faqText,
   textImageCard,
   FAQSection,
+  contactInformation,
 ];

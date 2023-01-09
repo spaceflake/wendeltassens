@@ -1,29 +1,61 @@
 import Hero from '../../../components/Hero';
 import Section from '../../../components/Section';
 import BorderedTextbox from '../../../components/BorderedTextbox';
+import { groq } from 'next-sanity';
+import { client } from '../../../lib/sanity.client';
 
-const Contact = () => {
-  const text =
-    'Hej och välkommen till vårt kontaktformulär! Om du har frågor om att adoptera en ragdoll-kattunge, eller har andra frågor som rör våra djur, vänligen fyll i formuläret nedan så svarar vi så snart vi kan. Tänk på att vara så tydlig och detaljerad som möjligt i din fråga, så att vi kan ge dig den bästa möjliga hjälpen. Vi ser fram emot att höra från dig! Med vänliga hälsningar, Wendeltassens';
+const pageQuery = groq`*[_type == "page" && title == "Kontakt"] {
+  heroTitle,
+  "heroImgUrl": heroImage.asset->url,
+  "components": component[]->{
+    _type, 
+    title, 
+    text, 
+    
+    _type == 'contactInformation' => {
+        name, email, phoneNumber
+    }
+  }
+}`;
+
+const Contact = async () => {
+  const pageMeta: Page[] = await client.fetch(pageQuery);
+
+  const { heroImgUrl, heroTitle } = pageMeta[0];
+
+  const components = pageMeta.map((page) => page.components) as Component[][];
+
+  const borderedTextboxText: TextboxBordered = components[0].find(
+    (component) => component._type === 'textboxBordered'
+  ) as TextboxBordered;
+
+  const informationText: Textblock = components[0].find(
+    (component) => component._type === 'textblock'
+  ) as Textblock;
+
+  const contactInformation: ContactInformation = components[0].find(
+    (component) => component._type === 'contactInformation'
+  ) as ContactInformation;
+
   return (
     <div>
-      <Hero>
-        <h1>Kontakt & Frågor</h1>
+      <Hero heroImgUrl={heroImgUrl}>
+        <h1>{heroTitle}</h1>
       </Hero>
       <Section>
-        <BorderedTextbox title="Frågor?" text={text} />
+        <BorderedTextbox
+          title={borderedTextboxText.title}
+          text={borderedTextboxText.text}
+        />
       </Section>
       <Section>
         <div className="grid grid-cols-1 p-12 divide-y lg:grid-cols-2 bg-Beige rounded-xl lg:divide-x lg:divide-y-0 divide-dotted divide-DarkBrown mb-36">
           <div className="pb-10 space-y-4 text-lg font-bold font-Montserrat text-DarkBrown lg:pr-10">
-            <p>
-              Går bra att skicka en förfrågan via formuläret bredvid eller så
-              kan du kontakta mig direkt.
-            </p>
+            <p>{informationText.text}</p>
             <div>
-              <p>Liselotte Wendel</p>
-              <p>mail: lise_lotte_1@hotmail.com</p>
-              <p>telefon: 0702040670</p>
+              <p>{contactInformation.name}</p>
+              <p>Email: {contactInformation.email}</p>
+              <p>Telefon: {contactInformation.phoneNumber}</p>
             </div>
           </div>
           <form
@@ -31,7 +63,7 @@ const Contact = () => {
             className="flex flex-col pt-10 space-y-4 font-bold text-DarkBrown lg:pl-10 lg:pt-0"
           >
             <label htmlFor="name" className="block">
-              <span>Ditt namn</span>
+              <span>Namn</span>
               <input
                 type="text"
                 name="name"
@@ -40,7 +72,7 @@ const Contact = () => {
               />
             </label>
             <label htmlFor="email" className="block">
-              <span>Din email</span>
+              <span>Email</span>
               <input
                 type="email"
                 name="email"
@@ -58,7 +90,7 @@ const Contact = () => {
               />
             </label>
             <label htmlFor="message" className="block">
-              <span>Ditt meddelande</span>
+              <span>Meddelande</span>
               <textarea
                 name="message"
                 id="message"
