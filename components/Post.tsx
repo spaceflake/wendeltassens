@@ -13,7 +13,7 @@ const Post = ({ title, text, imgUrl, date }: Props) => {
 
   return (
     <article
-      className={`bg-WhiteBG rounded-xl overflow-hidden min-h-[300px] lg:max-w-[1000px] flex flex-col-reverse md:grid ${
+      className={`bg-WhiteBG rounded-xl overflow-hidden h-full lg:max-w-[1000px] pb-6 md:pb-0 flex-1 flex-col-reverse md:grid ${
         imgUrl ? 'md:grid-cols-2' : 'md:grid-cols-1'
       } shadow-xl w-full`}
     >
@@ -26,14 +26,14 @@ const Post = ({ title, text, imgUrl, date }: Props) => {
           {text}
         </p>
       </div>
-      <div className="relative">
+      <div className="h-full ">
         {imgUrl && (
           <Image
             src={imgUrl}
             alt={title}
-            fill={true}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            className="object-contain md:object-cover h-auto w-full min-h-[300px] rounded-bl-md"
+            height={300}
+            width={300}
+            className="object-contain w-full h-full md:object-cover rounded-bl-md max-h-[300px]"
           />
         )}
       </div>
