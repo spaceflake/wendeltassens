@@ -22,7 +22,7 @@ const Carousel = ({ imageList }: Props) => {
         <div className="top-0 relative aspect-video overflow-hidden">
           {imageList.map((image, index) => {
             let className =
-              'object-cover w-full h-auto aspect-video absolute top-0';
+              'object-contain w-full h-auto aspect-video absolute top-0';
 
             if (index === currentIndex) {
               className += ' animate-carousel-slide-current left-0';
@@ -38,7 +38,7 @@ const Carousel = ({ imageList }: Props) => {
                 src={image}
                 width={1920}
                 height={500}
-                alt={'Karusell bild'}
+                alt={'Bildspel'}
                 className={className}
               />
             );
