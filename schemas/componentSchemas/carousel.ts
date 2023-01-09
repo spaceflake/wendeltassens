@@ -14,7 +14,7 @@ export default defineType({
       name: 'imageList',
       title: 'Bild',
       type: 'array',
-      of: [{ type: 'image', title: 'string' }],
+      of: [{ type: 'image' }],
     }),
   ],
 });
