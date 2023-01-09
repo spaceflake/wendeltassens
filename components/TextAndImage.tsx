@@ -10,15 +10,17 @@ type Props = {
 
 const TextAndImage = ({ text, image, hasLink, linkUrl }: Props) => {
   return (
-    <div className="flex flex-col lg:flex-row mx-auto font-Montserrat text-DarkBrown items-center bg-Beige/50 p-8 gap-8 rounded-xl mb-10">
+    <div className="flex flex-col items-center gap-8 p-8 mx-auto mb-10 lg:flex-row font-Montserrat text-DarkBrown bg-Beige/50 rounded-xl">
       <div>
-        <p className="max-w-prose text-lg mb-8">{text}</p>
+        <p className="mb-8 text-lg max-w-prose">{text}</p>
         {hasLink && <Button text="Läs mer" goTo={linkUrl} />}
       </div>
       <Image
         src={image}
+        height={500}
+        width={500}
         alt="Kattunge med dvärgväxt"
-        className="w-auto mx-auto h-auto rounded-xl"
+        className="w-auto h-auto mx-auto rounded-xl"
       />
     </div>
   );
