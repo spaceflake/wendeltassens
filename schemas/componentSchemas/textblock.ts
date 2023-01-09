@@ -19,6 +19,7 @@ export default defineType({
         list: [
           { title: 'Kattungar', value: 'kattungar' },
           { title: 'Information och Villkor', value: 'informationVillkor' },
+          { title: 'Kontakt', value: 'kontakt' },
         ],
       },
       validation: (Rule) => Rule.required(),
@@ -32,6 +33,7 @@ export default defineType({
           { title: 'Planerade kullar', value: 'introText' },
           { title: 'Om Ragdolls', value: 'ragdolls' },
           { title: 'Villkor', value: 'terms' },
+          { title: 'Kontaktformulär', value: 'kontakt' },
         ],
       },
       validation: (Rule) => Rule.required(),
