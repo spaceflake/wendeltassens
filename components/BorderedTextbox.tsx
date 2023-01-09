@@ -13,7 +13,7 @@ const BorderedTextbox = ({ title, text, children }: Props) => {
       <h2 className=" font-Tangerine text-3xl lg:text-5xl absolute top-[-1.5rem] bg-WhiteBG ml-8 px-4">
         {title || 'Title'}
       </h2>
-      <div className="py-8 pt-16 pl-8 pr-8 md:p-16">
+      <div className="px-4 py-8 pt-8 xl:pt-16 lg:px-8">
         <p
           className={`font-Montserrat italic text-sm lg:text-2xl ${
             text && text.length > 500 && 'lg:columns-2'

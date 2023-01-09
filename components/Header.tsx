@@ -1,25 +1,60 @@
+'use client';
+
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 type Props = {};
 
 const Header = (props: Props) => {
+  const pathname = usePathname();
+
+  const paths = [
+    {
+      path: '/',
+      name: 'Hem',
+    },
+    {
+      path: '/kontakt',
+      name: 'Kontakt',
+    },
+    {
+      path: '/kattungar',
+      name: 'Kattungar',
+    },
+    {
+      path: '/katter',
+      name: 'Katter',
+    },
+    {
+      path: '/information-villkor',
+      name: 'Information & Villkor',
+    },
+    {
+      path: '/om-mig',
+      name: 'Om Mig',
+    },
+  ];
   return (
-    <header className="absolute top-0 w-full z-10 ">
-      <div className="container mx-auto w-full flex flex-col md:flex-row items-center lg:items-baseline justify-between text-DarkBrown py-4 sm:py-10 bg-WhiteBG/50 backdrop:blur-md px-16 ">
+    <header className="absolute top-0 z-10 w-full ">
+      <div className="container flex flex-col items-center justify-between w-full px-4 py-4 mx-auto md:items-baseline lg:px-8 md:flex-row text-DarkBrown lg:py-10 bg-WhiteBG/50 backdrop-blur-sm ">
         <Link href={'/'}>
-          <div className="font-Tangerine text-5xl break-keep mx-auto">
-            <span className="text-2xl -mr-3">SE*</span> Wendeltassens
+          <div className="flex items-baseline mx-auto text-5xl font-Tangerine">
+            <span className="text-2xl">SE*</span>
+            <span>Wendeltassens</span>
           </div>
         </Link>
-        <nav className="font-Montserrat flex gap-4 text-sm sm:text-2xl font-normal ">
-          <Link href={'/'} className="font-bold">
-            Hem
-          </Link>
-          <Link href={'/kontakt'}>Kontakt</Link>
-          <Link href={'/katter'} className="break-keep">
-            Katter
-          </Link>
-          <Link href={'/om-mig'}>Om</Link>
+        <nav className="flex flex-wrap items-center justify-center gap-4 text-sm font-normal font-Montserrat sm:text-base lg:text-lg 2xl:text-xl ">
+          {paths.map((path) => (
+            <Link
+              key={path.name}
+              href={path.path}
+              className={`hover:underline ${
+                path.path === pathname ? 'font-bold' : ''
+              }`}
+            >
+              {path.name}
+            </Link>
+          ))}
         </nav>
       </div>
     </header>
