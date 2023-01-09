@@ -11,7 +11,7 @@ const AboutCarousel = ({ carouselImages }: Props) => {
   const nextIndex = (currentIndex + 1) % carouselImages.length;
 
   useEffect(() => {
-    const id = setTimeout(() => setCurrentIndex(nextIndex), 10000);
+    const id = setTimeout(() => setCurrentIndex(nextIndex), 5000);
     return () => clearTimeout(id);
   }, [currentIndex]);
 
