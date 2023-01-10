@@ -15,13 +15,15 @@ const TextAndImage = ({ text, image, hasLink, linkUrl }: Props) => {
         <p className="mb-8 text-lg max-w-prose">{text}</p>
         {hasLink && <Button text="Läs mer" goTo={linkUrl} />}
       </div>
-      <Image
-        src={image}
-        height={500}
-        width={500}
-        alt="Kattunge med dvärgväxt"
-        className="w-auto h-auto mx-auto rounded-xl"
-      />
+      <div>
+        <Image
+          src={image}
+          height={300}
+          width={300}
+          alt="Kattunge med dvärgväxt"
+          className="w-auto h-auto max-h-[350px] mx-auto rounded-xl"
+        />
+      </div>
     </div>
   );
 };
