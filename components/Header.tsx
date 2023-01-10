@@ -2,38 +2,13 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { paths } from '../utils/navLinks';
 
 type Props = {};
 
 const Header = (props: Props) => {
   const pathname = usePathname();
 
-  const paths = [
-    {
-      path: '/',
-      name: 'Hem',
-    },
-    {
-      path: '/kontakt',
-      name: 'Kontakt',
-    },
-    {
-      path: '/kattungar',
-      name: 'Kattungar',
-    },
-    {
-      path: '/katter',
-      name: 'Katter',
-    },
-    {
-      path: '/information-villkor',
-      name: 'Information & Villkor',
-    },
-    {
-      path: '/om-mig',
-      name: 'Om Mig',
-    },
-  ];
   return (
     <header className="absolute top-0 z-10 w-full ">
       <div className="container flex flex-col items-center justify-between w-full px-4 py-4 mx-auto md:items-baseline lg:px-8 md:flex-row text-DarkBrown lg:py-10 bg-WhiteBG/50 backdrop-blur-sm ">
