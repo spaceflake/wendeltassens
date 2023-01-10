@@ -62,7 +62,7 @@ const FAQPage = async () => {
       </Section>
       <Section>
         <SectionDividerBorder title="Frågor & Svar" />
-        <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center px-4">
           {FAQSection.faqs.map((faq) => (
             <FAQ key={faq._id} title={faq.title} text={faq.text} />
           ))}
