@@ -21,7 +21,7 @@ const TextAndImage = ({ text, image, hasLink, linkUrl }: Props) => {
           height={300}
           width={300}
           alt="Kattunge med dvärgväxt"
-          className="w-auto h-auto mx-auto rounded-xl"
+          className="w-auto h-auto max-h-[350px] mx-auto rounded-xl"
         />
       </div>
     </div>
