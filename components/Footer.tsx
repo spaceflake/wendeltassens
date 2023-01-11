@@ -3,10 +3,19 @@ import React from 'react';
 import footerSvg from '../public/footerClipPath.svg';
 import Image from 'next/image';
 import { paths, EXTLINKS, SOCIALS } from '../utils/navLinks';
+import { groq } from 'next-sanity';
+import { client } from '../lib/sanity.client';
 
-type Props = {};
+const query = groq`*[_type == 'contactInformation']{
+  name, email, phoneNumber,
 
-const Footer = (props: Props) => {
+}`;
+
+const Footer = async () => {
+  const pageMeta: ContactInformation[] = await client.fetch(query);
+
+  const { name, email, phoneNumber } = pageMeta[0];
+
   return (
     <div className="h-full mt-10">
       <Image src={footerSvg} alt="Footer svg" className="w-full" />
@@ -57,9 +66,9 @@ const Footer = (props: Props) => {
           </div>
           <div className="flex flex-col mb-8 font-Montserrat md:mb-0">
             <p className="mb-2 text-base font-bold md:text-lg">Kontakt</p>
-            <p className="text-sm md:text-base">Liselotte Wendel</p>
-            <p className="text-sm md:text-base">0702040670</p>
-            <p className="text-sm md:text-base">lise_lotte_1@hotmail.se</p>
+            <p className="text-sm md:text-base">{name}</p>
+            <p className="text-sm md:text-base">{phoneNumber}</p>
+            <p className="text-sm md:text-base">{email}</p>
           </div>
         </nav>
       </footer>
