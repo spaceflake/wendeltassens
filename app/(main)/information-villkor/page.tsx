@@ -12,18 +12,27 @@ const pageQuery = groq`*[_type == "page" && title == "information-villkor"] {
   heroTitle,
   "heroImgUrl": heroImage.asset->url,
   "components": component[]->{
-    ...,
+    _type == 'textblock' => {
+    page,
+    section,
+    title,
+    text,
+    },
     _type == 'textImageCard' => {
-      ...,
+      _updatedAt,
+      link,
+      text,
+      title,
       "image": image.asset->url,
     },
     _type == 'FAQSection' => {
-      ...,
+      title,
       "faqs": faqs[]->{
-        ...,
+        _id,
         title,
         text,
     },
+     
   },    
   }
 }`;
@@ -33,20 +42,23 @@ const FAQPage = async () => {
 
   const { heroImgUrl, heroTitle } = pageData[0];
 
-  const components = pageData.map((page) => page.components) as Component[][];
+  const components: Component[] = pageData[0].components;
 
-  const aboutRagdollsText: Textblock = components[0].find(
-    (component) => component._type === 'textblock'
-  ) as Textblock;
-  const FAQSection: FAQSection = components[0].find(
-    (component) => component._type === 'FAQSection'
-  ) as FAQSection;
-  const termsText: Textblock = components[0].find(
-    (component) => component._type === 'textblock'
-  ) as Textblock;
-  const dvärgväxtText: TextImageCard = components[0].find(
-    (component) => component._type === 'textImageCard'
-  ) as TextImageCard;
+  const aboutRagdollsText: Textblock = components.filter(
+    (item) => item.title === 'Om Ragdolls'
+  )[0] as Textblock;
+
+  const FAQSection: FAQSection = components.filter(
+    (item) => item.title === 'Frågor & Svar'
+  )[0] as FAQSection;
+
+  const termsText: Textblock = components.filter(
+    (item) => item.title === 'Villkor'
+  )[0] as Textblock;
+
+  const dvärgväxtText: TextImageCard = components.filter(
+    (item) => item.title === 'Dvärgväxt'
+  )[0] as TextImageCard;
 
   return (
     <div className="text-DarkBrown">
@@ -55,13 +67,11 @@ const FAQPage = async () => {
         <div className="mt-4 ml-auto "></div>
       </Hero>
       <Section>
-        <SectionDividerBorder title="Om Ragdolls" />
-        <TwoColumnTextSection
-          text={aboutRagdollsText.text}
-        ></TwoColumnTextSection>
+        <SectionDividerBorder title={aboutRagdollsText.title} />
+        <TwoColumnTextSection text={aboutRagdollsText.text} />
       </Section>
       <Section>
-        <SectionDividerBorder title="Frågor & Svar" />
+        <SectionDividerBorder title={FAQSection.title} />
         <div className="flex flex-col items-center justify-center px-4">
           {FAQSection.faqs.map((faq) => (
             <FAQ key={faq._id} title={faq.title} text={faq.text} />
@@ -73,11 +83,11 @@ const FAQPage = async () => {
       </Section>
       <Section>
         <SectionDividerBorder title="Villkor" />
-        <TwoColumnTextSection text={termsText.text}></TwoColumnTextSection>
+        <TwoColumnTextSection text={termsText.text} />
       </Section>
 
       <Section>
-        <SectionDividerBorder title="Dvärgväxt" />
+        <SectionDividerBorder title={dvärgväxtText.title} />
         <TextAndImage
           image={dvärgväxtText.image}
           text={dvärgväxtText.text}
