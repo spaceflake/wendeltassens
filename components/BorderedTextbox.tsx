@@ -1,13 +1,14 @@
 import React from 'react';
 import Button from './Button';
 
-type Props = {
-  title: string | null;
-  text: string | null | undefined;
-  children?: React.ReactNode;
-};
+interface Props {
+  title: string;
+  text: string;
+  buttonPath?: string;
+  buttonText?: string;
+}
 
-const BorderedTextbox = ({ title, text, children }: Props) => {
+const BorderedTextbox = ({ title, text, buttonPath, buttonText }: Props) => {
   return (
     <article className="relative ml-4 mr-4 border rounded border-DarkBrown bg-WhiteBG text-DarkBrown">
       <h2 className=" font-Tangerine text-3xl lg:text-5xl absolute top-[-1.5rem] bg-WhiteBG ml-8 px-4">
@@ -19,10 +20,14 @@ const BorderedTextbox = ({ title, text, children }: Props) => {
             text && text.length > 500 && 'lg:columns-2'
           }`}
         >
-          {text || 'Text'}
+          {text}
         </p>
       </div>
-      <div className="flex justify-center pb-8">{children}</div>
+      {buttonText && (
+        <div className="flex justify-center pb-8">
+          <Button text={buttonText} goTo={buttonPath} />
+        </div>
+      )}
     </article>
   );
 };
