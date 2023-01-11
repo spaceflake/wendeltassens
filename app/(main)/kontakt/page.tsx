@@ -11,6 +11,8 @@ const pageQuery = groq`*[_type == "page" && title == "Kontakt"] {
     _type, 
     title, 
     text, 
+    buttonText,
+    buttonPath,
     
     _type == 'contactInformation' => {
         name, email, phoneNumber
@@ -46,6 +48,8 @@ const Contact = async () => {
         <BorderedTextbox
           title={borderedTextboxText.title}
           text={borderedTextboxText.text}
+          buttonPath={borderedTextboxText.buttonPath}
+          buttonText={borderedTextboxText.buttonText}
         />
       </Section>
       <Section>

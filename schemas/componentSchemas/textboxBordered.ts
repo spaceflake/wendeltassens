@@ -17,5 +17,22 @@ export default defineType({
       type: 'text',
       validation: (Rule) => Rule.required(),
     }),
+    defineField({
+      name: 'button',
+      title: 'Lägg till knapp',
+      type: 'boolean',
+    }),
+    defineField({
+      name: 'buttonPath',
+      title: 'Till vilken sida',
+      type: 'string',
+      hidden: ({ parent }) => !parent?.button,
+    }),
+    defineField({
+      name: 'buttonText',
+      title: 'Text i knappen',
+      type: 'string',
+      hidden: ({ parent }) => !parent?.button,
+    }),
   ],
 });

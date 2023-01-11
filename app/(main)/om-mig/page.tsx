@@ -1,7 +1,6 @@
 import { groq } from 'next-sanity';
 import Carousel from '../../../components/Carousel';
 import BorderedTextbox from '../../../components/BorderedTextbox';
-import Button from '../../../components/Button';
 import Section from '../../../components/Section';
 import { client } from '../../../lib/sanity.client';
 
@@ -11,6 +10,8 @@ const pageQuery = groq`*[_type == "page" && title == "Om mig"] {
     text,
     _type,
     _id,
+    buttonText,
+    buttonPath,
 
     _type == 'carousel' => {
      "imageList": imageList[].asset->url,
@@ -40,9 +41,9 @@ const About = async () => {
         <BorderedTextbox
           title={borderedTextboxText.title}
           text={borderedTextboxText.text}
-        >
-          <Button text="Kontakta mig" goTo="/kontakt" />
-        </BorderedTextbox>
+          buttonPath={borderedTextboxText.buttonPath}
+          buttonText={borderedTextboxText.buttonText}
+        />
       </Section>
     </div>
   );

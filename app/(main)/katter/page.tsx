@@ -14,6 +14,8 @@ const pageQuery = groq`*[_type == "page" && title == "Katter"] {
     _id,
     title,
     text,
+    buttonText,
+    buttonPath,
     
     _type == 'catSection' => {
       cats[]->{
@@ -49,7 +51,9 @@ const AdultCats = async () => {
         <BorderedTextbox
           title={borderedTextboxText.title}
           text={borderedTextboxText.text}
-        ></BorderedTextbox>
+          buttonPath={borderedTextboxText.buttonPath}
+          buttonText={borderedTextboxText.buttonText}
+        />
       </Section>
       {catSections.map((catSection) => (
         <Section key={catSection._id}>

@@ -13,7 +13,7 @@ const pageQuery = groq`*[_type == "page" && title == "Hem"] {
   "heroImgUrl": heroImage.asset->url,
   "heroBtnPath": heroButtonPath,
   "heroBtnText": heroButtonText,
-  "components": component[]->{_type, title, text}
+  "components": component[]->{_type, title, text, buttonPath, buttonText}
 }`;
 
 const Homepage = async () => {
@@ -27,9 +27,10 @@ const Homepage = async () => {
   const introbox = components[0].find(
     (component) => component._type === 'introTextHome'
   );
-  const borderBox = components[0].find(
+  const borderedTextboxText: TextboxBordered = components[0].find(
     (component) => component._type === 'textboxBordered'
-  );
+  ) as TextboxBordered;
+
   const postContainerTitle = components[0].find(
     (component) => component._type === 'postContainer'
   );
@@ -48,10 +49,13 @@ const Homepage = async () => {
         )}
       </Section>
       <Section>
-        {borderBox && (
-          <BorderedTextbox title={borderBox.title} text={borderBox.text}>
-            <Button text="Läs mer..." goTo="/information-villkor" />
-          </BorderedTextbox>
+        {borderedTextboxText && (
+          <BorderedTextbox
+            title={borderedTextboxText.title}
+            text={borderedTextboxText.text}
+            buttonPath={borderedTextboxText.buttonPath}
+            buttonText={borderedTextboxText.buttonText}
+          />
         )}
       </Section>
       <Section>
