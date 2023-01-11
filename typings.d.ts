@@ -77,6 +77,8 @@ interface Textblock extends Component {
 interface TextboxBordered extends Component {
   title: string;
   text: string;
+  buttonPath?: string;
+  buttonText?: string;
 }
 
 interface TextImageCard extends Component {
