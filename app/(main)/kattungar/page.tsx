@@ -1,6 +1,5 @@
 import { groq } from 'next-sanity';
 import BorderedTextbox from '../../../components/BorderedTextbox';
-import Button from '../../../components/Button';
 import Hero from '../../../components/Hero';
 import KittenSection from '../../../components/KittenSection';
 import MatchSection from '../../../components/MatchSection';
@@ -63,11 +62,9 @@ const Kittens = async () => {
         <BorderedTextbox
           title={borderedTextboxText.title}
           text={borderedTextboxText.text}
-        >
-          <div className=" flex justify-center mb-[2rem]">
-            <Button text="Läs mer" />
-          </div>
-        </BorderedTextbox>
+          buttonPath={borderedTextboxText.buttonPath}
+          buttonText={borderedTextboxText.buttonText}
+        />
       </Section>
       <KittenSection litters={kittensection.litters} />
       <MatchSection
