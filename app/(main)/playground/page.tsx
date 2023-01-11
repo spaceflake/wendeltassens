@@ -64,7 +64,7 @@ const page = (props: Props) => {
         </div>
       </Hero>
       <div className="mt-[5rem]">
-        <BorderedTextbox
+        {/* <BorderedTextbox
           title="Intro"
           text='Jag är stolt över att presentera mina vuxna Ragdoll honor och hanar som jag använder för avel. Mina katter är alla vackra exemplar av den här unika rasen, med sina blå ögon och mjuka, fluffiga pälsar. De är kända för sin lugna och lättsamma personlighet, och är ofta beskrivna som "valpliknande" i sin kärleksfulla natur. De är också kända för sin intelligens och förmåga att lära sig tricks.
           Jag har Ragdoll katter i flera olika färger och mönster, inklusive seal, blue, chocolate, lilac och red point. De kan också ha mönster som bicolor, mitted och lynx.'
@@ -72,7 +72,7 @@ const page = (props: Props) => {
           <div className=" flex justify-center mb-[2rem]">
             <Button text="Läs mer" />
           </div>
-        </BorderedTextbox>
+        </BorderedTextbox> */}
       </div>
       <SectionDividerBorder title="Sektion Titel" />
       <div className="flex flex-col items-center space-y-4">
