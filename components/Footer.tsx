@@ -4,12 +4,10 @@ import footerSvg from '../public/footerClipPath.svg';
 import Image from 'next/image';
 import { paths, EXTLINKS, SOCIALS } from '../utils/navLinks';
 
-interface Props {
-  name: string;
-  email: string;
-  phoneNumber: string;
-}
-const Footer = ({ name, email, phoneNumber }: Props) => {
+type Props = {
+  contactInformation: ContactInformation;
+};
+const Footer = ({ contactInformation }: Props) => {
   return (
     <div className="h-full mt-10">
       <Image src={footerSvg} alt="Footer svg" className="w-full" />
@@ -60,9 +58,11 @@ const Footer = ({ name, email, phoneNumber }: Props) => {
           </div>
           <div className="flex flex-col mb-8 font-Montserrat md:mb-0">
             <p className="mb-2 text-base font-bold md:text-lg">Kontakt</p>
-            <p className="text-sm md:text-base">{name}</p>
-            <p className="text-sm md:text-base">{phoneNumber}</p>
-            <p className="text-sm md:text-base">{email}</p>
+            <p className="text-sm md:text-base">{contactInformation.name}</p>
+            <p className="text-sm md:text-base">
+              {contactInformation.phoneNumber}
+            </p>
+            <p className="text-sm md:text-base">{contactInformation.email}</p>
           </div>
         </nav>
       </footer>
