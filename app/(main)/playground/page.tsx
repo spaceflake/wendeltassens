@@ -131,11 +131,7 @@ Ragdoll-katter är inte kända för att vara skrikande eller skrikiga, och är o
 De kan bli väldigt stora, med en vikt på upp till 10 kg för hanar och 7 kg för honor.
 
 "
-        >
-          <div className="flex justify-center mt-[2rem]">
-            <Button text="Läs mer" />
-          </div>
-        </TwoColumnTextSection>
+        />
       </div>
       <div>
         <CatMatchCard
