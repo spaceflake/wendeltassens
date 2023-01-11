@@ -150,9 +150,7 @@ De kan bli väldigt stora, med en vikt på upp till 10 kg för hanar och 7 kg f�
           <FAQ title={faq.title} text={faq.text} />
         ))}
       </div>
-      <div className="mt-[150px]">
-        <Footer />
-      </div>
+      <div className="mt-[150px]">{/* <Footer /> */}</div>
     </div>
   );
 };
