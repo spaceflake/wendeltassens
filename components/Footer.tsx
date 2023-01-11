@@ -6,16 +6,12 @@ import { paths, EXTLINKS, SOCIALS } from '../utils/navLinks';
 import { groq } from 'next-sanity';
 import { client } from '../lib/sanity.client';
 
-const query = groq`*[_type == 'contactInformation']{
-  name, email, phoneNumber,
-
-}`;
-
-const Footer = async () => {
-  const pageMeta: ContactInformation[] = await client.fetch(query);
-
-  const { name, email, phoneNumber } = pageMeta[0];
-
+interface Props {
+  name: string;
+  email: string;
+  phoneNumber: string;
+}
+const Footer = ({ name, email, phoneNumber }: Props) => {
   return (
     <div className="h-full mt-10">
       <Image src={footerSvg} alt="Footer svg" className="w-full" />
