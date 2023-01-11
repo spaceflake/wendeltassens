@@ -68,9 +68,7 @@ const FAQPage = async () => {
       </Hero>
       <Section>
         <SectionDividerBorder title={aboutRagdollsText.title} />
-        <TwoColumnTextSection
-          text={aboutRagdollsText.text}
-        ></TwoColumnTextSection>
+        <TwoColumnTextSection text={aboutRagdollsText.text} />
       </Section>
       <Section>
         <SectionDividerBorder title={FAQSection.title} />
@@ -85,7 +83,7 @@ const FAQPage = async () => {
       </Section>
       <Section>
         <SectionDividerBorder title="Villkor" />
-        <TwoColumnTextSection text={termsText.text}></TwoColumnTextSection>
+        <TwoColumnTextSection text={termsText.text} />
       </Section>
 
       <Section>
