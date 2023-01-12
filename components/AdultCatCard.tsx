@@ -50,7 +50,7 @@ const AdultCatCard = ({ cat, inverted }: Props) => {
           </div>
         </div>
         <div className="self-end mt-4">
-          <Button text="Stamtavla" goTo={cat.pedigreeUrl} />
+          <Button isExternal text="Stamtavla" goTo={cat.pedigreeUrl} />
         </div>
       </div>
     </article>

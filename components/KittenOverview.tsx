@@ -36,7 +36,7 @@ const KittenOverview = ({
           </div>
         </div>
         <div className="mx-auto mt-4 space-x-4 lg:mr-auto lg:ml-0">
-          <Button text="Stamtavla" goTo="https://google.com" />
+          <Button isExternal text="Stamtavla" goTo="https://google.com" />
           <Button text="Förfrågan" goTo="/kontakt" />
         </div>
       </div>

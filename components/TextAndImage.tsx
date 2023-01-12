@@ -13,7 +13,7 @@ const TextAndImage = ({ text, image, hasLink, linkUrl }: Props) => {
     <div className="flex flex-col items-center gap-8 p-8 mx-auto mb-10 lg:flex-row font-Montserrat text-DarkBrown bg-Beige/50 rounded-xl">
       <div>
         <p className="mb-8 text-lg max-w-prose">{text}</p>
-        {hasLink && <Button text="Läs mer" goTo={linkUrl} />}
+        {hasLink && <Button isExternal text="Läs mer" goTo={linkUrl} />}
       </div>
       <div>
         <Image
