@@ -48,6 +48,7 @@ const KittenOverview = ({
               key={kitten._id}
               catImgUrl={kitten.catImgUrl}
               catName={kitten.name}
+              gender={kitten.gender}
               colorCode={kitten.colorCode}
               status={kitten.status}
             />
