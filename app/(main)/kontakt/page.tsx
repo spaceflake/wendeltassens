@@ -3,6 +3,7 @@ import Section from '../../../components/Section';
 import BorderedTextbox from '../../../components/BorderedTextbox';
 import { groq } from 'next-sanity';
 import { client } from '../../../lib/sanity.client';
+import ContactForm from '../../../components/ContactForm';
 
 const pageQuery = groq`*[_type == "page" && title == "Kontakt"] {
   heroTitle,
@@ -62,53 +63,7 @@ const Contact = async () => {
               <p>Telefon: {contactInformation.phoneNumber}</p>
             </div>
           </div>
-          <form
-            action=""
-            className="flex flex-col pt-10 space-y-4 font-bold text-DarkBrown lg:pl-10 lg:pt-0"
-          >
-            <label htmlFor="name" className="block">
-              <span>Namn</span>
-              <input
-                type="text"
-                name="name"
-                id="name"
-                className="block w-full mt-1 border-transparent rounded-md bg-Beige focus:border-DarkBrown focus:bg-WhiteBG focus:ring-0"
-              />
-            </label>
-            <label htmlFor="email" className="block">
-              <span>Email</span>
-              <input
-                type="email"
-                name="email"
-                id="email"
-                className="block w-full mt-1 border-transparent rounded-md bg-Beige focus:border-DarkBrown focus:bg-WhiteBG focus:ring-0"
-              />
-            </label>
-            <label htmlFor="subject" className="block">
-              <span>Ämne</span>
-              <input
-                type="text"
-                name="subject"
-                id="subject"
-                className="block w-full mt-1 border-transparent rounded-md bg-Beige focus:border-DarkBrown focus:bg-WhiteBG focus:ring-0"
-              />
-            </label>
-            <label htmlFor="message" className="block">
-              <span>Meddelande</span>
-              <textarea
-                name="message"
-                id="message"
-                cols={30}
-                rows={7}
-                className="block w-full mt-1 border-transparent rounded-md bg-Beige focus:border-DarkBrown focus:bg-WhiteBG focus:ring-0"
-              />
-            </label>
-            <input
-              type="submit"
-              value="Skicka"
-              className="py-4 rounded-md bg-SuperBrown text-Beige"
-            />
-          </form>
+          <ContactForm />
         </div>
       </Section>
     </div>

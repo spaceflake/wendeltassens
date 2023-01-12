@@ -4,16 +4,22 @@
 
 @layer base {
   h1 {
-    @apply text-6xl lg:text-8xl font-Tangerine font-bold text-DarkBrown;
+    @apply text-6xl font-bold lg:text-8xl font-Tangerine text-DarkBrown;
   }
   h2 {
-    @apply text-6xl lg:text-8xl font-Tangerine font-bold text-DarkBrown;
+    @apply text-6xl font-bold lg:text-8xl font-Tangerine text-DarkBrown;
   }
   h4 {
-    @apply text-3xl lg:text-4xl font-Montserrat font-bold italic text-DarkBrown;
+    @apply text-3xl italic font-bold lg:text-4xl font-Montserrat text-DarkBrown;
   }
   h5 {
-    @apply text-4xl font-Tangerine font-bold text-DarkBrown;
+    @apply text-4xl font-bold font-Tangerine text-DarkBrown;
+  }
+}
+
+@layer components {
+  .formField {
+    @apply block w-full mt-1 rounded-md bg-Beige focus:border-DarkBrown focus:bg-WhiteBG focus:ring-0 hover:border-SuperBrown;
   }
 }
 
