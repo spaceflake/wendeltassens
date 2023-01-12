@@ -19,7 +19,7 @@
 
 @layer components {
   .formField {
-    @apply block w-full mt-1 rounded-md bg-Beige focus:border-DarkBrown focus:bg-WhiteBG focus:ring-0;
+    @apply block w-full mt-1 rounded-md bg-Beige focus:border-DarkBrown focus:bg-WhiteBG focus:ring-0 hover:border-SuperBrown;
   }
 }
 
