@@ -47,6 +47,7 @@ const CatMatchCard = ({ femalename, maleName, femaleImg, maleImg }: Props) => {
       </div>
       <div className="flex justify-center mt-4">
         <Button
+          isExternal
           text="Stamtavla"
           goTo="https://stambok.sverak.se/Stambok/Visa/506242"
         />

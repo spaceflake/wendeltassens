@@ -34,6 +34,7 @@ const Footer = ({ contactInformation }: Props) => {
             </p>
             {SOCIALS.map((link) => (
               <Link
+                target="_blank"
                 key={link.name}
                 href={link.path}
                 className="text-sm md:text-base hover:underline"
@@ -47,6 +48,7 @@ const Footer = ({ contactInformation }: Props) => {
               <p className="mb-2 text-base font-bold md:text-lg">Kattlänkar</p>
               {EXTLINKS.map((link) => (
                 <Link
+                  target="_blank"
                   key={link.name}
                   href={link.path}
                   className="text-sm md:text-base hover:underline"
