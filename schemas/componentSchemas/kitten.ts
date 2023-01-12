@@ -44,8 +44,8 @@ export default defineType({
       type: 'string',
       options: {
         list: [
-          { title: 'Hane', value: 'male' },
-          { title: 'Hona', value: 'female' },
+          { title: 'Hane', value: 'Hane' },
+          { title: 'Hona', value: 'Hona' },
         ],
         layout: 'radio',
       },
