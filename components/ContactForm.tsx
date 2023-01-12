@@ -70,7 +70,7 @@ const ContactForm = (props: Props) => {
       <input
         type="submit"
         value="Skicka"
-        className="py-4 rounded-md bg-SuperBrown text-Beige"
+        className="py-4 rounded-md bg-SuperBrown text-Beige hover:bg-Beige hover:text-SuperBrown"
       />
     </form>
   );
