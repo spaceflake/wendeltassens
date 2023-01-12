@@ -1,5 +1,6 @@
 'use client';
 
+import { AnimatePresence, motion } from 'framer-motion';
 import Image, { StaticImageData } from 'next/image';
 import { useState } from 'react';
 
@@ -22,9 +23,9 @@ const KittenCard = ({
   return (
     <div
       onClick={() => setToggleOpen(!toggleOpen)}
-      className="relative flex overflow-hidden transition-all duration-300 ease-in-out rounded-lg cursor-pointer hover:shadow-lg hover:scale-105"
+      className="relative flex overflow-hidden transition-all duration-300 ease-in-out rounded-lg cursor-pointer hover:shadow-lg hover:scale-105 isolate"
     >
-      <div className="shrink-0">
+      <div className="z-10 shrink-0">
         <Image
           src={catImgUrl}
           width={100}
@@ -45,7 +46,13 @@ const KittenCard = ({
         </p>
       )}
       {toggleOpen && (
-        <div className="flex flex-col justify-between p-2 text-sm shrink-0 text-DarkBrown">
+        <motion.div
+          layout
+          key={catName}
+          initial={{ x: -100 }}
+          animate={{ x: 0 }}
+          className="flex flex-col justify-between p-2 text-sm shrink-0 text-DarkBrown"
+        >
           <div className="leading-tight">
             <p className="font-bold">{catName}</p>
             <p className="font-medium">{gender}</p>
@@ -60,7 +67,7 @@ const KittenCard = ({
           >
             {status}
           </p>
-        </div>
+        </motion.div>
       )}
     </div>
   );
