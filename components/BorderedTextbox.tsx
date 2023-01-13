@@ -25,7 +25,7 @@ const BorderedTextbox = ({ title, text, buttonPath, buttonText }: Props) => {
       </div>
       {buttonText && (
         <div className="flex justify-center pb-8">
-          <Button text={buttonText} goTo={buttonPath} />
+          <Button secondary text={buttonText} goTo={buttonPath} />
         </div>
       )}
     </article>
