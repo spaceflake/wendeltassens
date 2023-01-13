@@ -35,9 +35,9 @@ const KittenOverview = ({
             <span className="font-bold text-right">{father}</span>
           </div>
         </div>
-        <div className="mx-auto mt-4 space-x-4 lg:mr-auto lg:ml-0">
+        <div className="flex gap-2 mx-auto mt-4 space-x-4 lg:mr-auto lg:ml-0">
           <Button isExternal text="Stamtavla" goTo="https://google.com" />
-          <Button text="Förfrågan" goTo="/kontakt" />
+          <Button secondary text="Förfrågan" goTo="/kontakt" />
         </div>
       </div>
       <div className="grid grid-flow-col-dense gap-4 p-6 auto-cols-fr place-items-center">
