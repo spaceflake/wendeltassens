@@ -37,10 +37,17 @@ const Homepage = async () => {
 
   return (
     <div>
-      <Hero heroImgUrl={heroImgUrl}>
-        <h1>{heroTitle}</h1>
-        <div className="mt-4 ml-auto ">
-          <Button text={heroBtnText} goTo={heroBtnPath} />
+      <Hero isHomePage heroImgUrl={heroImgUrl}>
+        <div className="flex flex-col w-3/4 text-left">
+          <h1>{heroTitle}</h1>
+          <p className="pl-4 text-sm font-medium md:pl-12 lg:text-lg text-DarkBrown font-Montserrat">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae
+            ab ullam quis, eos cumque quod adipisci vero quas. Ea minima
+            assumenda accusantium libero, eaque quod!
+          </p>
+          <div className="self-center mt-8 md:self-end">
+            <Button text={heroBtnText} goTo={heroBtnPath} />
+          </div>
         </div>
       </Hero>
       <Section>
