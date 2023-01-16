@@ -68,7 +68,9 @@ const CatMatchCard = ({
         </div>
       </div>
       <div className="flex flex-col mt-6 grow justify-end">
-        {description && <p className="text-center py-4">{description}</p>}
+        {description && (
+          <p className="text-center py-4 font-Montserrat">{description}</p>
+        )}
         <div className="flex justify-center">
           <Button
             isExternal
