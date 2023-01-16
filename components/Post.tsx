@@ -8,16 +8,13 @@ type Props = {
 };
 
 const Post = ({ title, text, imgUrl, date }: Props) => {
-  // format date to "YYYY-MM-DD"
   const dateFormatted = new Date(date).toISOString().split('T')[0];
 
   return (
     <article
-      className={`bg-WhiteBG rounded-xl overflow-hidden h-full lg:max-w-[1000px] pb-6 md:pb-0 flex-1 flex-col-reverse md:grid ${
-        imgUrl ? 'md:grid-cols-2' : 'md:grid-cols-1'
-      } shadow-xl w-full`}
+      className={`bg-WhiteBG rounded-xl overflow-hidden md:pb-0 flex flex-col shadow-xl`}
     >
-      <div className="px-12 pt-10 pb-12 pl-10 pr-10 lg:py-12">
+      <div className="px-12 pt-10 pb-12 pl-10 pr-10 lg:py-12 grow">
         <div className="space-x-4 text-sm font-thin font-Montserrat text-DarkBrown">
           <span>{dateFormatted}</span>
         </div>
@@ -26,14 +23,14 @@ const Post = ({ title, text, imgUrl, date }: Props) => {
           {text}
         </p>
       </div>
-      <div className="h-full ">
+      <div className="p-4">
         {imgUrl && (
           <Image
             src={imgUrl}
             alt={title}
             height={300}
             width={300}
-            className="object-contain w-full h-full md:object-cover rounded-bl-md max-h-[300px]"
+            className="object-cover w-full h-full rounded-bl-md max-h-64"
           />
         )}
       </div>

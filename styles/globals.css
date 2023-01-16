@@ -4,7 +4,7 @@
 
 @layer base {
   h1 {
-    @apply text-6xl font-bold lg:text-8xl font-Tangerine text-DarkBrown;
+    @apply text-5xl font-bold sm:text-6xl md:text-7xl xl:text-8xl font-Tangerine text-DarkBrown;
   }
   h2 {
     @apply text-6xl font-bold lg:text-8xl font-Tangerine text-DarkBrown;
