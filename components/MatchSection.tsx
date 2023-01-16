@@ -25,6 +25,7 @@ const MatchSection = ({ introMatchText, matches }: Props) => {
               maleName={match.fatherName}
               femaleImg={match.motherImgUrl}
               maleImg={match.fatherImgUrl}
+              description={match.description}
             />
           ))}
         </div>
