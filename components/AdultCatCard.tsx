@@ -1,5 +1,6 @@
 import Image, { StaticImageData } from 'next/image';
 import Button from './Button';
+import paw from '../public/paw.svg';
 
 type Props = {
   cat: Cat;
@@ -9,7 +10,7 @@ type Props = {
 const AdultCatCard = ({ cat, inverted }: Props) => {
   return (
     <article
-      className={`font-Montserrat p-5 lg:p-9 bg-WhiteBG  rounded-xl shadow-lg flex flex-col lg:max-h-[500px] w-full max-w-[1000px] ${
+      className={` relative font-Montserrat p-5 lg:p-9 bg-WhiteBG  rounded-xl shadow-lg flex flex-col lg:max-h-[500px] w-full max-w-[1000px] ${
         inverted ? 'lg:flex-row-reverse' : 'lg:flex-row'
       }`}
     >
@@ -53,6 +54,11 @@ const AdultCatCard = ({ cat, inverted }: Props) => {
           <Button isExternal text="Stamtavla" goTo={cat.pedigreeUrl} />
         </div>
       </div>
+      <Image
+        src={paw}
+        alt=""
+        className="absolute right-0 top-1/3 sm:top-1/2 lg:top-0 fill-none"
+      />
     </article>
   );
 };
