@@ -1,5 +1,3 @@
-'use client';
-
 import Image, { StaticImageData } from 'next/image';
 import { useState } from 'react';
 
@@ -18,50 +16,33 @@ const KittenCard = ({
   status,
   gender,
 }: Props) => {
-  const [toggleOpen, setToggleOpen] = useState(false);
   return (
-    <div
-      onClick={() => setToggleOpen(!toggleOpen)}
-      className="relative flex overflow-hidden transition-all duration-300 ease-in-out rounded-lg cursor-pointer hover:shadow-lg hover:scale-105"
-    >
-      <div className="shrink-0">
+    <div className="grid grid-cols-2 gap-4 overflow-hidden rounded-lg shadow-md shrink-0">
+      <div className="relative overflow-hidden">
         <Image
           src={catImgUrl}
-          width={100}
-          height={100}
           alt="Kattunge"
-          className="w-[100px] h-[100px] col-span-1"
+          className="object-cover"
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
       </div>
-      {!toggleOpen && (
+      <div className="flex flex-col gap-2 p-2 text-sm text-DarkBrown">
+        <div className="leading-tight">
+          <p className="font-bold">{catName}</p>
+          <p className="font-medium">{gender}</p>
+          <p className="font-medium">{colorCode}</p>
+        </div>
         <p
-          className={`absolute bottom-2 z-10 text-sm font-Montserrat font-bold col-span-1 ${
+          className={`text-xs font-Montserrat font-bold col-span-1 ${
             status === 'Tillgänglig' ? 'bg-AngelBlue' : 'bg-Beige'
-          } p-[6px] ${
+          } ${
             status === 'Tillgänglig' ? 'text-WhiteBG' : 'text-DarkBrown'
-          } rounded left-1/2 -translate-x-1/2`}
+          } p-[6px] rounded`}
         >
           {status}
         </p>
-      )}
-      {toggleOpen && (
-        <div className="flex flex-col justify-between p-2 text-sm shrink-0 text-DarkBrown">
-          <div className="leading-tight">
-            <p className="font-bold">{catName}</p>
-            <p className="font-medium">{gender}</p>
-            <p className="font-medium">{colorCode}</p>
-          </div>
-          <p
-            className={`text-xs font-Montserrat font-bold col-span-1 ${
-              status === 'Tillgänglig' ? 'bg-AngelBlue' : 'bg-Beige'
-            } ${
-              status === 'Tillgänglig' ? 'text-WhiteBG' : 'text-DarkBrown'
-            } p-[6px] rounded`}
-          >
-            {status}
-          </p>
-        </div>
-      )}
+      </div>
     </div>
   );
 };

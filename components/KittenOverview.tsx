@@ -18,7 +18,7 @@ const KittenOverview = ({
   kittens,
 }: Props) => {
   return (
-    <div className="rounded-xl bg-WhiteBG p-8 flex flex-col lg:flex-row max-w[700px] justify-between shadow-lg text-DarkBrown">
+    <div className="gap-8 p-8 space-y-4 shadow-lg h-fit sm:grid sm:grid-cols-2 rounded-xl bg-WhiteBG text-DarkBrown">
       <div className="flex flex-col">
         <h5 className="text-[2.75rem]">{title}</h5>
         <div className="divide-y divide-dashed divide-[#E1DFDE] grow">
@@ -34,13 +34,17 @@ const KittenOverview = ({
             <span className="font-medium">Fader</span>
             <span className="font-bold text-right">{father}</span>
           </div>
+          <div className="flex justify-between gap-3 py-2">
+            <span className="font-medium">Antal kattungar</span>
+            <span className="font-bold text-right">{kittens?.length}</span>
+          </div>
         </div>
         <div className="flex gap-2 mx-auto mt-4 space-x-4 lg:mr-auto lg:ml-0">
           <Button isExternal text="Stamtavla" goTo="https://google.com" />
           <Button secondary text="Förfrågan" goTo="/kontakt" />
         </div>
       </div>
-      <div className="grid grid-flow-col-dense gap-4 p-6 auto-cols-fr place-items-center">
+      <div className="flex flex-col gap-2 overflow-y-scroll h-60">
         {kittens &&
           kittens.length > 0 &&
           kittens.map((kitten) => (
