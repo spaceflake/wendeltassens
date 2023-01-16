@@ -16,8 +16,8 @@ const MatchSection = ({ introMatchText, matches }: Props) => {
           {introMatchText.text}
         </p>
       </Section>
-      <section className="m-auto bg-Beige/50">
-        <div className="mt-16 mb-10 lg:mt-36">
+      <Section>
+        <div className="mx-auto mb-10 lg:flex lg:justify-around lg:gap-4 space-y-6 lg:space-y-0">
           {matches.map((match) => (
             <CatMatchCard
               key={match._id}
@@ -28,7 +28,7 @@ const MatchSection = ({ introMatchText, matches }: Props) => {
             />
           ))}
         </div>
-      </section>
+      </Section>
     </>
   );
 };

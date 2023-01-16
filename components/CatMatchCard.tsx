@@ -1,7 +1,8 @@
 import React from 'react';
 import Image, { StaticImageData } from 'next/image';
 import Button from './Button';
-import catMatchSvg from '../public/catmatch.svg';
+import femaleCrown from '../public/femaleCrown.svg';
+import maleCrown from '../public/maleCrown.svg';
 
 type Props = {
   femalename: string;
@@ -13,39 +14,59 @@ type Props = {
 
 const CatMatchCard = ({ femalename, maleName, femaleImg, maleImg }: Props) => {
   return (
-    <div className="text-DarkBrown py-12 w-full md:w-[40%] md:m-auto">
-      <div className="relative">
-        <div className="flex items-start ml-6 lg:items-center">
+    <div className="text-DarkBrown bg-Beige/50 shadow-lg rounded-md p-8 max-w-[500px] bg-[url('../public/catMatchHeart.svg')] bg-center bg-no-repeat">
+      <div className="grid grid-cols-2 justify-center items-stretch pt-6">
+        <div className="flex items-center flex-col">
+          <div className="flex flex-col items-center grow">
+            <Image
+              src={maleCrown}
+              alt=""
+              height={50}
+              width={50}
+              className="h-[30px] w-[30px] md:h-[50px] md:w-[50px]"
+            />
+            <h6 className="ml-4 italic font-semibold md:ml-4 font-Montserrat text-sm lg:text-base text-center">
+              {femalename}
+            </h6>
+          </div>
+
           <Image
             src={femaleImg}
-            height={250}
-            width={250}
+            height={100}
+            width={100}
             alt={femalename}
-            className="h-28 w-28 md:max-lg:h-36 md:max-lg:w-36 xl:h-[250px] xl:w-[250px] rounded-full object-cover object-top aspect-video"
+            className="w-[100px] h-[100px] xl:h-[120px] xl:w-[120px] rounded-full object-cover object-top aspect-square mt-4"
           />
-          <p className="ml-4 italic font-semibold md:ml-4 font-Montserrat">
-            {femalename}
-          </p>
         </div>
-        <Image
-          src={catMatchSvg}
-          alt=""
-          className="absolute inset-0 object-contain object-center w-full h-full"
-        />
-        <div className="flex flex-row-reverse items-end mr-6 lg:items-center">
+        <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center grow">
+            <Image
+              src={femaleCrown}
+              alt=""
+              height={50}
+              width={50}
+              className="h-[30px] w-[30px] md:h-[50px] md:w-[50px]"
+            />
+            <h6 className="mr-4 italic font-semibold md:mr-4 font-Montserrat text-sm lg:text-base text-center">
+              {maleName}
+            </h6>
+          </div>
           <Image
             src={maleImg}
             height={250}
             width={250}
             alt={maleName}
-            className="h-28 w-28 md:max-lg:h-36 md:max-lg:w-36 xl:h-[250px] xl:w-[250px] rounded-full	 object-cover object-top aspect-video"
+            className="w-[100px] h-[100px] xl:h-[120px] xl:w-[120px] rounded-full object-cover object-top aspect-square mt-4"
           />
-          <p className="mr-4 italic font-semibold md:mr-4 font-Montserrat">
-            {maleName}
-          </p>
         </div>
       </div>
-      <div className="flex justify-center mt-4">
+      {/* <div className="w-3/4 m-auto py-6">
+        <p className="text-center">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
+          molestias praesentium eaque qui dolores dolorum asperiores commodi
+        </p>
+      </div> */}
+      <div className=" flex justify-center mt-4">
         <Button
           isExternal
           text="Stamtavla"
