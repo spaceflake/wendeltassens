@@ -14,7 +14,7 @@ type Props = {
 
 const CatMatchCard = ({ femalename, maleName, femaleImg, maleImg }: Props) => {
   return (
-    <div className="text-DarkBrown bg-Beige/50 shadow-lg rounded-md catMatch p-8 max-w-[500px]">
+    <div className="text-DarkBrown bg-Beige/50 shadow-lg rounded-md p-8 max-w-[500px] bg-[url('../public/catMatchHeart.svg')] bg-center bg-no-repeat">
       <div className="grid grid-cols-2 justify-center items-stretch pt-6">
         <div className="flex items-center flex-col">
           <div className="flex flex-col items-center grow">
