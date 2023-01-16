@@ -67,10 +67,20 @@ const Kittens = async () => {
         />
       </Section>
       <KittenSection litters={kittensection.litters} />
-      <MatchSection
-        introMatchText={introMatchText}
-        matches={matchsection.matches}
-      />
+      {matchsection && matchsection.matches.length > 0 ? (
+        <MatchSection
+          introMatchText={introMatchText}
+          matches={matchsection.matches}
+        />
+      ) : (
+        <Section>
+          <div className="mx-auto my-auto bg-[#80756B]/10 w-full py-14 flex items-center justify-center">
+            <p className="text-lg text-center">
+              Inga planerade kullar för tillfället
+            </p>
+          </div>
+        </Section>
+      )}
     </div>
   );
 };
