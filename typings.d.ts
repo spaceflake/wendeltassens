@@ -55,6 +55,7 @@ interface Match extends Component {
   motherName: string;
   fatherName: string;
   pedigreeUrl: string;
+  description: string;
 }
 
 interface Faq extends Component {

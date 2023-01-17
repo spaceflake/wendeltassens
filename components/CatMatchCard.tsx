@@ -10,22 +10,29 @@ type Props = {
   pedigreeUrl?: string;
   femaleImg: string | StaticImageData;
   maleImg: string | StaticImageData;
+  description?: string;
 };
 
-const CatMatchCard = ({ femalename, maleName, femaleImg, maleImg }: Props) => {
+const CatMatchCard = ({
+  femalename,
+  maleName,
+  femaleImg,
+  maleImg,
+  description,
+}: Props) => {
   return (
-    <div className="text-DarkBrown bg-Beige/50 shadow-lg rounded-md p-8 max-w-[500px] bg-[url('../public/catMatchHeart.svg')] bg-center bg-no-repeat">
+    <div className="text-DarkBrown bg-Beige/50 shadow-lg rounded-md p-8 max-w-[500px] bg-[url('../public/catMatchHeart.svg')] bg-center bg-no-repeat flex flex-col">
       <div className="grid grid-cols-2 justify-center items-stretch pt-6">
         <div className="flex items-center flex-col">
-          <div className="flex flex-col items-center grow">
+          <div className="flex flex-col items-center">
             <Image
-              src={maleCrown}
+              src={femaleCrown}
               alt=""
               height={50}
               width={50}
               className="h-[30px] w-[30px] md:h-[50px] md:w-[50px]"
             />
-            <h6 className="ml-4 italic font-semibold md:ml-4 font-Montserrat text-sm lg:text-base text-center">
+            <h6 className="ml-4 italic font-semibold font-Montserrat text-sm lg:text-base text-center">
               {femalename}
             </h6>
           </div>
@@ -41,13 +48,13 @@ const CatMatchCard = ({ femalename, maleName, femaleImg, maleImg }: Props) => {
         <div className="flex flex-col items-center">
           <div className="flex flex-col items-center grow">
             <Image
-              src={femaleCrown}
+              src={maleCrown}
               alt=""
               height={50}
               width={50}
               className="h-[30px] w-[30px] md:h-[50px] md:w-[50px]"
             />
-            <h6 className="mr-4 italic font-semibold md:mr-4 font-Montserrat text-sm lg:text-base text-center">
+            <h6 className="mr-4 italic font-semibold font-Montserrat text-sm lg:text-base text-center">
               {maleName}
             </h6>
           </div>
@@ -60,18 +67,17 @@ const CatMatchCard = ({ femalename, maleName, femaleImg, maleImg }: Props) => {
           />
         </div>
       </div>
-      {/* <div className="w-3/4 m-auto py-6">
-        <p className="text-center">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
-          molestias praesentium eaque qui dolores dolorum asperiores commodi
-        </p>
-      </div> */}
-      <div className=" flex justify-center mt-4">
-        <Button
-          isExternal
-          text="Stamtavla"
-          goTo="https://stambok.sverak.se/Stambok/Visa/506242"
-        />
+      <div className="flex flex-col mt-6 grow justify-end">
+        {description && (
+          <p className="text-center py-4 font-Montserrat">{description}</p>
+        )}
+        <div className="flex justify-center">
+          <Button
+            isExternal
+            text="Stamtavla"
+            goTo="https://stambok.sverak.se/Stambok/Visa/506242"
+          />
+        </div>
       </div>
     </div>
   );
