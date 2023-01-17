@@ -21,7 +21,6 @@ export default async function handler(
     ];
 
     await Promise.all(promises);
-
     return res.json({ revalidated: true });
   } catch (err) {
     // If there was an error, Next.js will continue
