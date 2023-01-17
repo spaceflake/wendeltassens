@@ -20,7 +20,7 @@ const Hero = ({ children, heroImgUrl, isHomePage }: Props) => {
             width={1920}
             height={1080}
             alt="hero image"
-            className="object-contain w-full h-auto"
+            className="object-cover w-full h-auto max-h-screen"
           />
         </div>
       </div>
@@ -37,7 +37,7 @@ const Hero = ({ children, heroImgUrl, isHomePage }: Props) => {
           width={1920}
           height={1080}
           alt="hero image"
-          className="object-contain w-full h-auto"
+          className="object-cover w-full h-auto max-h-screen"
         />
       </div>
     </div>

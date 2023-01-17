@@ -7,7 +7,7 @@ type Props = {
 
 const KittenSection = ({ litters }: Props) => {
   return (
-    <div className="pb-[150px] mt-16 lg:mt-36 bg-[#80756B]/10 shadow-inner flex flex-col items-center space-y-4">
+    <div className="pb-[150px] mt-16 lg:mt-36 bg-[#80756B]/10 shadow-inner flex flex-col items-center space-y-4 px-4">
       <h2 className="py-16">Tillgängliga kattungar</h2>
       <>
         {litters && litters.length > 0 ? (
