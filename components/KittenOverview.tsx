@@ -44,7 +44,7 @@ const KittenOverview = ({
           <Button secondary text="Förfrågan" goTo="/kontakt" />
         </div>
       </div>
-      <div className="flex flex-col gap-2 overflow-y-scroll h-60">
+      <div className="flex flex-col gap-2 px-2 overflow-y-scroll h-60">
         {kittens &&
           kittens.length > 0 &&
           kittens.map((kitten) => (
