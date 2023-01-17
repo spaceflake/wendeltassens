@@ -11,17 +11,12 @@ export default async function handler(
   try {
     // This should be the actual path not a rewritten path
     // e.g. for "/blog/[slug]" this should be "/blog/post-1"
-    const promises = [
-      res.revalidate('/'),
-      res.revalidate('/katter'),
-      res.revalidate('/kattungar'),
-      res.revalidate('/kontakt'),
-      res.revalidate('/information-villkor'),
-      res.revalidate('/om-mig'),
-    ];
-
-    await Promise.all(promises);
-
+    await res.revalidate('/');
+    await res.revalidate('/katter');
+    await res.revalidate('/kattungar');
+    await res.revalidate('/kontakt');
+    await res.revalidate('/information-villkor');
+    await res.revalidate('/om-mig');
     return res.json({ revalidated: true });
   } catch (err) {
     // If there was an error, Next.js will continue
