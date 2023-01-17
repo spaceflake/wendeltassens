@@ -4,6 +4,7 @@ import Hero from '../../../components/Hero';
 import KittenSection from '../../../components/KittenSection';
 import MatchSection from '../../../components/MatchSection';
 import Section from '../../../components/Section';
+import SectionDividerBorder from '../../../components/SectionDividerBorder';
 import { client } from '../../../lib/sanity.client';
 
 const pageQuery = groq`*[_type == "page" && title == "kattungar"] {
@@ -74,7 +75,8 @@ const Kittens = async () => {
         />
       ) : (
         <Section>
-          <div className="mx-auto my-auto bg-[#80756B]/10 w-full py-14 flex items-center justify-center">
+          <div className="mx-auto my-auto w-full py-14 flex justify-center flex-col">
+            <SectionDividerBorder title="Planerade kullar" />
             <p className="text-lg text-center">
               Inga planerade kullar för tillfället
             </p>
