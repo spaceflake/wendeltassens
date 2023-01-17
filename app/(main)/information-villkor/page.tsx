@@ -72,13 +72,10 @@ const FAQPage = async () => {
       </Section>
       <Section>
         <SectionDividerBorder title={FAQSection.title} />
-        <div className="flex flex-col items-center justify-center px-4">
+        <div className="flex flex-wrap justify-center">
           {FAQSection.faqs.map((faq) => (
             <FAQ key={faq._id} title={faq.title} text={faq.text} />
           ))}
-          <div className="mt-10">
-            <Button text="Kontakta mig" goTo="/kontakt" />
-          </div>
         </div>
       </Section>
       <Section>
