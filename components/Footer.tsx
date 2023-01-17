@@ -13,7 +13,7 @@ const Footer = ({ contactInformation }: Props) => {
       <Image src={footerSvg} alt="Footer svg" className="w-full" />
 
       <div className="w-full bg-SuperBrown">
-        <footer className="  max-w-[1000px] mx-auto md:gap-6 md:justify-between text-Beige py-[64px] flex flex-col lg:flex-row relative text-center lg:text-left px-4">
+        <footer className="  container mx-auto md:gap-6 md:justify-between text-Beige py-[64px] flex flex-col lg:flex-row relative text-center lg:text-left px-4">
           <div className="flex flex-col lg:mr-6 md:self-center">
             <h2 className="mb-2 text-6xl text-center font-Tangerine text-Beige">
               Wendeltassens
