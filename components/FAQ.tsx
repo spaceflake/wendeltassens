@@ -1,4 +1,3 @@
-'use client';
 export interface FAQProps {
   title: string;
   text: string;
