@@ -1,8 +1,4 @@
 'use client';
-import React, { useState } from 'react';
-import { FiChevronUp } from 'react-icons/fi';
-import { FiChevronDown } from 'react-icons/fi';
-
 export interface FAQProps {
   title: string;
   text: string;
@@ -10,22 +6,29 @@ export interface FAQProps {
 
 const FAQ = ({ title, text }: FAQProps) => {
   return (
-    <div className="font-Montserrat italic text-DarkBrown max-w-prose">
-      <div className="w-full">
-        <div className="mx-auto max-w-md rounded 2xl bg-white flex">
-          <div className="flex ml-4 bg-[#FFFFFF] shadow-lg p-4 rounded-md m-4 hover:bg-Beige/40 transition-colors">
-            <details className="group">
-              <summary className="cursor-pointer flex justify-center">
-                <a className="text-2xl flex align-top">
-                  <FiChevronDown className="transition group-open:rotate-180 mr-2" />
-                </a>
-                <h6 className="font-bold mb-2 text-lg">{title}</h6>
-              </summary>
-              <p className="text-base mb-4">{text}</p>
-            </details>
-          </div>
-        </div>
-      </div>
+    <div className="flex bg-[#FFFFFF] shadow-lg rounded-md hover:bg-Beige/40 transition-colors font-Montserrat italic text-DarkBrown w-full">
+      <details className="group items-stretch w-full open:bg-Beige/50 p-4">
+        <summary className="cursor-pointer flex items-center justify-between">
+          <h6 className="font-bold text-lg">{title}</h6>
+          <a className="text-2xl flex justify-center transition group-open:rotate-180">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+              />
+            </svg>
+          </a>
+        </summary>
+        <p className="text-base p-2 max-w-prose">{text}</p>
+      </details>
     </div>
   );
 };
