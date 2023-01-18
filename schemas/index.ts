@@ -12,6 +12,7 @@ import textboxBordered from './componentSchemas/textboxBordered';
 import textImageCard from './componentSchemas/textImageCard';
 import FAQSection from './FAQSection';
 import kittenSection from './kittenSection';
+import matchOverview from './matchOverview';
 import matchSection from './matchSection';
 import page from './page';
 import post from './post';
@@ -28,6 +29,7 @@ export const schemaTypes = [
   kitten,
   textblock,
   matchSection,
+  matchOverview,
   match,
   catCard,
   catSection,
