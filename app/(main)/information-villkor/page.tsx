@@ -1,4 +1,5 @@
 import { groq } from 'next-sanity';
+import image from 'next/image';
 import Button from '../../../components/Button';
 import FAQ from '../../../components/FAQ';
 import Hero from '../../../components/Hero';
@@ -72,13 +73,10 @@ const FAQPage = async () => {
       </Section>
       <Section>
         <SectionDividerBorder title={FAQSection.title} />
-        <div className="flex flex-col items-center justify-center px-4">
+        <div className="flex flex-col gap-4 items-stretch max-w-[1000px] w-full mx-auto p-4">
           {FAQSection.faqs.map((faq) => (
             <FAQ key={faq._id} title={faq.title} text={faq.text} />
           ))}
-          <div className="mt-10">
-            <Button text="Kontakta mig" goTo="/kontakt" />
-          </div>
         </div>
       </Section>
       <Section>
