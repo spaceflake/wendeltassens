@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from './Button';
+import TextField from './TextField';
 
 interface Props {
   title: string;
@@ -15,13 +16,7 @@ const BorderedTextbox = ({ title, text, buttonPath, buttonText }: Props) => {
         {title || 'Title'}
       </h2>
       <div className="px-4 py-8 pt-8 xl:pt-16 lg:px-8">
-        <p
-          className={`font-Montserrat italic text-sm lg:text-2xl ${
-            text && text.length > 500 && 'lg:columns-2'
-          }`}
-        >
-          {text}
-        </p>
+        <TextField text={text} />
       </div>
       {buttonText && (
         <div className="flex justify-center pb-8">
