@@ -19,8 +19,8 @@ export const postContainerFragment: string = `
   }
 `;
 
-export const catSectionFragment: string = `
-_type == 'catSection' => {
+export const catOverviewFragment: string = `
+_type == 'catOverview' => {
   cats[]->{
     ...,
     "catImgUrl": catImgUrl.asset->url,
@@ -54,12 +54,35 @@ _type == 'textField' => {
   ...,
 }`;
 
+export const faqOverviewFragment: string = `
+  _type == 'FAQOverview' => {
+    ...,
+    "faqs": faqs[]->{
+      ...,
+    }
+  }`;
 export const sectionFragment: string = `
   _type == 'section' => {
     ...,
     "component": component[]->{
       ...,
       ${textFieldFragment},
-      ${matchOverviewFragment}
+      ${matchOverviewFragment},
+      ${faqOverviewFragment},
+      ${catOverviewFragment}
     }
+  }`;
+
+export const formSectionFragment: string = `
+  _type == 'formSection' => {
+    ...,
+    contactInformation ->{
+      ...,
+    },
+  }`;
+
+export const carouselFragment: string = `
+  _type == 'carousel' => {
+    ...,
+    "imageList": imageList[].asset->url,
   }`;
