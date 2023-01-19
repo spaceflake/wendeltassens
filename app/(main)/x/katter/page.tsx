@@ -1,10 +1,10 @@
 import { groq } from 'next-sanity';
-import AdultCatCard from '../../../components/CatCard';
-import BorderedTextbox from '../../../components/BorderedTextbox';
-import Hero from '../../../components/Hero';
-import Section from '../../../components/Section';
-import SectionDividerBorder from '../../../components/SectionDividerBorder';
-import { client } from '../../../lib/sanity.client';
+import AdultCatCard from '../../../../components/CatCard';
+import BorderedTextbox from '../../../../components/BorderedTextbox';
+import Hero from '../../../../components/Hero';
+import Section from '../../../../components/Section';
+import SectionDividerBorder from '../../../../components/SectionDividerBorder';
+import { client } from '../../../../lib/sanity.client';
 
 const pageQuery = groq`*[_type == "page" && title == "Katter"] {
   heroTitle,

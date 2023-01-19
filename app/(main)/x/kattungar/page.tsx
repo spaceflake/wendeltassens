@@ -1,11 +1,11 @@
 import { groq } from 'next-sanity';
-import BorderedTextbox from '../../../components/BorderedTextbox';
-import Hero from '../../../components/Hero';
-import KittenSection from '../../../components/KittenSection';
-import MatchOverview from '../../../components/MatchOverview';
-import Section from '../../../components/Section';
-import SectionDividerBorder from '../../../components/SectionDividerBorder';
-import { client } from '../../../lib/sanity.client';
+import BorderedTextbox from '../../../../components/BorderedTextbox';
+import Hero from '../../../../components/Hero';
+import KittenSection from '../../../../components/KittenSection';
+import MatchOverview from '../../../../components/MatchOverview';
+import Section from '../../../../components/Section';
+import SectionDividerBorder from '../../../../components/SectionDividerBorder';
+import { client } from '../../../../lib/sanity.client';
 
 const pageQuery = groq`*[_type == "page" && title == "kattungar"] {
   heroTitle,
@@ -75,7 +75,7 @@ const Kittens = async () => {
         />
       ) : (
         <Section>
-          <div className="mx-auto my-auto w-full py-14 flex justify-center flex-col">
+          <div className="flex flex-col justify-center w-full mx-auto my-auto py-14">
             <SectionDividerBorder title="Planerade kullar" />
             <p className="text-lg text-center">
               Inga planerade kullar för tillfället

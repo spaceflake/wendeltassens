@@ -1,13 +1,13 @@
 import { groq } from 'next-sanity';
 import image from 'next/image';
-import Button from '../../../components/Button';
-import FAQ from '../../../components/FAQ';
-import Hero from '../../../components/Hero';
-import Section from '../../../components/Section';
-import SectionDividerBorder from '../../../components/SectionDividerBorder';
-import TextAndImage from '../../../components/TextAndImage';
-import TwoColumnTextSection from '../../../components/TwoColumnTextSection';
-import { client } from '../../../lib/sanity.client';
+import Button from '../../../../components/Button';
+import FAQ from '../../../../components/FAQ';
+import Hero from '../../../../components/Hero';
+import Section from '../../../../components/Section';
+import SectionDividerBorder from '../../../../components/SectionDividerBorder';
+import TextAndImage from '../../../../components/TextAndImage';
+import TwoColumnTextSection from '../../../../components/TwoColumnTextSection';
+import { client } from '../../../../lib/sanity.client';
 
 const pageQuery = groq`*[_type == "page" && title == "information-villkor"] {
   "components": component[]->{

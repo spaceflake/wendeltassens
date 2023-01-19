@@ -1,8 +1,8 @@
 import { groq } from 'next-sanity';
-import Carousel from '../../../components/Carousel';
-import BorderedTextbox from '../../../components/BorderedTextbox';
-import Section from '../../../components/Section';
-import { client } from '../../../lib/sanity.client';
+import Carousel from '../../../../components/Carousel';
+import BorderedTextbox from '../../../../components/BorderedTextbox';
+import Section from '../../../../components/Section';
+import { client } from '../../../../lib/sanity.client';
 
 const pageQuery = groq`*[_type == "page" && title == "Om mig"] {
   "components": component[]->{

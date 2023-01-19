@@ -5,15 +5,15 @@ import {
   heroFragment,
   kittenSectionFragment,
   sectionFragment,
-} from '../../../../cms/fragments';
-import BorderedTextbox from '../../../../components/BorderedTextbox';
-import Carousel from '../../../../components/Carousel';
-import ComponentSection from '../../../../components/ComponentSection';
-import ContactForm from '../../../../components/ContactForm';
-import Hero from '../../../../components/Hero';
-import KittenSection from '../../../../components/KittenSection';
-import Section from '../../../../components/Section';
-import { client } from '../../../../lib/sanity.client';
+} from '../../../cms/fragments';
+import BorderedTextbox from '../../../components/BorderedTextbox';
+import Carousel from '../../../components/Carousel';
+import ComponentSection from '../../../components/ComponentSection';
+import ContactForm from '../../../components/ContactForm';
+import Hero from '../../../components/Hero';
+import KittenSection from '../../../components/KittenSection';
+import Section from '../../../components/Section';
+import { client } from '../../../lib/sanity.client';
 
 type Params = {
   slug: string;
@@ -23,7 +23,7 @@ type Props = {
   params: Params;
 };
 
-const pageQuery = groq`*[_type == "page" && slug == $slug] {
+const pageQuery = groq`*[_type == "page" && slug.current == $slug] {
   "sections": sections[]->{
     _type,
     _id,

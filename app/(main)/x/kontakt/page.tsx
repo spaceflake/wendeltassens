@@ -1,9 +1,9 @@
-import Hero from '../../../components/Hero';
-import Section from '../../../components/Section';
-import BorderedTextbox from '../../../components/BorderedTextbox';
+import Hero from '../../../../components/Hero';
+import Section from '../../../../components/Section';
+import BorderedTextbox from '../../../../components/BorderedTextbox';
 import { groq } from 'next-sanity';
-import { client } from '../../../lib/sanity.client';
-import ContactForm from '../../../components/ContactForm';
+import { client } from '../../../../lib/sanity.client';
+import ContactForm from '../../../../components/ContactForm';
 
 const pageQuery = groq`*[_type == "page" && title == "Kontakt"] {
   heroTitle,
