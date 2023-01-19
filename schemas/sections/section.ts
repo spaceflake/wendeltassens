@@ -43,6 +43,7 @@ export default defineType({
             { type: 'FAQOverview' },
             { type: 'contactInformation' },
             { type: 'textField' },
+            { type: 'link' },
           ],
         },
       ],
