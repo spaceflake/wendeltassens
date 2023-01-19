@@ -65,7 +65,7 @@ export default defineType({
       type: 'url',
       validation: (Rule) => Rule.required(),
     }),
-    {
+    defineField({
       name: 'gender',
       title: 'Kön',
       type: 'string',
@@ -76,6 +76,6 @@ export default defineType({
         ],
         layout: 'radio',
       },
-    },
+    }),
   ],
 });

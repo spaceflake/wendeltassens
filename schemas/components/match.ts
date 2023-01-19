@@ -6,6 +6,12 @@ export default defineType({
   type: 'document',
   fields: [
     defineField({
+      name: 'title',
+      title: 'Titel',
+      description: 'Titel som visas i studion',
+      type: 'string',
+    }),
+    defineField({
       name: 'motherImgUrl',
       title: 'Moder bild',
       type: 'image',

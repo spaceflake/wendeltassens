@@ -1,8 +1,8 @@
 import { defineField, defineType } from 'sanity';
 
 export default defineType({
-  name: 'matchSection',
-  title: 'Planerade kullar sektion',
+  name: 'matchOverview',
+  title: 'Planerade kullar',
   type: 'document',
   fields: [
     defineField({
