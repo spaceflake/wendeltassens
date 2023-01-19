@@ -39,11 +39,8 @@ export default defineType({
             { type: 'textImageCard' },
             { type: 'kittenSection' },
             { type: 'matchOverview' }, //ska ligga här
-            { type: 'textblock' },
-            { type: 'faq' },
-            { type: 'catSection' },
-            { type: 'carousel' },
-            { type: 'FAQSection' },
+            { type: 'catOverview' },
+            { type: 'FAQOverview' },
             { type: 'contactInformation' },
             { type: 'textField' },
           ],

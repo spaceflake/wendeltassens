@@ -1,21 +1,20 @@
 import { defineField, defineType } from 'sanity';
 
 export default defineType({
-  name: 'introTextHome',
-  title: 'Intro Text Hemsida',
+  name: 'catOverview',
+  title: 'Katt sektion',
   type: 'document',
   fields: [
     defineField({
       name: 'title',
       title: 'Rubrik',
       type: 'string',
-      validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'text',
-      title: 'Text',
-      type: 'text',
-      validation: (Rule) => Rule.required(),
+      name: 'cats',
+      title: 'Katter',
+      type: 'array',
+      of: [{ type: 'reference', to: { type: 'cat' } }],
     }),
   ],
 });

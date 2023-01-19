@@ -1,20 +1,20 @@
 import { defineField, defineType } from 'sanity';
 
 export default defineType({
-  name: 'catSection',
-  title: 'Katt sektion',
+  name: 'FAQOverview',
+  title: 'Frågor och svar Sektion',
   type: 'document',
   fields: [
     defineField({
       name: 'title',
-      title: 'Rubrik',
+      title: 'Titel',
       type: 'string',
     }),
     defineField({
-      name: 'cats',
-      title: 'Katter',
+      name: 'faqs',
+      title: 'Frågor och svar',
       type: 'array',
-      of: [{ type: 'reference', to: { type: 'catCard' } }],
+      of: [{ type: 'reference', to: { type: 'faq' } }],
     }),
   ],
 });

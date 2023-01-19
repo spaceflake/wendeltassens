@@ -1,24 +1,25 @@
-import catSection from './sections/catSection';
-import carousel from './sections/carousel';
-import catCard from './components/catCard';
+import cat from './components/cat';
 import contactInformation from './components/contactInformation';
-import faqText from './components/faqText';
-import hero from './sections/hero';
-import introTextHome from './sections/introTextHome';
+import faq from './components/faq';
+import FAQOverview from './components/FAQOverview';
 import kitten from './components/kitten';
 import kittenOverview from './components/kittenOverview';
 import match from './components/match';
+import matchOverview from './components/matchOverview';
+import post from './components/post';
 import textblock from './components/textblock';
 import textboxBordered from './components/textboxBordered';
 import textField from './components/textField';
 import textImageCard from './components/textImageCard';
-import FAQSection from './sections/FAQSection';
-import kittenSection from './sections/kittenSection';
 import page from './page';
-import post from './components/post';
+import carousel from './sections/carousel';
+import catOverview from './sections/catOverview';
+import formSection from './sections/formSection';
+import hero from './sections/hero';
+import introTextHome from './sections/introTextHome';
+import kittenSection from './sections/kittenSection';
 import postContainer from './sections/postSection';
 import section from './sections/section';
-import matchOverview from './components/matchOverview';
 
 export const schemaTypes = [
   postContainer,
@@ -32,14 +33,15 @@ export const schemaTypes = [
   textblock,
   matchOverview,
   match,
-  catCard,
-  catSection,
-  faqText,
+  cat,
+  catOverview,
+  faq,
   textImageCard,
   carousel,
-  FAQSection,
+  FAQOverview,
   contactInformation,
   hero,
   section,
   textField,
+  formSection,
 ];
