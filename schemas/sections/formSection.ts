@@ -2,15 +2,16 @@ import { defineField, defineType } from 'sanity';
 
 export default defineType({
   name: 'formSection',
-  title: 'Sektion med formulär',
+  title: 'Kontaktformulär',
   description:
     'En sektion med ett kontaktformulär, kontaktuppgifter, och plats för lite text.',
   type: 'document',
   fields: [
     defineField({
       name: 'title',
-      title: 'Titel',
       type: 'string',
+      hidden: true,
+      initialValue: 'Kontaktformulär',
     }),
     defineField({
       name: 'text',

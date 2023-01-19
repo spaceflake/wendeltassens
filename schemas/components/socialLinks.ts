@@ -8,10 +8,9 @@ export default defineType({
   fields: [
     defineField({
       name: 'name',
-      title: 'Namn',
       type: 'string',
-      description: 'Namn som visas i Studion',
-      validation: (Rule) => Rule.required(),
+      hidden: true,
+      initialValue: 'Sociala medie länkar',
     }),
     defineField({
       name: 'links',

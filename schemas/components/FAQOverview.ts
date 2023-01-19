@@ -2,17 +2,18 @@ import { defineField, defineType } from 'sanity';
 
 export default defineType({
   name: 'FAQOverview',
-  title: 'Frågor och svar Sektion',
+  title: 'Frågor & Svar',
   type: 'document',
   fields: [
     defineField({
       name: 'title',
-      title: 'Titel',
       type: 'string',
+      hidden: true,
+      initialValue: 'Frågor & Svar',
     }),
     defineField({
       name: 'faqs',
-      title: 'Frågor och svar',
+      title: 'Frågor & Svar',
       type: 'array',
       of: [{ type: 'reference', to: { type: 'faq' } }],
     }),

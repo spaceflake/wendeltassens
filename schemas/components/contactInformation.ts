@@ -2,9 +2,15 @@ import { defineField, defineType } from 'sanity';
 
 export default defineType({
   name: 'contactInformation',
-  title: 'Kontaktinformation',
+  title: 'Kontaktuppgifter',
   type: 'document',
   fields: [
+    defineField({
+      name: 'title',
+      type: 'string',
+      hidden: true,
+      initialValue: 'Kontaktuppgifter',
+    }),
     defineField({
       name: 'name',
       title: 'Namn',

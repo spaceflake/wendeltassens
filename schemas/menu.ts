@@ -8,8 +8,9 @@ export default defineType({
   fields: [
     defineField({
       name: 'title',
-      title: 'Namn',
       type: 'string',
+      hidden: true,
+      initialValue: 'Meny',
     }),
     defineField({
       name: 'pages',
