@@ -1,4 +1,4 @@
-import AdultCatCard from '../../../components/AdultCatCard';
+import AdultCatCard from '../../../components/CatCard';
 import BorderedTextbox from '../../../components/BorderedTextbox';
 import Button from '../../../components/Button';
 import CatMatchCard from '../../../components/CatMatchCard';

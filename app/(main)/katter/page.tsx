@@ -1,5 +1,5 @@
 import { groq } from 'next-sanity';
-import AdultCatCard from '../../../components/AdultCatCard';
+import AdultCatCard from '../../../components/CatCard';
 import BorderedTextbox from '../../../components/BorderedTextbox';
 import Hero from '../../../components/Hero';
 import Section from '../../../components/Section';

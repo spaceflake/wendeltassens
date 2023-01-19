@@ -1,11 +1,9 @@
 import { groq } from 'next-sanity';
-import React from 'react';
 import {
   heroFragment,
-  sectionFragment,
-  catSectionFragment,
   kittenSectionFragment,
   postContainerFragment,
+  sectionFragment,
 } from '../../../cms/fragments';
 import BorderedTextbox from '../../../components/BorderedTextbox';
 import Button from '../../../components/Button';
@@ -34,7 +32,6 @@ const pageQuery = groq`*[_type == "page" && slug == null] {
 
     ${heroFragment},
     ${sectionFragment},
-    ${catSectionFragment},
     ${kittenSectionFragment},
     ${postContainerFragment},
   }

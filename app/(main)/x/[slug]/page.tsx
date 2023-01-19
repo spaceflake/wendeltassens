@@ -1,15 +1,18 @@
 import { groq } from 'next-sanity';
-import React from 'react';
 import {
+  carouselFragment,
+  formSectionFragment,
   heroFragment,
-  sectionFragment,
-  catSectionFragment,
   kittenSectionFragment,
+  sectionFragment,
 } from '../../../../cms/fragments';
 import BorderedTextbox from '../../../../components/BorderedTextbox';
+import Carousel from '../../../../components/Carousel';
 import ComponentSection from '../../../../components/ComponentSection';
+import ContactForm from '../../../../components/ContactForm';
 import Hero from '../../../../components/Hero';
 import KittenSection from '../../../../components/KittenSection';
+import Section from '../../../../components/Section';
 import { client } from '../../../../lib/sanity.client';
 
 type Params = {
@@ -29,8 +32,9 @@ const pageQuery = groq`*[_type == "page" && slug == $slug] {
 
     ${heroFragment},
     ${sectionFragment},
-    ${catSectionFragment},
     ${kittenSectionFragment},
+    ${formSectionFragment},
+    ${carouselFragment}
   }
 }[0]`;
 
@@ -40,8 +44,6 @@ const page = async ({ params }: Props) => {
   };
 
   const page: Page = await client.fetch(pageQuery, queryParams);
-  console.log('hej');
-  console.log(page);
 
   return (
     <div className="text-DarkBrown">
@@ -60,6 +62,7 @@ const page = async ({ params }: Props) => {
           case 'section':
             return (
               <ComponentSection
+                key={index}
                 componentSection={section as ComponentSection}
               />
             );
@@ -82,6 +85,34 @@ const page = async ({ params }: Props) => {
 
             return (
               <KittenSection key={index} litters={kittenSection.litters} />
+            );
+
+          case 'formSection':
+            const formSection = section as FormSection;
+
+            return (
+              <Section key={index}>
+                <div className="grid grid-cols-1 p-12 divide-y lg:grid-cols-2 bg-Beige rounded-xl lg:divide-x lg:divide-y-0 divide-dotted divide-DarkBrown mb-36">
+                  <div className="pb-10 space-y-4 text-lg font-bold font-Montserrat text-DarkBrown lg:pr-10">
+                    <p>{formSection.text}</p>
+                    <div>
+                      <p>{formSection.contactInformation.name}</p>
+                      <p>{formSection.contactInformation.email}</p>
+                      <p>{formSection.contactInformation.phoneNumber}</p>
+                    </div>
+                  </div>
+                  <ContactForm />
+                </div>
+              </Section>
+            );
+
+          case 'carousel':
+            const carousel = section as Carousel;
+
+            return (
+              <div key={index} className="flex justify-center center">
+                <Carousel imageList={carousel.imageList} />
+              </div>
             );
 
           default:
