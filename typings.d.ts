@@ -159,4 +159,4 @@ type Section =
   | ContactInformation
   | Hero;
 
-type Component = BaseComponent | TextField | MatchOverview;
+type Component = ComponentBase | TextField | MatchOverview;
