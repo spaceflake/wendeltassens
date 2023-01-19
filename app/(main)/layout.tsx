@@ -10,8 +10,17 @@ const contactInformationQuery = groq`*[_type == 'contactInformation']{ name, ema
 const pagesQuery = groq`*[_type == 'menu'][0].pages[]->{ 
   title, 
   "slug": slug.current,
+}`;
 
-  }`;
+const socialLinksQuery = groq`*[_type == 'socialLinks'][0].links[]{
+  text,
+  url,
+}`;
+
+const externalLinksQuery = groq`*[_type == 'externalLinks'][0].links[]{
+  text,
+  url,
+}`;
 
 export default async function SiteLayout({
   children,
@@ -24,13 +33,24 @@ export default async function SiteLayout({
 
   const pages: PageNav[] = await client.fetch(pagesQuery);
 
+  const socialLinks: ExternalLink[] =
+    (await client.fetch(socialLinksQuery)) ?? [];
+
+  const externalLinks: ExternalLink[] =
+    (await client.fetch(externalLinksQuery)) ?? [];
+
   return (
     <section className="backgroundPattern">
       <Header pages={pages} />
       <Suspense fallback={<Loading />}>
         <main className="container mx-auto">{children}</main>
       </Suspense>
-      <Footer contactInformation={contactInformation} pages={pages} />
+      <Footer
+        contactInformation={contactInformation}
+        pages={pages}
+        socialLinks={socialLinks}
+        externalLinks={externalLinks}
+      />
     </section>
   );
 }
