@@ -4,6 +4,7 @@ import faq from './components/faq';
 import FAQOverview from './components/FAQOverview';
 import kitten from './components/kitten';
 import kittenOverview from './components/kittenOverview';
+import link from './components/link';
 import match from './components/match';
 import matchOverview from './components/matchOverview';
 import post from './components/post';
@@ -11,6 +12,7 @@ import textblock from './components/textblock';
 import textboxBordered from './components/textboxBordered';
 import textField from './components/textField';
 import textImageCard from './components/textImageCard';
+import menu from './menu';
 import page from './page';
 import carousel from './sections/carousel';
 import catOverview from './sections/catOverview';
@@ -44,4 +46,6 @@ export const schemaTypes = [
   section,
   textField,
   formSection,
+  link,
+  menu,
 ];
