@@ -112,7 +112,7 @@ interface Litter extends ComponentBase {
   kittens: Kitten[];
 }
 
-interface CatSection extends ComponentBase {
+interface CatOverview extends ComponentBase {
   title: string;
   cats: Cat[];
 }
@@ -125,7 +125,7 @@ interface KittenSection extends ComponentBase {
   litters: Litter[];
 }
 
-interface FAQSection extends ComponentBase {
+interface FAQOverview extends ComponentBase {
   faqs: Faq[];
 }
 
@@ -133,6 +133,11 @@ interface ContactInformation extends ComponentBase {
   name: string;
   email: string;
   phoneNumber: string;
+}
+
+interface FormSection extends ComponentBase {
+  text: string;
+  contactInformation: ContactInformation;
 }
 
 interface Page extends Base {
@@ -146,7 +151,6 @@ interface ComponentSection extends ComponentBase {
 }
 
 type Section =
-  | CatSection
   | KittenSection
   | Faq
   | IntroTextHome
@@ -155,8 +159,13 @@ type Section =
   | TextImageCard
   | Carousel
   | PostContainer
-  | FAQSection
   | ContactInformation
+  | FormSection
   | Hero;
 
-type Component = ComponentBase | TextField | MatchOverview;
+type Component =
+  | ComponentBase
+  | TextField
+  | MatchOverview
+  | FAQOverview
+  | CatOverview;
