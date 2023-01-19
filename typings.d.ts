@@ -6,6 +6,26 @@ type Base = {
   _updatedAt: string;
 };
 
+interface ComponentBase extends Base {
+  title: string;
+  text: string | null;
+}
+
+interface Hero extends ComponentBase {
+  title: string;
+  heroImage: string;
+  heroTitle: string;
+  addButton: boolean;
+  heroText: string;
+  heroButtonPath: string;
+  heroButtonText: string;
+}
+
+interface TextField extends ComponentBase {
+  text: string;
+  initialCapital: 'true' | 'false';
+}
+
 interface Post extends Base {
   title: string;
   text: string;
@@ -13,21 +33,16 @@ interface Post extends Base {
   publishedAt: string;
 }
 
-interface PostContainer extends Component {
+interface PostContainer extends ComponentBase {
   title: string;
   posts: Post[];
 }
 
-interface Component extends Base {
-  title: string;
-  text: string | null;
-}
-
-interface Carousel extends Component {
+interface Carousel extends ComponentBase {
   imageList: string[];
 }
 
-interface Cat extends Component {
+interface Cat extends ComponentBase {
   catImgUrl: string;
   breeder: string;
   name: string;
@@ -39,7 +54,7 @@ interface Cat extends Component {
   pedigreeUrl: string;
   gender: string;
 }
-interface Kitten extends Component {
+interface Kitten extends ComponentBase {
   catImgUrl: string;
   status: string;
   name: string;
@@ -47,7 +62,7 @@ interface Kitten extends Component {
   gender: string;
 }
 
-interface Match extends Component {
+interface Match extends ComponentBase {
   name: string;
   title: string;
   motherImgUrl: string;
@@ -58,37 +73,37 @@ interface Match extends Component {
   description: string;
 }
 
-interface Faq extends Component {
+interface Faq extends ComponentBase {
   title: string;
   text: string;
 }
 
-interface IntroTextHome extends Component {
+interface IntroTextHome extends ComponentBase {
   title: string;
   text: string;
 }
 
-interface Textblock extends Component {
+interface Textblock extends ComponentBase {
   title: string;
   page: string;
   section: string;
   text: string;
 }
 
-interface TextboxBordered extends Component {
+interface TextboxBordered extends ComponentBase {
   title: string;
   text: string;
   buttonPath?: string;
   buttonText?: string;
 }
 
-interface TextImageCard extends Component {
+interface TextImageCard extends ComponentBase {
   title: string;
   text: string;
   image: string;
   link: string;
 }
-interface Litter extends Component {
+interface Litter extends ComponentBase {
   title: string;
   birthDate: string;
   mother: string;
@@ -97,32 +112,41 @@ interface Litter extends Component {
   kittens: Kitten[];
 }
 
-interface CatSection extends Component {
+interface CatSection extends ComponentBase {
   title: string;
   cats: Cat[];
 }
 
-interface MatchSection extends Component {
+interface MatchOverview extends ComponentBase {
   matches: Match[];
 }
 
-interface KittenSection extends Component {
+interface KittenSection extends ComponentBase {
   litters: Litter[];
 }
 
-interface FAQSection extends Component {
+interface FAQSection extends ComponentBase {
   faqs: Faq[];
 }
 
-interface ContactInformation extends Component {
+interface ContactInformation extends ComponentBase {
   name: string;
   email: string;
   phoneNumber: string;
 }
 
-type Component =
+interface Page extends Base {
+  sections: Section[];
+}
+
+interface ComponentSection extends ComponentBase {
+  title: string;
+  type: 'sectionBordered' | 'sectionDivider' | 'section';
+  component: Component[];
+}
+
+type Section =
   | CatSection
-  | MatchSection
   | KittenSection
   | Faq
   | IntroTextHome
@@ -132,14 +156,7 @@ type Component =
   | Carousel
   | PostContainer
   | FAQSection
-  | ContactInformation;
+  | ContactInformation
+  | Hero;
 
-interface Page extends Base {
-  title: string;
-  heroTitle: string;
-  heroImgUrl: string;
-  heroBtnPath: string;
-  heroBtnText: string;
-  addButton: boolean;
-  components: Component[];
-}
+type Component = BaseComponent | TextField | MatchOverview;
