@@ -1,21 +1,24 @@
-import catSection from './catSection';
-import carousel from './componentSchemas/carousel';
-import catCard from './componentSchemas/catCard';
-import contactInformation from './componentSchemas/contactInformation';
-import faqText from './componentSchemas/faqText';
-import introTextHome from './componentSchemas/introTextHome';
-import kitten from './componentSchemas/kitten';
-import kittenOverview from './componentSchemas/kittenOverview';
-import match from './componentSchemas/match';
-import textblock from './componentSchemas/textblock';
-import textboxBordered from './componentSchemas/textboxBordered';
-import textImageCard from './componentSchemas/textImageCard';
-import FAQSection from './FAQSection';
-import kittenSection from './kittenSection';
-import matchSection from './matchSection';
+import catSection from './sections/catSection';
+import carousel from './sections/carousel';
+import catCard from './components/catCard';
+import contactInformation from './components/contactInformation';
+import faqText from './components/faqText';
+import hero from './sections/hero';
+import introTextHome from './sections/introTextHome';
+import kitten from './components/kitten';
+import kittenOverview from './components/kittenOverview';
+import match from './components/match';
+import textblock from './components/textblock';
+import textboxBordered from './components/textboxBordered';
+import textField from './components/textField';
+import textImageCard from './components/textImageCard';
+import FAQSection from './sections/FAQSection';
+import kittenSection from './sections/kittenSection';
 import page from './page';
-import post from './post';
-import postContainer from './postContainer';
+import post from './components/post';
+import postContainer from './sections/postSection';
+import section from './sections/section';
+import matchOverview from './components/matchOverview';
 
 export const schemaTypes = [
   postContainer,
@@ -27,7 +30,7 @@ export const schemaTypes = [
   kittenOverview,
   kitten,
   textblock,
-  matchSection,
+  matchOverview,
   match,
   catCard,
   catSection,
@@ -36,4 +39,7 @@ export const schemaTypes = [
   carousel,
   FAQSection,
   contactInformation,
+  hero,
+  section,
+  textField,
 ];

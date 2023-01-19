@@ -1,25 +1,33 @@
 import { defineField, defineType } from 'sanity';
 
 export default defineType({
-  name: 'page',
-  title: 'Sida',
+  name: 'section',
+  title: 'Sektion',
+  description: 'Lägg till en sektion på sidan',
   type: 'document',
   fields: [
     defineField({
       name: 'title',
-      title: 'Sid Namn',
+      title: 'Titel',
       type: 'string',
     }),
     defineField({
-      name: 'slug',
-      title: 'Slug',
-      description: 'Slutet på adressen som visas efter wendeltassens.se',
+      name: 'type',
+      title: 'Typ',
+      description: 'Välj typ av sektion',
       type: 'string',
+      options: {
+        list: [
+          { title: 'Sektion med ram', value: 'sectionBordered' },
+          { title: 'Sektion med avskiljare', value: 'sectionDivider' },
+          { title: 'Sektion', value: 'section' },
+        ],
+        layout: 'radio',
+      },
     }),
     defineField({
-      name: 'sections',
-      title: 'Sektioner',
-      description: 'Sektioner som ska visas på sidan',
+      name: 'component',
+      title: 'Komponent',
       type: 'array',
       of: [
         {
@@ -30,14 +38,14 @@ export default defineType({
             { type: 'postContainer' },
             { type: 'textImageCard' },
             { type: 'kittenSection' },
+            { type: 'matchOverview' }, //ska ligga här
             { type: 'textblock' },
             { type: 'faq' },
             { type: 'catSection' },
             { type: 'carousel' },
             { type: 'FAQSection' },
             { type: 'contactInformation' },
-            { type: 'hero' },
-            { type: 'section' },
+            { type: 'textField' },
           ],
         },
       ],
