@@ -1,3 +1,4 @@
+import Button from './Button';
 import CatCard from './CatCard';
 import FAQ from './FAQ';
 import MatchOverview from './MatchOverview';
@@ -11,7 +12,6 @@ const SectionContent = ({ components }: Props) => {
   return (
     <>
       {components.map((component) => {
-        console.log(component._type);
         switch (component._type) {
           case 'textField':
             const textField = component as TextField;
@@ -45,6 +45,19 @@ const SectionContent = ({ components }: Props) => {
                   <CatCard key={cat._id} cat={cat} />
                 ))}
               </div>
+            );
+
+          case 'link':
+            const link = component as Link;
+            return (
+              <Button
+                key={component._id}
+                isInternalLink={link.isInternalLink}
+                text={link.text}
+                goTo={
+                  link.isInternalLink ? link.internalLink : link.externalLink
+                }
+              />
             );
 
           default: {
