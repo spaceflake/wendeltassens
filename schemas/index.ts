@@ -1,5 +1,6 @@
 import cat from './components/cat';
 import contactInformation from './components/contactInformation';
+import externalLinks from './components/externalLinks';
 import faq from './components/faq';
 import FAQOverview from './components/FAQOverview';
 import kitten from './components/kitten';
@@ -8,6 +9,7 @@ import link from './components/link';
 import match from './components/match';
 import matchOverview from './components/matchOverview';
 import post from './components/post';
+import socialLinks from './components/socialLinks';
 import textblock from './components/textblock';
 import textboxBordered from './components/textboxBordered';
 import textField from './components/textField';
@@ -48,4 +50,6 @@ export const schemaTypes = [
   formSection,
   link,
   menu,
+  externalLinks,
+  socialLinks,
 ];
