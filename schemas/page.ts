@@ -14,7 +14,7 @@ export default defineType({
       name: 'slug',
       title: 'Slug',
       description: 'Slutet på adressen som visas efter wendeltassens.se',
-      type: 'string',
+      type: 'slug',
     }),
     defineField({
       name: 'sections',
