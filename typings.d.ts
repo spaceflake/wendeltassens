@@ -140,8 +140,21 @@ interface FormSection extends ComponentBase {
   contactInformation: ContactInformation;
 }
 
+interface Link extends ComponentBase {
+  title: string;
+  text: string;
+  isInternalLink: boolean;
+  internalLink?: string;
+  externalLink?: string;
+}
+
 interface Page extends Base {
   sections: Section[];
+}
+
+interface PageNav {
+  title: string;
+  slug: string;
 }
 
 interface ComponentSection extends ComponentBase {
@@ -168,4 +181,5 @@ type Component =
   | TextField
   | MatchOverview
   | FAQOverview
-  | CatOverview;
+  | CatOverview
+  | Link;
