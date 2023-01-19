@@ -61,6 +61,13 @@ export const faqOverviewFragment: string = `
       ...,
     }
   }`;
+
+export const linkFragment: string = `
+  _type == 'link' => {
+    ...,
+    "internalLink": internalLink->slug,
+  }`;
+
 export const sectionFragment: string = `
   _type == 'section' => {
     ...,
@@ -69,7 +76,8 @@ export const sectionFragment: string = `
       ${textFieldFragment},
       ${matchOverviewFragment},
       ${faqOverviewFragment},
-      ${catOverviewFragment}
+      ${catOverviewFragment},
+      ${linkFragment},
     }
   }`;
 
