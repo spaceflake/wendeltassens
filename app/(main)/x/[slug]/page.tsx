@@ -1,41 +1,16 @@
 import { groq } from 'next-sanity';
 import React from 'react';
+import {
+  heroFragment,
+  sectionFragment,
+  catSectionFragment,
+  kittenSectionFragment,
+} from '../../../../cms/fragments';
 import BorderedTextbox from '../../../../components/BorderedTextbox';
+import ComponentSection from '../../../../components/ComponentSection';
 import Hero from '../../../../components/Hero';
 import KittenSection from '../../../../components/KittenSection';
-import MatchSection from '../../../../components/MatchSection';
 import { client } from '../../../../lib/sanity.client';
-
-// TODO: Dessa "fragment"-variabler som emulerar fragment-funktionaliteten i GraphQL bör exporteras från React-komponentens fil istället
-const catSectionFragment: string = `
-_type == 'catSection' => {
-  cats[]->{
-    ...,
-    "catImgUrl": catImgUrl.asset->url,
-  }
-}`;
-
-const kittenSectionFragment: string = `
-_type == 'kittenSection' => {
-  ...,
-  "litters": litters[]->{
-    ...,
-    "kittens": kittens[]->{
-      ...,
-      "catImgUrl": catImgUrl.asset->url,
-    },
-  },
-}`;
-
-const matchSectionFragment: string = `
-_type == 'matchSection' => {
-  ...,
-  "matches": matches[]->{
-    ...,
-    "fatherImgUrl": fatherImgUrl.asset->url,
-    "motherImgUrl": motherImgUrl.asset->url,
-  },
-}`;
 
 type Params = {
   slug: string;
@@ -45,63 +20,73 @@ type Props = {
   params: Params;
 };
 
-const pageQuery = groq`*[_type == "page" && title == $title] {
-  heroTitle,
-  "heroImgUrl": heroImage.asset->url,
-  "components": component[]->{
+const pageQuery = groq`*[_type == "page" && slug == $slug] {
+  "sections": sections[]->{
     _type,
     _id,
     title,
     text,
-    buttonText,
-    buttonPath,
-    
+
+    ${heroFragment},
+    ${sectionFragment},
     ${catSectionFragment},
     ${kittenSectionFragment},
-    ${matchSectionFragment}
   }
 }[0]`;
 
 const page = async ({ params }: Props) => {
   const queryParams = {
-    title: params.slug,
+    slug: params.slug,
   };
 
   const page: Page = await client.fetch(pageQuery, queryParams);
+  console.log('hej');
+  console.log(page);
 
   return (
     <div className="text-DarkBrown">
-      <Hero heroImgUrl={page.heroImgUrl}>
-        <h1 className="text-center text-AngelBlue">{page.heroTitle}</h1>
-        <div className="mt-4 ml-auto "></div>
-      </Hero>
-      <>
-        {page.components.map((component, index) => {
-          switch (component._type) {
-            case 'textboxBordered':
-              const textbox = component as TextboxBordered;
+      {page.sections.map((section, index) => {
+        switch (section._type) {
+          case 'hero':
+            const hero = section as Hero;
 
-              return (
-                <BorderedTextbox
-                  key={index}
-                  title={textbox.title}
-                  text={textbox.text}
-                  buttonPath={textbox.buttonPath}
-                  buttonText={textbox.buttonText}
-                />
-              );
+            return (
+              <Hero key={index} heroImgUrl={hero.heroImage}>
+                <h1 className="text-center text-AngelBlue">{hero.heroTitle}</h1>
+                <div className="mt-4 ml-auto "></div>
+              </Hero>
+            );
 
-            case 'kittenSection':
-              const kittenSection = component as KittenSection;
+          case 'section':
+            return (
+              <ComponentSection
+                componentSection={section as ComponentSection}
+              />
+            );
 
-              return (
-                <KittenSection key={index} litters={kittenSection.litters} />
-              );
+          case 'textboxBordered':
+            const textbox = section as TextboxBordered;
 
-            default:
-          }
-        })}
-      </>
+            return (
+              <BorderedTextbox
+                key={index}
+                title={textbox.title}
+                text={textbox.text}
+                buttonPath={textbox.buttonPath}
+                buttonText={textbox.buttonText}
+              />
+            );
+
+          case 'kittenSection':
+            const kittenSection = section as KittenSection;
+
+            return (
+              <KittenSection key={index} litters={kittenSection.litters} />
+            );
+
+          default:
+        }
+      })}
     </div>
   );
 };

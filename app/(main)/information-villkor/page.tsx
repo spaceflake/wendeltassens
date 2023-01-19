@@ -10,9 +10,15 @@ import TwoColumnTextSection from '../../../components/TwoColumnTextSection';
 import { client } from '../../../lib/sanity.client';
 
 const pageQuery = groq`*[_type == "page" && title == "information-villkor"] {
-  heroTitle,
-  "heroImgUrl": heroImage.asset->url,
   "components": component[]->{
+    _type == 'hero' => {
+      title,
+      heroImage.asset->url,
+      heroTitle,
+      heroText,
+      heroButtonPath,
+      heroButtonText
+    }
     _type == 'textblock' => {
     page,
     section,

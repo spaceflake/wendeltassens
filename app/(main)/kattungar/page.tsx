@@ -2,7 +2,7 @@ import { groq } from 'next-sanity';
 import BorderedTextbox from '../../../components/BorderedTextbox';
 import Hero from '../../../components/Hero';
 import KittenSection from '../../../components/KittenSection';
-import MatchSection from '../../../components/MatchSection';
+import MatchOverview from '../../../components/MatchOverview';
 import Section from '../../../components/Section';
 import SectionDividerBorder from '../../../components/SectionDividerBorder';
 import { client } from '../../../lib/sanity.client';
@@ -69,7 +69,7 @@ const Kittens = async () => {
       </Section>
       <KittenSection litters={kittensection.litters} />
       {matchsection && matchsection.matches.length > 0 ? (
-        <MatchSection
+        <MatchOverview
           introMatchText={introMatchText}
           matches={matchsection.matches}
         />
