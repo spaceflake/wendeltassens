@@ -13,7 +13,8 @@ const SectionContent = ({ components }: Props) => {
         console.log(component._type);
         switch (component._type) {
           case 'textField':
-            return <TextField key={component._id} textField={component} />;
+            const textField = component as TextField;
+            return <TextField key={component._id} textField={textField} />;
           case 'matchOverview':
             const matchOverview = component as MatchOverview;
 
