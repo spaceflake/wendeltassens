@@ -148,6 +148,11 @@ interface Link extends ComponentBase {
   externalLink?: string;
 }
 
+interface ExternalLink {
+  text: string;
+  url: string;
+}
+
 interface Page extends Base {
   sections: Section[];
 }
