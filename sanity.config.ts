@@ -31,6 +31,8 @@ export default defineConfig({
                   'FAQOverview',
                   'socialLinks',
                   'externalLinks',
+                  'matchOverview',
+                  'kittenSection',
                 ].includes(listItem.getId()!)
             ),
 
@@ -76,6 +78,22 @@ export default defineConfig({
               .id('socialLinks')
               .child(
                 S.document().schemaType('socialLinks').documentId('socialLinks')
+              ),
+            S.listItem()
+              .title('Planerade kullar')
+              .id('matchOverview')
+              .child(
+                S.document()
+                  .schemaType('matchOverview')
+                  .documentId('matchOverview')
+              ),
+            S.listItem()
+              .title('Aktuella kullar')
+              .id('kittenSection')
+              .child(
+                S.document()
+                  .schemaType('kittenSection')
+                  .documentId('kittenSection')
               ),
           ]),
     }),
