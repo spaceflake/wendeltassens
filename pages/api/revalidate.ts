@@ -1,4 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
+import { groq } from 'next-sanity';
+import { client } from '../../lib/sanity.client';
 
 export default async function handler(
   req: NextApiRequest,
@@ -9,16 +11,25 @@ export default async function handler(
   }
 
   try {
+    const pageQuery = groq`*[_type == "page"]{
+      title,
+      "slug": slug.current,
+    }`;
+
+    const pages: PageNav[] = await client.fetch(pageQuery);
     // This should be the actual path not a rewritten path
     // e.g. for "/blog/[slug]" this should be "/blog/post-1"
-    const promises = [
-      res.revalidate('/'),
-      res.revalidate('/katter'),
-      res.revalidate('/kattungar'),
-      res.revalidate('/kontakt'),
-      res.revalidate('/information-villkor'),
-      res.revalidate('/om-mig'),
-    ];
+    const promises = pages.map((page) => {
+      return res.revalidate(`/${page.slug ?? ''}`);
+    });
+    // [
+    //   res.revalidate('/'),
+    //   res.revalidate('/katter'),
+    //   res.revalidate('/kattungar'),
+    //   res.revalidate('/kontakt'),
+    //   res.revalidate('/information-villkor'),
+    //   res.revalidate('/om-mig'),
+    // ];
 
     await Promise.all(promises);
 

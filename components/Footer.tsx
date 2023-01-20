@@ -6,8 +6,16 @@ import { paths, EXTLINKS, SOCIALS } from '../utils/navLinks';
 
 type Props = {
   contactInformation: ContactInformation;
+  pages: PageNav[];
+  socialLinks: ExternalLink[];
+  externalLinks: ExternalLink[];
 };
-const Footer = ({ contactInformation }: Props) => {
+const Footer = ({
+  contactInformation,
+  pages,
+  socialLinks,
+  externalLinks,
+}: Props) => {
   return (
     <div className="h-full mt-10 font-Montserrat">
       <Image src={footerSvg} alt="Footer svg" className="w-full" />
@@ -28,13 +36,13 @@ const Footer = ({ contactInformation }: Props) => {
           <nav className="flex flex-col flex-wrap items-center justify-center gap-6 text-sm lg:self-end sm:items-start lg:items-start lg:justify-end sm:flex-row lg:text-base">
             <div className="flex flex-col md:mb-0">
               <p className="mb-2 text-base font-bold md:text-lg">Sitemap</p>
-              {paths.map((path) => (
+              {pages.map((path) => (
                 <Link
-                  key={path.name}
-                  href={path.path}
+                  key={path.title}
+                  href={path.slug ?? '/'}
                   className="text-sm md:text-base hover:underline"
                 >
-                  {path.name}
+                  {path.title}
                 </Link>
               ))}
             </div>
@@ -42,14 +50,14 @@ const Footer = ({ contactInformation }: Props) => {
               <p className="mb-2 text-base font-bold md:text-lg">
                 Sociala medier
               </p>
-              {SOCIALS.map((link) => (
+              {socialLinks.map((link, index) => (
                 <Link
                   target="_blank"
-                  key={link.name}
-                  href={link.path}
+                  key={index}
+                  href={link.url}
                   className="text-sm md:text-base hover:underline"
                 >
-                  {link.name}
+                  {link.text}
                 </Link>
               ))}
             </div>
@@ -58,14 +66,14 @@ const Footer = ({ contactInformation }: Props) => {
                 <p className="mb-2 text-base font-bold md:text-lg">
                   Kattlänkar
                 </p>
-                {EXTLINKS.map((link) => (
+                {externalLinks.map((link, index) => (
                   <Link
                     target="_blank"
-                    key={link.name}
-                    href={link.path}
+                    key={index}
+                    href={link.url}
                     className="text-sm md:text-base hover:underline"
                   >
-                    {link.name}
+                    {link.text}
                   </Link>
                 ))}
               </div>

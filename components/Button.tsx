@@ -3,15 +3,15 @@ import Link from 'next/link';
 type Props = {
   text: string;
   goTo: string | undefined;
-  isExternal?: boolean;
+  isInternalLink?: boolean;
   secondary?: boolean;
 };
 
-const Button = ({ text, goTo, isExternal, secondary }: Props) => {
-  if (secondary) {
+const Button = ({ text, goTo, isInternalLink, secondary }: Props) => {
+  if (isInternalLink) {
     return (
       <Link
-        target={isExternal ? '_blank' : '_self'}
+        target={isInternalLink ? '_blank' : '_self'}
         href={goTo || '/'}
         className="px-5 py-2 text-sm italic text-center transition-all duration-150 ease-in-out border rounded border-DarkBrown text-DarkBrown hover:ring-2 hover:ring-DarkBrown hover:font-medium font-Montserrat lg:text-base"
       >
@@ -21,12 +21,12 @@ const Button = ({ text, goTo, isExternal, secondary }: Props) => {
   }
   return (
     <Link
-      target={isExternal ? '_blank' : '_self'}
+      target={isInternalLink ? '_blank' : '_self'}
       href={goTo || '/'}
       className="flex items-center justify-center gap-2 px-5 py-2 text-sm italic text-center transition-all duration-150 ease-in-out border rounded border-DarkBrown hover:ring-2 hover:ring-DarkBrown hover:font-medium bg-DarkBrown text-Beige font-Montserrat lg:text-base hover:bg-DarkBrown/90"
     >
       <span>{text || 'Knapptext'}</span>
-      {isExternal && (
+      {isInternalLink && (
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"

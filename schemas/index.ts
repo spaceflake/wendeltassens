@@ -1,22 +1,30 @@
-import catSection from './catSection';
-import carousel from './componentSchemas/carousel';
-import catCard from './componentSchemas/catCard';
-import contactInformation from './componentSchemas/contactInformation';
-import faqText from './componentSchemas/faqText';
-import introTextHome from './componentSchemas/introTextHome';
-import kitten from './componentSchemas/kitten';
-import kittenOverview from './componentSchemas/kittenOverview';
-import match from './componentSchemas/match';
-import textblock from './componentSchemas/textblock';
-import textboxBordered from './componentSchemas/textboxBordered';
-import textImageCard from './componentSchemas/textImageCard';
-import FAQSection from './FAQSection';
-import kittenSection from './kittenSection';
-import matchOverview from './matchOverview';
-import matchSection from './matchSection';
+import cat from './components/cat';
+import contactInformation from './components/contactInformation';
+import externalLinks from './components/externalLinks';
+import faq from './components/faq';
+import FAQOverview from './components/FAQOverview';
+import kitten from './components/kitten';
+import link from './components/link';
+import litter from './components/litter';
+import match from './components/match';
+import matchOverview from './components/matchOverview';
+import post from './components/post';
+import socialLinks from './components/socialLinks';
+import textblock from './components/textblock';
+import textboxBordered from './components/textboxBordered';
+import textField from './components/textField';
+import textImageCard from './components/textImageCard';
+import menu from './menu';
 import page from './page';
-import post from './post';
-import postContainer from './postContainer';
+import carousel from './sections/carousel';
+import catOverview from './sections/catOverview';
+import formSection from './sections/formSection';
+import hero from './sections/hero';
+import introTextHome from './sections/introTextHome';
+import kittenSection from './sections/kittenSection';
+import postContainer from './sections/postSection';
+import section from './sections/section';
+import terms from './sections/terms';
 
 export const schemaTypes = [
   postContainer,
@@ -25,17 +33,25 @@ export const schemaTypes = [
   introTextHome,
   textboxBordered,
   kittenSection,
-  kittenOverview,
+  litter,
   kitten,
   textblock,
-  matchSection,
   matchOverview,
   match,
-  catCard,
-  catSection,
-  faqText,
+  cat,
+  catOverview,
+  faq,
   textImageCard,
   carousel,
-  FAQSection,
+  FAQOverview,
   contactInformation,
+  hero,
+  section,
+  textField,
+  formSection,
+  link,
+  menu,
+  externalLinks,
+  socialLinks,
+  terms,
 ];

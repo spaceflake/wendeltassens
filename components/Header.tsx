@@ -2,11 +2,12 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { paths } from '../utils/navLinks';
 
-type Props = {};
+type Props = {
+  pages: PageNav[];
+};
 
-const Header = (props: Props) => {
+const Header = ({ pages }: Props) => {
   const pathname = usePathname();
 
   return (
@@ -19,15 +20,15 @@ const Header = (props: Props) => {
           </div>
         </Link>
         <nav className="flex flex-wrap items-center justify-center gap-4 text-sm font-normal font-Montserrat sm:text-base lg:text-lg 2xl:text-xl ">
-          {paths.map((path) => (
+          {pages.map((path) => (
             <Link
-              key={path.name}
-              href={path.path}
+              key={path.title}
+              href={path.slug ?? '/'}
               className={`hover:underline ${
-                path.path === pathname ? 'font-bold' : ''
+                path.slug === pathname ? 'font-bold' : ''
               }`}
             >
-              {path.name}
+              {path.title}
             </Link>
           ))}
         </nav>

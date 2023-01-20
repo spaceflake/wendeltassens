@@ -40,7 +40,7 @@ const KittenOverview = ({
           </div>
         </div>
         <div className="flex gap-2 mx-auto mt-4 space-x-4 lg:mr-auto lg:ml-0">
-          <Button isExternal text="Stamtavla" goTo="https://google.com" />
+          <Button text="Stamtavla" goTo="https://google.com" />
           <Button secondary text="Förfrågan" goTo="/kontakt" />
         </div>
       </div>

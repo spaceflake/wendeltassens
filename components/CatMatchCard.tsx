@@ -73,7 +73,6 @@ const CatMatchCard = ({
 
         <div className="flex justify-center col-span-2">
           <Button
-            isExternal
             text="Stamtavla"
             goTo="https://stambok.sverak.se/Stambok/Visa/506242"
           />
