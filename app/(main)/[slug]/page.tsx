@@ -74,7 +74,7 @@ const page = async ({ params }: Props) => {
               <BorderedTextbox
                 key={index}
                 title={textbox.title}
-                text={textbox.text}
+                textField={textbox.text}
                 buttonPath={textbox.buttonPath}
                 buttonText={textbox.buttonText}
               />
