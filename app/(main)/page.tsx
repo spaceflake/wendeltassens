@@ -73,9 +73,13 @@ const page = async ({ params }: Props) => {
             );
 
           case 'introTextHome':
+            const introTextHome = section as ComponentBase;
             return (
               <Section>
-                <IntroTextHome title={section.title} text={section.text} />
+                <IntroTextHome
+                  title={introTextHome.title}
+                  text={introTextHome.text}
+                />
               </Section>
             );
 
@@ -104,7 +108,7 @@ const page = async ({ params }: Props) => {
               <BorderedTextbox
                 key={index}
                 title={textbox.title}
-                text={textbox.text}
+                textField={textbox.text}
                 buttonPath={textbox.buttonPath}
                 buttonText={textbox.buttonText}
               />

@@ -92,7 +92,7 @@ interface Textblock extends ComponentBase {
 
 interface TextboxBordered extends ComponentBase {
   title: string;
-  text: string;
+  text: TextField;
   buttonPath?: string;
   buttonText?: string;
 }

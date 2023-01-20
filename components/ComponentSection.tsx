@@ -1,5 +1,3 @@
-import React from 'react';
-import BorderedTextbox from './BorderedTextbox';
 import Section from './Section';
 import SectionContent from './SectionContent';
 import SectionDividerBorder from './SectionDividerBorder';

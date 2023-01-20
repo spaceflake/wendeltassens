@@ -5,7 +5,7 @@ import swirl2 from '../public/swirl2.svg';
 
 type Props = {
   title: string;
-  text: string | null | undefined;
+  text: string | null;
 };
 
 const IntroTextHome = ({ title, text }: Props) => {
@@ -15,7 +15,7 @@ const IntroTextHome = ({ title, text }: Props) => {
       <div className="text-center max-w-[436px]">
         <h2 className="text-3xl lg:text-[4rem] leading-none">{title}</h2>
         <p className="px-3 mt-4 text-sm text-center text-DarkBrown font-Montserrat lg:text-2xl lg:px-0">
-          {text || 'Text'}
+          {text}
         </p>
       </div>
       <Image src={swirl2} alt="Swirl" className="self-end hidden lg:block" />
