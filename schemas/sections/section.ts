@@ -37,7 +37,6 @@ export default defineType({
             { type: 'textboxBordered' },
             { type: 'postContainer' },
             { type: 'textImageCard' },
-            { type: 'kittenSection' },
             { type: 'matchOverview' }, //ska ligga här
             { type: 'catOverview' },
             { type: 'FAQOverview' },
