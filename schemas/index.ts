@@ -5,7 +5,7 @@ import faq from './components/faq';
 import FAQOverview from './components/FAQOverview';
 import kitten from './components/kitten';
 import link from './components/link';
-import litter from './components/litter';
+import litter from './components/kittenOverview';
 import match from './components/match';
 import matchOverview from './components/matchOverview';
 import post from './components/post';
