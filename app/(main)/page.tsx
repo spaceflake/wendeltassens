@@ -53,20 +53,22 @@ const page = async ({ params }: Props) => {
                 heroImgUrl={hero.heroImage}
                 isHomePage={hero.addButton}
               >
-                <h1 className="text-center text-AngelBlue">{hero.heroTitle}</h1>
-                {hero.heroButtonText && (
-                  <p className="pl-4 text-sm font-medium md:pl-12 lg:text-lg text-DarkBrown font-Montserrat">
-                    {hero.heroText}
-                  </p>
-                )}
-                {hero.heroButtonText && hero.heroButtonPath && (
-                  <div className="self-center mt-8 md:self-end">
-                    <Button
-                      text={hero.heroButtonText}
-                      goTo={hero.heroButtonPath}
-                    />
-                  </div>
-                )}
+                <div className="flex flex-col w-3/4 text-left">
+                  <h1>{hero.heroTitle}</h1>
+                  {hero.heroButtonText && (
+                    <p className="pl-4 text-sm font-medium md:pl-12 lg:text-lg text-DarkBrown font-Montserrat">
+                      {hero.heroText}
+                    </p>
+                  )}
+                  {hero.heroButtonText && hero.heroButtonPath && (
+                    <div className="self-center mt-8 md:self-end">
+                      <Button
+                        text={hero.heroButtonText}
+                        goTo={hero.heroButtonPath}
+                      />
+                    </div>
+                  )}
+                </div>
               </Hero>
             );
 
