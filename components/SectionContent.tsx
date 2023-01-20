@@ -19,7 +19,12 @@ const SectionContent = ({ components }: Props) => {
           case 'matchOverview':
             const matchOverview = component as MatchOverview;
 
-            return <MatchOverview matches={matchOverview.matches} />;
+            return (
+              <MatchOverview
+                key={component._id}
+                matches={matchOverview.matches}
+              />
+            );
 
           case 'FAQOverview':
             const faqOverview = component as FAQOverview;
