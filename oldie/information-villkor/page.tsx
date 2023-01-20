@@ -45,31 +45,31 @@ const pageQuery = groq`*[_type == "page" && title == "information-villkor"] {
 }`;
 
 const FAQPage = async () => {
-  const pageData: Page[] = await client.fetch(pageQuery);
+  // const pageData: Page[] = await client.fetch(pageQuery);
 
-  const { heroImgUrl, heroTitle } = pageData[0];
+  // const { heroImgUrl, heroTitle } = pageData[0];
 
-  const components: Component[] = pageData[0].components;
+  // const components: Component[] = pageData[0].components;
 
-  const aboutRagdollsText: Textblock = components.filter(
-    (item) => item.title === 'Om Ragdolls'
-  )[0] as Textblock;
+  // const aboutRagdollsText: Textblock = components.filter(
+  //   (item) => item.title === 'Om Ragdolls'
+  // )[0] as Textblock;
 
-  const FAQSection: FAQSection = components.filter(
-    (item) => item.title === 'Frågor & Svar'
-  )[0] as FAQSection;
+  // const FAQSection: FAQSection = components.filter(
+  //   (item) => item.title === 'Frågor & Svar'
+  // )[0] as FAQSection;
 
-  const termsText: Textblock = components.filter(
-    (item) => item.title === 'Villkor'
-  )[0] as Textblock;
+  // const termsText: Textblock = components.filter(
+  //   (item) => item.title === 'Villkor'
+  // )[0] as Textblock;
 
-  const dvärgväxtText: TextImageCard = components.filter(
-    (item) => item.title === 'Dvärgväxt'
-  )[0] as TextImageCard;
+  // const dvärgväxtText: TextImageCard = components.filter(
+  //   (item) => item.title === 'Dvärgväxt'
+  // )[0] as TextImageCard;
 
   return (
     <div className="text-DarkBrown">
-      <Hero heroImgUrl={heroImgUrl}>
+      {/* <Hero heroImgUrl={heroImgUrl}>
         <h1>{heroTitle}</h1>
         <div className="mt-4 ml-auto "></div>
       </Hero>
@@ -98,7 +98,7 @@ const FAQPage = async () => {
           hasLink
           linkUrl="https://scandinavianragdoll.com/dvargvaxt/"
         />
-      </Section>
+      </Section> */}
     </div>
   );
 };
