@@ -2,13 +2,14 @@ import { defineField, defineType } from 'sanity';
 
 export default defineType({
   name: 'kittenSection',
-  title: 'Kattunge sektion',
+  title: 'Aktuella kullar',
   type: 'document',
   fields: [
     defineField({
       name: 'title',
-      title: 'Rubrik',
       type: 'string',
+      hidden: true,
+      initialValue: 'Aktuella kullar',
     }),
     defineField({
       name: 'litters',

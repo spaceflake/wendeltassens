@@ -7,8 +7,9 @@ export default defineType({
   fields: [
     defineField({
       name: 'title',
-      title: 'Titel',
       type: 'string',
+      hidden: true,
+      initialValue: 'Planerade kullar',
     }),
     defineField({
       name: 'matches',
