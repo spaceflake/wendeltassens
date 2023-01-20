@@ -27,9 +27,8 @@ export default async function SiteLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const contactInformation: ContactInformation = await client.fetch(
-    contactInformationQuery
-  );
+  const contactInformation: ContactInformation =
+    (await client.fetch(contactInformationQuery)) ?? [];
 
   const pages: PageNav[] = await client.fetch(pagesQuery);
 
