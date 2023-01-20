@@ -13,7 +13,8 @@ export default defineType({
     defineField({
       name: 'slug',
       title: 'Slug',
-      description: 'Slutet på adressen som visas efter wendeltassens.se',
+      description:
+        'Slutet på adressen som visas efter wendeltassens.se. T.ex. "kontakt" för wendeltassens.se/kontakt',
       type: 'slug',
     }),
     defineField({
