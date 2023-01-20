@@ -1,9 +1,9 @@
-import Hero from '../../../../components/Hero';
-import Section from '../../../../components/Section';
-import BorderedTextbox from '../../../../components/BorderedTextbox';
+import Hero from '../../components/Hero';
+import Section from '../../components/Section';
+import BorderedTextbox from '../../components/BorderedTextbox';
 import { groq } from 'next-sanity';
-import { client } from '../../../../lib/sanity.client';
-import ContactForm from '../../../../components/ContactForm';
+import { client } from '../../lib/sanity.client';
+import ContactForm from '../../components/ContactForm';
 
 const pageQuery = groq`*[_type == "page" && title == "Kontakt"] {
   heroTitle,
@@ -22,27 +22,27 @@ const pageQuery = groq`*[_type == "page" && title == "Kontakt"] {
 }`;
 
 const Contact = async () => {
-  const pageMeta: Page[] = await client.fetch(pageQuery);
+  // const pageMeta: Page[] = await client.fetch(pageQuery);
 
-  const { heroImgUrl, heroTitle } = pageMeta[0];
+  // const { heroImgUrl, heroTitle } = pageMeta[0];
 
-  const components = pageMeta.map((page) => page.components) as Component[][];
+  // const components = pageMeta.map((page) => page.components) as Component[][];
 
-  const borderedTextboxText: TextboxBordered = components[0].find(
-    (component) => component._type === 'textboxBordered'
-  ) as TextboxBordered;
+  // const borderedTextboxText: TextboxBordered = components[0].find(
+  //   (component) => component._type === 'textboxBordered'
+  // ) as TextboxBordered;
 
-  const informationText: Textblock = components[0].find(
-    (component) => component._type === 'textblock'
-  ) as Textblock;
+  // const informationText: Textblock = components[0].find(
+  //   (component) => component._type === 'textblock'
+  // ) as Textblock;
 
-  const contactInformation: ContactInformation = components[0].find(
-    (component) => component._type === 'contactInformation'
-  ) as ContactInformation;
+  // const contactInformation: ContactInformation = components[0].find(
+  //   (component) => component._type === 'contactInformation'
+  // ) as ContactInformation;
 
   return (
     <div>
-      <Hero heroImgUrl={heroImgUrl}>
+      {/* <Hero heroImgUrl={heroImgUrl}>
         <h1>{heroTitle}</h1>
       </Hero>
       <Section>
@@ -65,7 +65,7 @@ const Contact = async () => {
           </div>
           <ContactForm />
         </div>
-      </Section>
+      </Section> */}
     </div>
   );
 };

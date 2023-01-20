@@ -1,11 +1,11 @@
 import { groq } from 'next-sanity';
-import BorderedTextbox from '../../../../components/BorderedTextbox';
-import Hero from '../../../../components/Hero';
-import KittenSection from '../../../../components/KittenSection';
-import MatchOverview from '../../../../components/MatchOverview';
-import Section from '../../../../components/Section';
-import SectionDividerBorder from '../../../../components/SectionDividerBorder';
-import { client } from '../../../../lib/sanity.client';
+import BorderedTextbox from '../../components/BorderedTextbox';
+import Hero from '../../components/Hero';
+import KittenSection from '../../components/KittenSection';
+import MatchOverview from '../../components/MatchOverview';
+import Section from '../../components/Section';
+import SectionDividerBorder from '../../components/SectionDividerBorder';
+import { client } from '../../lib/sanity.client';
 
 const pageQuery = groq`*[_type == "page" && title == "kattungar"] {
   heroTitle,
@@ -34,28 +34,28 @@ const pageQuery = groq`*[_type == "page" && title == "kattungar"] {
 }`;
 
 const Kittens = async () => {
-  const pageData: Page[] = await client.fetch(pageQuery);
+  // const pageData: Page[] = await client.fetch(pageQuery);
 
-  const { heroImgUrl, heroTitle } = pageData[0];
+  // const { heroImgUrl, heroTitle } = pageData[0];
 
-  const components = pageData.map((page) => page.components) as Component[][];
+  // const components = pageData.map((page) => page.components) as Component[][];
 
-  const borderedTextboxText: TextboxBordered = components[0].find(
-    (component) => component._type === 'textboxBordered'
-  ) as TextboxBordered;
-  const kittensection: KittenSection = components[0].find(
-    (component) => component._type === 'kittenSection'
-  ) as KittenSection;
-  const introMatchText: Textblock = components[0].find(
-    (component) => component._type === 'textblock'
-  ) as Textblock;
-  const matchsection: MatchSection = components[0].find(
-    (component) => component._type === 'matchSection'
-  ) as MatchSection;
+  // const borderedTextboxText: TextboxBordered = components[0].find(
+  //   (component) => component._type === 'textboxBordered'
+  // ) as TextboxBordered;
+  // const kittensection: KittenSection = components[0].find(
+  //   (component) => component._type === 'kittenSection'
+  // ) as KittenSection;
+  // const introMatchText: Textblock = components[0].find(
+  //   (component) => component._type === 'textblock'
+  // ) as Textblock;
+  // const matchsection: MatchSection = components[0].find(
+  //   (component) => component._type === 'matchSection'
+  // ) as MatchSection;
 
   return (
     <div className="text-DarkBrown">
-      <Hero heroImgUrl={heroImgUrl}>
+      {/* <Hero heroImgUrl={heroImgUrl}>
         <h1 className="text-center text-AngelBlue">{heroTitle}</h1>
         <div className="mt-4 ml-auto "></div>
       </Hero>
@@ -82,7 +82,7 @@ const Kittens = async () => {
             </p>
           </div>
         </Section>
-      )}
+      )} */}
     </div>
   );
 };

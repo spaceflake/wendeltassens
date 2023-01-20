@@ -1,10 +1,10 @@
 import { groq } from 'next-sanity';
-import AdultCatCard from '../../../../components/CatCard';
-import BorderedTextbox from '../../../../components/BorderedTextbox';
-import Hero from '../../../../components/Hero';
-import Section from '../../../../components/Section';
-import SectionDividerBorder from '../../../../components/SectionDividerBorder';
-import { client } from '../../../../lib/sanity.client';
+import AdultCatCard from '../../components/CatCard';
+import BorderedTextbox from '../../components/BorderedTextbox';
+import Hero from '../../components/Hero';
+import Section from '../../components/Section';
+import SectionDividerBorder from '../../components/SectionDividerBorder';
+import { client } from '../../lib/sanity.client';
 
 const pageQuery = groq`*[_type == "page" && title == "Katter"] {
   heroTitle,
@@ -27,23 +27,23 @@ const pageQuery = groq`*[_type == "page" && title == "Katter"] {
 }`;
 
 const AdultCats = async () => {
-  const pageMeta: Page[] = await client.fetch(pageQuery);
+  // const pageMeta: Page[] = await client.fetch(pageQuery);
 
-  const { heroImgUrl, heroTitle } = pageMeta[0];
+  // const { heroImgUrl, heroTitle } = pageMeta[0];
 
-  const components = pageMeta.map((page) => page.components) as Component[][];
+  // const components = pageMeta.map((page) => page.components) as Component[][];
 
-  const borderedTextboxText: TextboxBordered = components[0].find(
-    (component) => component._type === 'textboxBordered'
-  ) as TextboxBordered;
+  // const borderedTextboxText: TextboxBordered = components[0].find(
+  //   (component) => component._type === 'textboxBordered'
+  // ) as TextboxBordered;
 
-  const catSections: CatSection[] = components[0].filter(
-    (component) => component._type === 'catSection'
-  ) as CatSection[];
+  // const catSections: CatSection[] = components[0].filter(
+  //   (component) => component._type === 'catSection'
+  // ) as CatSection[];
 
   return (
     <div>
-      <Hero heroImgUrl={heroImgUrl}>
+      {/* <Hero heroImgUrl={heroImgUrl}>
         <h1 className="text-center text-AngelBlue">{heroTitle}</h1>
         <div className="mt-4 ml-auto "></div>
       </Hero>
@@ -64,7 +64,7 @@ const AdultCats = async () => {
             ))}
           </div>
         </Section>
-      ))}
+      ))} */}
     </div>
   );
 };
