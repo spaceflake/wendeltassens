@@ -4,8 +4,8 @@ import externalLinks from './components/externalLinks';
 import faq from './components/faq';
 import FAQOverview from './components/FAQOverview';
 import kitten from './components/kitten';
-import kittenOverview from './components/kittenOverview';
 import link from './components/link';
+import litter from './components/litter';
 import match from './components/match';
 import matchOverview from './components/matchOverview';
 import post from './components/post';
@@ -32,7 +32,7 @@ export const schemaTypes = [
   introTextHome,
   textboxBordered,
   kittenSection,
-  kittenOverview,
+  litter,
   kitten,
   textblock,
   matchOverview,
