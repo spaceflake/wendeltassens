@@ -33,6 +33,7 @@ export default defineConfig({
                   'externalLinks',
                   'matchOverview',
                   'kittenSection',
+                  'terms',
                 ].includes(listItem.getId()!)
             ),
 
@@ -95,6 +96,10 @@ export default defineConfig({
                   .schemaType('kittenSection')
                   .documentId('kittenSection')
               ),
+            S.listItem()
+              .title('Villkors innehåll')
+              .id('terms')
+              .child(S.document().schemaType('terms').documentId('terms')),
           ]),
     }),
     visionTool(),

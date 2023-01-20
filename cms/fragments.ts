@@ -94,3 +94,11 @@ export const carouselFragment: string = `
     ...,
     "imageList": imageList[].asset->url,
   }`;
+
+export const termsFragment: string = `
+  _type == 'terms' => {
+    ...,
+    content[]{
+      ...,
+    }
+  }`;

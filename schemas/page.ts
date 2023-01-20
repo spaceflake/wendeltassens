@@ -36,6 +36,7 @@ export default defineType({
             { type: 'hero' },
             { type: 'section' },
             { type: 'formSection' },
+            { type: 'terms' },
           ],
         },
       ],

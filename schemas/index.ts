@@ -24,6 +24,7 @@ import introTextHome from './sections/introTextHome';
 import kittenSection from './sections/kittenSection';
 import postContainer from './sections/postSection';
 import section from './sections/section';
+import terms from './sections/terms';
 
 export const schemaTypes = [
   postContainer,
@@ -52,4 +53,5 @@ export const schemaTypes = [
   menu,
   externalLinks,
   socialLinks,
+  terms,
 ];
