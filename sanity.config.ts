@@ -3,12 +3,20 @@ import { deskTool } from 'sanity/desk';
 import { visionTool } from '@sanity/vision';
 import { schemaTypes } from './schemas';
 import { theme } from './theme';
+import {
+  createSingletonDocumentsIfNotExists,
+  singletonDocuments,
+} from './cms/singletonDocuments';
 
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!;
 const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!;
 
 const singletonActions = new Set(['publish', 'discardChanges', 'restore']);
-const singletonTypes = new Set(['socialLinks']);
+const singletonTypes = new Set(
+  singletonDocuments.map((document) => document._id)
+);
+
+createSingletonDocumentsIfNotExists();
 
 export default defineConfig({
   basePath: '/studio',
@@ -24,82 +32,21 @@ export default defineConfig({
           .items([
             ...S.documentTypeListItems().filter(
               (listItem) =>
-                ![
-                  'menu',
-                  'contactInformation',
-                  'formSection',
-                  'FAQOverview',
-                  'socialLinks',
-                  'externalLinks',
-                  'matchOverview',
-                  'kittenSection',
-                  'terms',
-                ].includes(listItem.getId()!)
+                !singletonDocuments
+                  .map((document) => document._id)
+                  .includes(listItem.getId()!)
             ),
 
-            S.listItem()
-              .title('Meny')
-              .id('menu')
-              .child(S.document().schemaType('menu').documentId('menu')),
-
-            S.listItem()
-              .title('Kontaktuppgifter')
-              .id('contactInformation')
-              .child(
-                S.document()
-                  .schemaType('contactInformation')
-                  .documentId('contactInformation')
-              ),
-
-            S.listItem()
-              .title('Kontaktformulär')
-              .id('formSection')
-              .child(
-                S.document().schemaType('formSection').documentId('formSection')
-              ),
-
-            S.listItem()
-              .title('Frågor & Svar')
-              .id('FAQOverview')
-              .child(
-                S.document().schemaType('FAQOverview').documentId('FAQOverview')
-              ),
-
-            S.listItem()
-              .title('Externa länkar')
-              .id('externalLinks')
-              .child(
-                S.document()
-                  .schemaType('externalLinks')
-                  .documentId('externalLinks')
-              ),
-
-            S.listItem()
-              .title('Sociala medier')
-              .id('socialLinks')
-              .child(
-                S.document().schemaType('socialLinks').documentId('socialLinks')
-              ),
-            S.listItem()
-              .title('Planerade kullar')
-              .id('matchOverview')
-              .child(
-                S.document()
-                  .schemaType('matchOverview')
-                  .documentId('matchOverview')
-              ),
-            S.listItem()
-              .title('Aktuella kullar')
-              .id('kittenSection')
-              .child(
-                S.document()
-                  .schemaType('kittenSection')
-                  .documentId('kittenSection')
-              ),
-            S.listItem()
-              .title('Villkors innehåll')
-              .id('terms')
-              .child(S.document().schemaType('terms').documentId('terms')),
+            ...singletonDocuments.map((document) =>
+              S.listItem()
+                .title(document.title)
+                .id(document._id)
+                .child(
+                  S.document()
+                    .schemaType(document._type)
+                    .documentId(document._id)
+                )
+            ),
           ]),
     }),
     visionTool(),
