@@ -2,11 +2,11 @@
 import { loadEnvConfig } from '@next/env';
 import { defineCliConfig } from 'sanity/cli';
 
-const dev = process.env.NODE_ENV !== 'production';
+var dev = process.env.NODE_ENV !== 'production';
 loadEnvConfig(__dirname, dev, { info: () => null, error: console.error });
 
-const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
-const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET;
+var projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
+var dataset = process.env.NEXT_PUBLIC_SANITY_DATASET;
 
 export default defineCliConfig({
   api: {
