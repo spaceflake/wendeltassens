@@ -54,6 +54,10 @@ _type == 'textField' => {
   ...,
   content[] => {
     ...,
+    _type == "image" => {
+      ...,
+      asset->
+    }
   }
 }`;
 
