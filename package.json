@@ -9,6 +9,8 @@
     "@next/env": "^13.0.6",
     "@next/font": "^13.1.0",
     "@portabletext/react": "^2.0.0",
+    "@portabletext/toolkit": "^2.0.0",
+    "@portabletext/types": "^2.0.0",
     "@sanity/image-url": "^1.0.1",
     "@sanity/vision": "^3.0.0",
     "@sanity/webhook": "^2.0.0",

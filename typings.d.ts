@@ -24,6 +24,7 @@ interface Hero extends ComponentBase {
 interface TextField extends ComponentBase {
   text: string;
   initialCapital: 'true' | 'false';
+  content?: any;
 }
 
 interface Post extends Base {

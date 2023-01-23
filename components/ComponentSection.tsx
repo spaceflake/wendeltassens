@@ -32,7 +32,9 @@ const ComponentSection = ({ componentSection }: Props) => {
   } else if (type === 'section') {
     return (
       <Section>
-        <SectionContent components={component} />
+        <div className="px-4 mx-auto mt-24">
+          <SectionContent components={component} />
+        </div>
       </Section>
     );
   } else {

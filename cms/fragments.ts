@@ -52,6 +52,13 @@ _type == 'matchOverview' => {
 export const textFieldFragment: string = `
 _type == 'textField' => {
   ...,
+  content[] => {
+    ...,
+    _type == "image" => {
+      ...,
+      asset->
+    }
+  }
 }`;
 
 export const faqOverviewFragment: string = `

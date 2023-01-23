@@ -19,6 +19,7 @@ const SectionContent = ({ components }: Props) => {
               <TextField
                 key={component._id}
                 text={textField.text}
+                content={textField.content}
                 initialCapital={textField.initialCapital}
               />
             );
