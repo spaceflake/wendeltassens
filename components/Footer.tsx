@@ -17,7 +17,7 @@ const Footer = ({
   externalLinks,
 }: Props) => {
   return (
-    <div className="h-full mt-10 font-Montserrat">
+    <div className="mt-10 font-Montserrat">
       <Image src={footerSvg} alt="Footer svg" className="w-full" />
 
       <div className="w-full bg-SuperBrown">

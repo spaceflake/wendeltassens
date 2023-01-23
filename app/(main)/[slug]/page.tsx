@@ -1,4 +1,5 @@
 import { groq } from 'next-sanity';
+import { notFound } from 'next/navigation';
 import {
   carouselFragment,
   formSectionFragment,
@@ -44,6 +45,10 @@ const page = async ({ params }: Props) => {
   };
 
   const page: Page = await client.fetch(pageQuery, queryParams);
+
+  if (!page) {
+    notFound();
+  }
 
   return (
     <div className="text-DarkBrown">

@@ -8,7 +8,8 @@ type Props = {
 };
 
 const Header = ({ pages }: Props) => {
-  const pathname = usePathname();
+  let pathname = usePathname();
+  pathname = pathname === null ? '' : pathname.slice(1);
 
   return (
     <header className="absolute top-0 z-10 w-full ">
@@ -25,7 +26,9 @@ const Header = ({ pages }: Props) => {
               key={path.title}
               href={path.slug ?? '/'}
               className={`hover:underline ${
-                path.slug === pathname ? 'font-bold' : ''
+                (path.slug === pathname ||
+                  (path.slug === null && pathname === '')) &&
+                'font-bold'
               }`}
             >
               {path.title}
