@@ -46,9 +46,9 @@ const components: PortableTextComponents = {
 const TextField = ({ text, initialCapital, content }: Props) => {
   if (content) {
     return (
-      <>
+      <div className="mx-auto max-w-prose">
         <PortableText value={content} components={components} />
-      </>
+      </div>
     );
   } else if (initialCapital === 'true') {
     return (
