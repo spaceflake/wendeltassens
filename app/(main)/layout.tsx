@@ -39,10 +39,12 @@ export default async function SiteLayout({
     (await client.fetch(externalLinksQuery)) ?? [];
 
   return (
-    <section className="backgroundPattern">
+    <section className="flex flex-col h-screen backgroundPattern">
       <Header pages={pages} />
       <Suspense fallback={<Loading />}>
-        <main className="container mx-auto">{children}</main>
+        <main className="container flex flex-col justify-center mx-auto grow">
+          {children}
+        </main>
       </Suspense>
       <Footer
         contactInformation={contactInformation}
