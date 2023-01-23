@@ -9,7 +9,13 @@ export default function NotFound() {
         <p className="mb-12 text-3xl text-center font-Montserrat text-DarkBrown">
           Sidan kunde inte hittas.
         </p>
-        <Image src={cat} alt="404" width={500} height={500} />
+        <Image
+          src={cat}
+          alt="404"
+          width={500}
+          height={500}
+          className="w-auto h-auto"
+        />
       </div>
     </div>
   );
