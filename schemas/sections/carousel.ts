@@ -8,11 +8,13 @@ export default defineType({
     defineField({
       name: 'title',
       title: 'Titel',
+      description: 'Titel som visas i studion men inte på hemsidan',
       type: 'string',
     }),
     defineField({
       name: 'imageList',
       title: 'Bild',
+      description: 'En lista på bilder som finns i bildspelet',
       type: 'array',
       of: [{ type: 'image' }],
     }),

@@ -17,6 +17,8 @@ export default defineType({
     defineField({
       name: 'status',
       title: 'Status',
+      description:
+        'Status på kattungen. Det går att välja mellan "Tillgänglig" eller "Tingad"',
       type: 'string',
       options: {
         list: [

@@ -7,7 +7,7 @@ export default defineType({
   fields: [
     defineField({
       name: 'catImgUrl',
-      title: 'Katt bild',
+      title: 'Kattbild',
       type: 'image',
       options: {
         hotspot: true,
@@ -17,12 +17,13 @@ export default defineType({
     defineField({
       name: 'breeder',
       title: 'Uppfödare',
+      description: 'Namn på uppfödare av katten',
       type: 'string',
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'name',
-      title: 'Namn',
+      title: 'Kattnamn',
       type: 'string',
       validation: (Rule) => Rule.required(),
     }),
@@ -57,6 +58,8 @@ export default defineType({
     defineField({
       name: 'information',
       title: 'Övrigt',
+      description:
+        'Om man vill lägga till ytterligare information. Detta är valfritt',
       type: 'text',
     }),
     defineField({
