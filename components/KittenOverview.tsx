@@ -18,7 +18,7 @@ const KittenOverview = ({
   kittens,
 }: Props) => {
   return (
-    <div className="gap-8 p-8 space-y-4 shadow-lg h-fit sm:grid sm:grid-cols-2 rounded-xl bg-WhiteBG text-DarkBrown">
+    <div className="gap-8 p-8 space-y-4 shadow-lg h-fit sm:grid sm:grid-cols-2 rounded-xl bg-WhiteBG text-DarkBrown w-full max-w-[800px]">
       <div className="flex flex-col">
         <h5 className="text-[2.75rem]">{title}</h5>
         <div className="divide-y divide-dashed divide-[#E1DFDE] grow">
@@ -41,10 +41,10 @@ const KittenOverview = ({
         </div>
         <div className="flex gap-2 mx-auto mt-4 space-x-4 lg:mr-auto lg:ml-0">
           <Button text="Stamtavla" goTo="https://google.com" />
-          <Button secondary text="Förfrågan" goTo="/kontakt" />
+          <Button isInternalLink text="Förfrågan" goTo="/kontakt" />
         </div>
       </div>
-      <div className="flex flex-col gap-2 px-2 overflow-y-scroll h-60">
+      <div className="flex flex-col gap-2 px-2 overflow-y-auto h-60">
         {kittens &&
           kittens.length > 0 &&
           kittens.map((kitten) => (
