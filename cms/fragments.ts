@@ -72,7 +72,7 @@ export const faqOverviewFragment: string = `
 export const linkFragment: string = `
   _type == 'link' => {
     ...,
-    "internalLink": internalLink->slug,
+    "internalLink": internalLink->slug.current,
   }`;
 
 export const sectionFragment: string = `
