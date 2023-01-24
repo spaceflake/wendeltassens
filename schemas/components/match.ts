@@ -50,6 +50,8 @@ export default defineType({
     defineField({
       name: 'description',
       title: 'Information',
+      description:
+        'Text om man vill lägga till ytterligare information om den planerade kullen. Detta är valfritt att lägga till',
       type: 'text',
     }),
   ],

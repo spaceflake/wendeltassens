@@ -8,6 +8,7 @@ export default defineType({
     defineField({
       name: 'title',
       title: 'Kullnamn',
+      description: 'Namnet på kullen',
       type: 'string',
       validation: (Rule) => Rule.required(),
     }),
@@ -41,6 +42,7 @@ export default defineType({
     defineField({
       name: 'kittens',
       title: 'Kattungar',
+      description: 'En lista på samtliga kattungar som finns i kullen',
       type: 'array',
       of: [{ type: 'reference', to: { type: 'kitten' } }],
       validation: (Rule) => Rule.required(),

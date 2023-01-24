@@ -14,6 +14,8 @@ export default defineType({
     defineField({
       name: 'title',
       title: 'Sid Namn',
+      description:
+        'Namnet på sidan som visas i navigeringen längst upp på hemsidan',
       type: 'string',
     }),
     defineField({

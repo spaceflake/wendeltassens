@@ -9,14 +9,15 @@ export default defineType({
   fields: [
     defineField({
       name: 'title',
-      title: 'Namn',
-      description: 'Namnet på länken i Studio.',
+      title: 'Titel',
+      description: 'Titeln som visas i studion men inte på hemsidan',
       type: 'string',
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'text',
       title: 'Knapptext',
+      description: 'Vad som ska stå inuti knappen',
       type: 'string',
       validation: (Rule) => Rule.required(),
     }),
@@ -30,6 +31,7 @@ export default defineType({
     defineField({
       name: 'internalLink',
       title: 'Länk till sida',
+      description: 'Välj i listan till vilkan sida som länken ska gå till',
       type: 'reference',
       to: [{ type: 'page' }],
       hidden: ({ parent }) => !parent?.isInternalLink,

@@ -7,7 +7,8 @@ export default defineType({
   fields: [
     defineField({
       name: 'title',
-      title: 'Namn',
+      title: 'Titel',
+      description: 'Titel som visas i studion men inte på hemsidan',
       type: 'string',
     }),
     defineField({
@@ -21,6 +22,7 @@ export default defineType({
     defineField({
       name: 'heroTitle',
       title: 'Sid Rubrik',
+      description: 'Rubriken som är synlig på frontbilden på hemsidan',
       type: 'string',
     }),
     defineField({
@@ -33,18 +35,22 @@ export default defineType({
     defineField({
       name: 'heroText',
       title: 'Hero text',
+      description: 'En text som visas under rubriken på frontbilden',
       type: 'string',
       hidden: ({ parent }) => !parent?.addButton,
     }),
     defineField({
       name: 'heroButtonPath',
       title: 'Knapp adress',
+      description:
+        'Vart länken ska gå. Tex om man vill att länken går till kattunge sidan så skriv kattungar',
       type: 'string',
       hidden: ({ parent }) => !parent?.addButton,
     }),
     defineField({
       name: 'heroButtonText',
       title: 'Sid Knapp text',
+      description: 'Texten som ska stå i knappen',
       type: 'string',
       hidden: ({ parent }) => !parent?.addButton,
     }),
