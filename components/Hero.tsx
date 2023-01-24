@@ -10,7 +10,7 @@ type Props = {
 const Hero = ({ children, heroImgUrl, isHomePage }: Props) => {
   if (isHomePage) {
     return (
-      <div className="relative top-0 w-full mt-32">
+      <div className="relative top-0 w-full">
         <div className=" top-0 relative max-h-[900px] overflow-hidden">
           <div className="absolute bottom-0 flex flex-col items-center justify-center w-full text-center md:right-0 md:w-1/2 md:h-full p-7 bg-gradient-to-r from-WhiteBG/50 to-WhiteBG backdrop:blur-sm">
             {children}
@@ -27,7 +27,7 @@ const Hero = ({ children, heroImgUrl, isHomePage }: Props) => {
     );
   }
   return (
-    <div className="relative top-0 w-full mt-20 md:mt-0">
+    <div className="relative top-0 w-full md:mt-0">
       <div className=" top-0 relative max-h-[900px] overflow-hidden">
         <div className="absolute bottom-0 w-full py-5 text-center bg-gradient-to-b from-WhiteBG/50 to-WhiteBG backdrop:blur-sm">
           {children}

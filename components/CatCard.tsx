@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import paw from '../public/paw.svg';
 import Button from './Button';
 
@@ -14,13 +14,13 @@ const CatCard = ({ cat, inverted }: Props) => {
         inverted ? 'lg:flex-row-reverse' : 'lg:flex-row'
       }`}
     >
-      <div className="overflow-hidden">
+      <div className="relative w-auto overflow-hidden lg:w-1/3 h-72 lg:h-auto grow-0">
         <Image
           src={cat.catImgUrl}
-          alt={cat.name}
-          height={300}
-          width={300}
-          className="object-contain w-auto h-auto mx-auto rounded-md max-sm:max-h-[200px] "
+          alt={`Bild på katten ${cat.name}`}
+          className="object-contain w-auto h-full rounded-lg lg:object-cover"
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
       </div>
       <div className="flex flex-col p-4 pb-0 lg:p-8 grow">

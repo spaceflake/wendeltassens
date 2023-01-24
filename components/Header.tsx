@@ -12,7 +12,7 @@ const Header = ({ pages }: Props) => {
   pathname = pathname === null ? '' : pathname.slice(1);
 
   return (
-    <header className="absolute top-0 z-10 w-full ">
+    <header className="z-10 w-full ">
       <div className="container flex flex-col items-center justify-between w-full px-4 py-4 mx-auto md:items-baseline lg:px-8 md:flex-row text-DarkBrown lg:py-10 bg-WhiteBG/50 backdrop-blur-sm ">
         <Link href={'/'}>
           <div className="flex items-baseline mx-auto text-5xl font-Tangerine">

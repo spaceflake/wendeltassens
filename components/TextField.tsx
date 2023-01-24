@@ -1,5 +1,6 @@
 import { PortableText, PortableTextComponents } from '@portabletext/react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { PortableTextBlock } from 'sanity';
 import urlFor from '../cms/imgBuilder';
 
@@ -8,6 +9,19 @@ interface Props {
   initialCapital: string;
   content?: PortableTextBlock;
 }
+
+export const LinkComponent = ({ value, children }: any) => {
+  const target = (value?.href || '').startsWith('http') ? '_blank' : undefined;
+  return (
+    <Link
+      href={value?.href}
+      target={target}
+      className="underline underline-offset-8 text-AngelBlue"
+    >
+      {children}
+    </Link>
+  );
+};
 
 const ImageComponent = ({ value, isInline }: any) => {
   return (
@@ -34,9 +48,16 @@ const components: PortableTextComponents = {
       <p className="py-2 mx-auto max-w-prose">{children}</p>
     ),
   },
+  marks: {
+    link: LinkComponent,
+  },
   list: {
-    bullet: ({ children }) => <ul className="list-disc">{children}</ul>,
-    number: ({ children }) => <ol className="list-decimal">{children}</ol>,
+    bullet: ({ children }) => (
+      <ul className="list-disc list-inside">{children}</ul>
+    ),
+    number: ({ children }) => (
+      <ol className="list-decimal list-inside">{children}</ol>
+    ),
   },
   types: {
     image: ImageComponent,
@@ -46,9 +67,9 @@ const components: PortableTextComponents = {
 const TextField = ({ text, initialCapital, content }: Props) => {
   if (content) {
     return (
-      <>
+      <div className="mx-auto max-w-prose px-4">
         <PortableText value={content} components={components} />
-      </>
+      </div>
     );
   } else if (initialCapital === 'true') {
     return (

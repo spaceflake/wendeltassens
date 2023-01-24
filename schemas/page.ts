@@ -6,6 +6,11 @@ export default defineType({
   type: 'document',
   groups: [
     {
+      name: 'content',
+      title: 'Innehåll',
+      default: true,
+    },
+    {
       name: 'seo',
       title: 'SEO',
     },
@@ -17,6 +22,7 @@ export default defineType({
       description:
         'Namnet på sidan som visas i navigeringen längst upp på hemsidan',
       type: 'string',
+      group: 'content',
     }),
     defineField({
       name: 'slug',
@@ -24,12 +30,14 @@ export default defineType({
       description:
         'Slutet på adressen som visas efter wendeltassens.se. T.ex. "kontakt" för wendeltassens.se/kontakt',
       type: 'slug',
+      group: 'content',
     }),
     defineField({
       name: 'sections',
       title: 'Sektioner',
       description: 'Sektioner som ska visas på sidan',
       type: 'array',
+      group: 'content',
       of: [
         {
           type: 'reference',

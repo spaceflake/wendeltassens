@@ -1,4 +1,5 @@
 import { groq } from 'next-sanity';
+import Link from 'next/link';
 import {
   heroFragment,
   kittenSectionFragment,
@@ -62,10 +63,13 @@ const page = async ({ params }: Props) => {
                   )}
                   {hero.heroButtonText && hero.heroButtonPath && (
                     <div className="self-center mt-8 md:self-end">
-                      <Button
-                        text={hero.heroButtonText}
-                        goTo={hero.heroButtonPath}
-                      />
+                      <Link
+                        target="_self"
+                        href={hero.heroButtonPath || '/'}
+                        className="flex items-center justify-center gap-2 px-5 py-2 text-sm font-bold text-center transition-all duration-150 ease-in-out border rounded border-DarkBrown hover:ring-2 hover:ring-DarkBrown bg-DarkBrown text-Beige font-Montserrat lg:text-base hover:bg-DarkBrown/90"
+                      >
+                        <span>{hero.heroButtonText || 'Knapptext'}</span>
+                      </Link>
                     </div>
                   )}
                 </div>
