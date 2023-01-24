@@ -1,4 +1,3 @@
-import React from 'react';
 import Button from './Button';
 import TextField from './TextField';
 
@@ -28,7 +27,7 @@ const BorderedTextbox = ({
       </div>
       {buttonText && (
         <div className="flex justify-center pb-8">
-          <Button secondary text={buttonText} goTo={buttonPath} />
+          <Button isInternalLink text={buttonText} goTo={buttonPath} />
         </div>
       )}
     </article>
