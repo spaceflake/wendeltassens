@@ -10,11 +10,13 @@ type Props = {
 };
 
 const pageQuery = groq`*[_type == "page" && slug.current == $slug][0] {
-  title
+  title,
+  seoDescription,
 }`;
 
 interface HeadData {
   title: string;
+  seoDescription: string;
 }
 
 export default async function Head({ params }: Props) {
@@ -22,16 +24,13 @@ export default async function Head({ params }: Props) {
     slug: params.slug,
   };
 
-  const pages: HeadData = await client.fetch(pageQuery, queryParams);
+  const data: HeadData = await client.fetch(pageQuery, queryParams);
 
   return (
     <>
-      <title>{`${pages.title} | Wendeltassens`}</title>
+      <title>{`${data.title} | Wendeltassens`}</title>
       <meta content="width=device-width, initial-scale=1" name="viewport" />
-      <meta
-        name="description"
-        content="Wendeltassans Ragdoll startsida. Beskrivning om Wendeltassens. Uppdateringar från Wendeltassens Ragdoll"
-      />
+      <meta name="description" content={`${data.seoDescription}`} />
       <link rel="icon" href="/favicon.ico" />
     </>
   );

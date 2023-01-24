@@ -2,24 +2,23 @@ import { groq } from 'next-sanity';
 import { client } from '../../lib/sanity.client';
 
 const pageQuery = groq`*[_type == "page" && slug.current == null][0] {
-  title
+  title,
+  seoDescription,
 }`;
 
 interface HeadData {
   title: string;
+  seoDescription: string;
 }
 
 export default async function Head() {
-  const pages: HeadData = await client.fetch(pageQuery);
+  const data: HeadData = await client.fetch(pageQuery);
 
   return (
     <>
-      <title>{`Wendeltassens | ${pages.title}`}</title>
+      <title>{`Wendeltassens | ${data.title}`}</title>
       <meta content="width=device-width, initial-scale=1" name="viewport" />
-      <meta
-        name="description"
-        content="Wendeltassans Ragdoll startsida. Beskrivning om Wendeltassens. Uppdateringar från Wendeltassens Ragdoll"
-      />
+      <meta name="description" content={`${data.seoDescription}`} />
       <link rel="icon" href="/favicon.ico" />
     </>
   );
