@@ -8,11 +8,14 @@ export default defineType({
     defineField({
       name: 'title',
       title: 'Rubrik',
+      description: 'Rubrik som visas på sidan ovanför blogginlägg',
       type: 'string',
     }),
     defineField({
       name: 'posts',
       title: 'Inlägg',
+      description:
+        'En lista på samtliga blogginlägg som är synliga på hemsidan',
       type: 'array',
       of: [{ type: 'reference', to: { type: 'post' } }],
     }),

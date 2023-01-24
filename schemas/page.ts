@@ -4,10 +4,18 @@ export default defineType({
   name: 'page',
   title: 'Sida',
   type: 'document',
+  groups: [
+    {
+      name: 'seo',
+      title: 'SEO',
+    },
+  ],
   fields: [
     defineField({
       name: 'title',
       title: 'Sid Namn',
+      description:
+        'Namnet på sidan som visas i navigeringen längst upp på hemsidan',
       type: 'string',
     }),
     defineField({
@@ -40,6 +48,24 @@ export default defineType({
           ],
         },
       ],
+    }),
+    defineField({
+      name: 'seoDescription',
+      title: 'SEO Beskrivning',
+      type: 'text',
+      group: 'seo',
+    }),
+    defineField({
+      name: 'seoKeywords',
+      title: 'SEO Nyckelord',
+      type: 'string',
+      group: 'seo',
+    }),
+    defineField({
+      name: 'seoImage',
+      title: 'SEO Bild',
+      type: 'image',
+      group: 'seo',
     }),
   ],
 });

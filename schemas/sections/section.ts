@@ -8,13 +8,15 @@ export default defineType({
   fields: [
     defineField({
       name: 'title',
-      title: 'Titel',
+      title: 'Rubrik',
+      description: 'Rubriken som visas på hemsidan',
       type: 'string',
     }),
     defineField({
       name: 'type',
       title: 'Typ',
-      description: 'Välj typ av sektion',
+      description:
+        'Välj typ av sektion. Alternativen är en sektion med ram, sektion med avskiljare och en sektion som är en tom sektion utan ram och utan avskiljare',
       type: 'string',
       options: {
         list: [
@@ -28,6 +30,8 @@ export default defineType({
     defineField({
       name: 'component',
       title: 'Komponent',
+      description:
+        'En lista på samtliga komponenter som finns i den här sektionen',
       type: 'array',
       of: [
         {

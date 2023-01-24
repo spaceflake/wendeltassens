@@ -8,18 +8,22 @@ export default defineType({
     defineField({
       name: 'title',
       title: 'Rubrik',
+      description: 'Rubrik på blogginlägget som visas på hemsidan',
       type: 'string',
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'text',
       title: 'Text',
+      description: 'Textinnehållet på blogginlägget',
       type: 'text',
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'image',
       title: 'Bild',
+      description:
+        'Bild som visas i blogginlägget. Det är valfritt att lägga till en bild',
       type: 'image',
       options: {
         hotspot: true,
@@ -28,6 +32,7 @@ export default defineType({
     defineField({
       name: 'publishedAt',
       title: 'Publicerad',
+      description: 'Datum då blogginlägget skapas',
       type: 'datetime',
       options: {
         dateFormat: 'YYYY-MM-DD',
