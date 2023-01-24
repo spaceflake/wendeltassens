@@ -62,14 +62,16 @@ const SectionContent = ({ components }: Props) => {
           case 'link':
             const link = component as Link;
             return (
-              <Button
-                key={component._id}
-                isInternalLink={link.isInternalLink}
-                text={link.text}
-                goTo={
-                  link.isInternalLink ? link.internalLink : link.externalLink
-                }
-              />
+              <div className="justify-center flex mt-6">
+                <Button
+                  key={component._id}
+                  isInternalLink={link.isInternalLink}
+                  text={link.text}
+                  goTo={
+                    link.isInternalLink ? link.internalLink : link.externalLink
+                  }
+                />
+              </div>
             );
 
           default: {
