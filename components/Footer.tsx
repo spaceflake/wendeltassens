@@ -18,7 +18,7 @@ const Footer = ({
 }: Props) => {
   return (
     <div className="mt-10 font-Montserrat">
-      <Image src={footerSvg} alt="Footer svg" className="w-full" />
+      <Image src={footerSvg} alt="" className="w-full" />
 
       <div className="w-full bg-SuperBrown">
         <footer className="  container mx-auto md:gap-6 md:justify-between text-Beige py-[64px] flex flex-col lg:flex-row relative text-center lg:text-left px-4">

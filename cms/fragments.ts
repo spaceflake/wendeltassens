@@ -15,6 +15,7 @@ export const postContainerFragment: string = `
     posts[]->{
       ...,
       "imageUrl": image.asset->url,
+      "alt": alt,
     }
   }
 `;

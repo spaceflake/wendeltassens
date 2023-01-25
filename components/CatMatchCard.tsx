@@ -53,7 +53,7 @@ const CatMatchCard = ({
           src={femaleImg}
           height={100}
           width={100}
-          alt={femalename}
+          alt={`Bild på katten ${femalename}`}
           className="w-[100px] h-[100px] sm:h-[120px] sm:w-[120px] rounded-full object-cover object-top aspect-square justify-self-center self-end"
         />
 
@@ -61,7 +61,7 @@ const CatMatchCard = ({
           src={maleImg}
           height={250}
           width={250}
-          alt={maleName}
+          alt={`Bild på katten ${maleName}`}
           className="w-[100px] h-[100px] sm:h-[120px] sm:w-[120px] rounded-full object-cover object-top aspect-square justify-self-center self-end"
         />
 

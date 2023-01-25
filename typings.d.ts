@@ -32,6 +32,7 @@ interface Post extends Base {
   text: string;
   imageUrl: string;
   publishedAt: string;
+  alt?: string;
 }
 
 interface PostContainer extends ComponentBase {
