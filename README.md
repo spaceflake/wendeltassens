@@ -1,3 +1,69 @@
+# Wendeltassens Ragdoll hemsida
+
+A brief description of what this project does and who it's for
+
+## Tech Stack
+
+**Client:** React, Next, TailwindCSS
+
+**CMS:** Sanity
+
+## Demo
+
+[Wendeltassens Ragdolls](https://wendeltassen.vercel.app)
+
+## Authors
+
+- [Tomas Fridekrans](https://www.github.com/spaceflake)
+- [Olivia Isberg](https://github.com/OliviaIsberg)
+
+## Environment Variables
+
+To run this project, you will need to add the following environment variables to your .env file
+
+`API_KEY`
+
+`ANOTHER_API_KEY`
+
+## Installation
+
+Install my-project with npm
+
+```bash
+  npm install my-project
+  cd my-project
+```
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://link-to-project
+```
+
+Go to the project directory
+
+```bash
+  cd my-project
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run start
+```
+
+## Repo
+
+[Repo](https://github.com/spaceflake/wendeltassens)
+
 # Next.js + Tailwind CSS Example
 
 This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.2)](https://tailwindcss.com/blog/tailwindcss-v3-2) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
