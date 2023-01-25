@@ -30,6 +30,15 @@ export default defineType({
       },
     }),
     defineField({
+      name: 'alt',
+      title: 'Bildbeskrivning',
+      description: 'Lägg till en beskrivning om bilden. En mening räcker',
+      type: 'string',
+      validation: (Rule) =>
+        Rule.max(80).warning(`Titeln borde inte ha mer än 80 tecken`),
+      hidden: ({ document }) => !document?.image,
+    }),
+    defineField({
       name: 'publishedAt',
       title: 'Publicerad',
       description: 'Datum då blogginlägget skapas',
