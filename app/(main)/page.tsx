@@ -52,6 +52,7 @@ const page = async ({ params }: Props) => {
               <Hero
                 key={index}
                 heroImgUrl={hero.heroImage}
+                alt={hero.alt}
                 isHomePage={hero.addButton}
               >
                 <div className="flex flex-col w-3/4 text-left">

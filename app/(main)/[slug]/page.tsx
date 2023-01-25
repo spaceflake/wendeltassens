@@ -58,7 +58,7 @@ const page = async ({ params }: Props) => {
             const hero = section as Hero;
 
             return (
-              <Hero key={index} heroImgUrl={hero.heroImage}>
+              <Hero key={index} heroImgUrl={hero.heroImage} alt={hero.alt}>
                 <h1 className="text-center text-AngelBlue">{hero.heroTitle}</h1>
                 <div className="mt-4 ml-auto "></div>
               </Hero>

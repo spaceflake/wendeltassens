@@ -7,6 +7,7 @@ _type == 'hero' => {
   heroText,
   heroButtonPath,
   heroButtonText,
+  "alt": alt,
 }`;
 
 export const postContainerFragment: string = `
