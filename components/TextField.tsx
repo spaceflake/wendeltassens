@@ -38,11 +38,16 @@ const ImageComponent = ({ value, isInline }: any) => {
 };
 const components: PortableTextComponents = {
   block: {
-    // Ex. 1: customizing common block types
     h1: ({ children }) => <h1 className="my-3 text-center">{children}</h1>,
-    h2: ({ children }) => <h5>{children}</h5>,
+    h2: ({ children }) => (
+      <h2 className="text-3xl font-bold font-Montserrat">{children}</h2>
+    ),
     blockquote: ({ children }) => (
-      <blockquote className="text-SuperBrown">{children}</blockquote>
+      <blockquote className="py-8 text-xl italic text-SuperBrown">
+        <span>"</span>
+        {children}
+        <span>"</span>
+      </blockquote>
     ),
     normal: ({ children }) => (
       <p className="py-2 mx-auto max-w-prose">{children}</p>
@@ -53,10 +58,10 @@ const components: PortableTextComponents = {
   },
   list: {
     bullet: ({ children }) => (
-      <ul className="list-disc list-inside">{children}</ul>
+      <ul className="ml-4 list-disc list-inside">{children}</ul>
     ),
     number: ({ children }) => (
-      <ol className="list-decimal list-inside">{children}</ol>
+      <ol className="ml-4 list-decimal list-inside">{children}</ol>
     ),
   },
   types: {
@@ -67,7 +72,7 @@ const components: PortableTextComponents = {
 const TextField = ({ text, initialCapital, content }: Props) => {
   if (content) {
     return (
-      <div className="mx-auto max-w-prose px-4">
+      <div className="px-4 mx-auto max-w-prose">
         <PortableText value={content} components={components} />
       </div>
     );

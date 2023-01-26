@@ -1,8 +1,7 @@
-import React from 'react';
 import Image, { StaticImageData } from 'next/image';
-import Button from './Button';
 import femaleCrown from '../public/femaleCrown.svg';
 import maleCrown from '../public/maleCrown.svg';
+import Button from './Button';
 
 type Props = {
   femalename: string;

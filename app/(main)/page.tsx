@@ -7,7 +7,6 @@ import {
   sectionFragment,
 } from '../../cms/fragments';
 import BorderedTextbox from '../../components/BorderedTextbox';
-import Button from '../../components/Button';
 import ComponentSection from '../../components/ComponentSection';
 import Hero from '../../components/Hero';
 import IntroTextHome from '../../components/IntroTextHome';

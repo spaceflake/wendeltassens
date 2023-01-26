@@ -1,6 +1,5 @@
 import Button from './Button';
 import KittenCard from './KittenCard';
-import KittenImg from '../public/kitten-image-1.jpg';
 
 type Props = {
   title: string;
@@ -18,7 +17,7 @@ const KittenOverview = ({
   kittens,
 }: Props) => {
   return (
-    <div className="gap-8 p-8 space-y-4 shadow-lg h-fit sm:grid sm:grid-cols-2 rounded-xl bg-WhiteBG text-DarkBrown w-full max-w-[800px]">
+    <div className="gap-8 px-4 py-8 sm:p-8 space-y-4 shadow-lg h-fit sm:grid sm:grid-cols-2 rounded-xl bg-WhiteBG text-DarkBrown w-full max-w-[800px]">
       <div className="flex flex-col">
         <h5 className="text-[2.75rem]">{title}</h5>
         <div className="divide-y divide-dashed divide-[#E1DFDE] grow">
@@ -39,7 +38,7 @@ const KittenOverview = ({
             <span className="font-bold text-right">{kittens?.length}</span>
           </div>
         </div>
-        <div className="flex gap-2 mx-auto mt-4 space-x-4 lg:mr-auto lg:ml-0">
+        <div className="flex gap-2 mx-auto mt-4 lg:mr-auto lg:ml-0">
           <Button text="Stamtavla" goTo="https://google.com" />
           <Button isInternalLink text="Förfrågan" goTo="/kontakt" />
         </div>

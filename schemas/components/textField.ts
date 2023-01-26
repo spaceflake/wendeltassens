@@ -44,17 +44,13 @@ export default defineType({
           type: 'block',
           styles: [
             { title: 'Normal', value: 'normal' },
-            { title: 'Rubrik 1', value: 'h1' },
-            { title: 'Rubrik 2', value: 'h2' },
-            { title: 'Rubrik 3', value: 'h3' },
-            { title: 'Rubrik 4', value: 'h4' },
-            { title: 'Rubrik 5', value: 'h5' },
-            { title: 'Rubrik 6', value: 'h6' },
+            { title: 'Huvudrubrik', value: 'h1' },
+            { title: 'Underrubrik', value: 'h2' },
 
             { title: 'Citat', value: 'blockquote' },
           ],
           lists: [
-            { title: 'Lista', value: 'bullet' },
+            { title: 'Punkt lista', value: 'bullet' },
             { title: 'Numrerad lista', value: 'number' },
           ],
           marks: {

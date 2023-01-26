@@ -1,7 +1,6 @@
-import Link from 'next/link';
-import React from 'react';
-import footerSvg from '../public/footerClipPath.svg';
 import Image from 'next/image';
+import Link from 'next/link';
+import footerSvg from '../public/footerClipPath.svg';
 
 type Props = {
   contactInformation: ContactInformation;
@@ -25,8 +24,10 @@ const Footer = ({
             <h2 className="mb-2 text-6xl text-center font-Tangerine text-Beige">
               Wendeltassens
             </h2>
-            <div className="flex flex-col mb-8 text-sm md:mb-0 md:text-base">
-              <p className="mb-2 text-base font-bold md:text-lg">Kontakt</p>
+            <div className="flex flex-col pl-8 mx-auto mb-8 text-sm md:mb-0 md:text-base">
+              <p className="mb-2 text-base font-bold text-left md:text-lg">
+                Kontakt
+              </p>
               <div className="flex flex-col gap-2">
                 <p className="flex gap-2">
                   <span>
@@ -88,7 +89,7 @@ const Footer = ({
               </div>
             </div>
           </div>
-          <nav className="flex flex-col flex-wrap items-center justify-center gap-6 text-sm lg:self-end sm:items-start lg:items-start lg:justify-end sm:flex-row lg:text-base">
+          <nav className="flex flex-col flex-wrap items-center justify-center gap-6 text-sm lg:gap-10 lg:self-end sm:items-start lg:items-start lg:justify-end sm:flex-row lg:text-base">
             <div className="flex flex-col md:mb-0">
               <p className="mb-2 text-base font-bold md:text-lg">Sitemap</p>
               {pages.map((path) => (
@@ -138,7 +139,7 @@ const Footer = ({
       </div>
       <div className="w-full py-2 bg-Beige">
         <p className="text-center text-DarkBrown">
-          Copyright &copy; 2023 Wendeltassens
+          Copyright &copy; {new Date().getFullYear()} Wendeltassens
         </p>
       </div>
     </div>

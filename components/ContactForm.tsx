@@ -18,7 +18,11 @@ const ContactForm = (props: Props) => {
     formState: { errors },
   } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = (formData) => {
-    window.location.href = `mailto:lise_lotte_1@hotmail.se?subject=${formData.subject}&body=${formData.message}`;
+    window.location.href = `mailto:lise_lotte_1@hotmail.com?subject=${
+      formData.subject
+    }&body=${encodeURIComponent(formData.message)}%0D%0Amvh%20${
+      formData.name
+    }%0D%0A${formData.email}`;
   };
 
   return (
