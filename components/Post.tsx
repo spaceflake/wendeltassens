@@ -11,7 +11,6 @@ type Props = {
 const Post = ({ title, text, imgUrl, date, alt }: Props) => {
   const dateFormatted = new Date(date).toISOString().split('T')[0];
 
-  console.log(alt);
   return (
     <article
       className={`bg-WhiteBG rounded-xl overflow-hidden md:pb-0 flex flex-col shadow-xl`}
