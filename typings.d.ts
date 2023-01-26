@@ -19,6 +19,7 @@ interface Hero extends ComponentBase {
   heroText: string;
   heroButtonPath: string;
   heroButtonText: string;
+  alt?: string;
 }
 
 interface TextField extends ComponentBase {
@@ -32,6 +33,7 @@ interface Post extends Base {
   text: string;
   imageUrl: string;
   publishedAt: string;
+  alt?: string;
 }
 
 interface PostContainer extends ComponentBase {

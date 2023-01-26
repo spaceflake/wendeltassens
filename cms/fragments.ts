@@ -7,6 +7,7 @@ _type == 'hero' => {
   heroText,
   heroButtonPath,
   heroButtonText,
+  "alt": alt,
 }`;
 
 export const postContainerFragment: string = `
@@ -15,6 +16,7 @@ export const postContainerFragment: string = `
     posts[]->{
       ...,
       "imageUrl": image.asset->url,
+      "alt": alt,
     }
   }
 `;

@@ -16,6 +16,7 @@ const PostContainer = ({ title, posts }: Props) => {
             title={post.title}
             text={post.text}
             imgUrl={post.imageUrl}
+            alt={post.alt}
             date={post.publishedAt}
           />
         ))}

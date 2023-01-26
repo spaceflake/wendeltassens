@@ -5,9 +5,10 @@ type Props = {
   text: string;
   imgUrl?: string | StaticImageData;
   date: string;
+  alt?: string;
 };
 
-const Post = ({ title, text, imgUrl, date }: Props) => {
+const Post = ({ title, text, imgUrl, date, alt }: Props) => {
   const dateFormatted = new Date(date).toISOString().split('T')[0];
 
   return (
@@ -27,7 +28,7 @@ const Post = ({ title, text, imgUrl, date }: Props) => {
         {imgUrl && (
           <Image
             src={imgUrl}
-            alt={title}
+            alt={alt || ''}
             height={300}
             width={300}
             className="object-cover w-full h-full rounded-bl-md max-h-64"
