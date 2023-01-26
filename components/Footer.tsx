@@ -2,7 +2,6 @@ import Link from 'next/link';
 import React from 'react';
 import footerSvg from '../public/footerClipPath.svg';
 import Image from 'next/image';
-import { paths, EXTLINKS, SOCIALS } from '../utils/navLinks';
 
 type Props = {
   contactInformation: ContactInformation;
