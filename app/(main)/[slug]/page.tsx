@@ -97,8 +97,8 @@ const page = async ({ params }: Props) => {
 
             return (
               <Section key={index}>
-                <div className="grid grid-cols-1 p-12 divide-y lg:grid-cols-2 bg-Beige rounded-xl lg:divide-x lg:divide-y-0 divide-dotted divide-DarkBrown mb-36">
-                  <div className="pb-10 space-y-4 text-lg font-bold font-Montserrat text-DarkBrown lg:pr-10">
+                <div className="grid grid-cols-1 px-4 py-12 divide-y md:p-12 lg:grid-cols-2 bg-Beige rounded-xl lg:divide-x lg:divide-y-0 divide-dotted divide-DarkBrown mb-36">
+                  <div className="pb-10 space-y-4 text-base font-bold md:text-lg lg:text-xl font-Montserrat text-DarkBrown lg:pr-10">
                     <p>{formSection.text}</p>
                     <div>
                       <p>{formSection.contactInformation.name}</p>

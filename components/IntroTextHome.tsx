@@ -1,4 +1,3 @@
-import React from 'react';
 import Image from 'next/image';
 import swirl from '../public/swirl.svg';
 import swirl2 from '../public/swirl2.svg';

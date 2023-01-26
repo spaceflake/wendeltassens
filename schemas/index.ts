@@ -7,13 +7,11 @@ import kitten from './components/kitten';
 import link from './components/link';
 import litter from './components/litter';
 import match from './components/match';
-import matchOverview from './components/matchOverview';
+import matchOverview from './sections/matchOverview';
 import post from './components/post';
 import socialLinks from './components/socialLinks';
-import textblock from './components/textblock';
 import textboxBordered from './components/textboxBordered';
 import textField from './components/textField';
-import textImageCard from './components/textImageCard';
 import menu from './menu';
 import page from './page';
 import carousel from './sections/carousel';
@@ -24,7 +22,6 @@ import introTextHome from './sections/introTextHome';
 import kittenSection from './sections/kittenSection';
 import postContainer from './sections/postSection';
 import section from './sections/section';
-import terms from './sections/terms';
 
 export const schemaTypes = [
   postContainer,
@@ -35,13 +32,11 @@ export const schemaTypes = [
   kittenSection,
   litter,
   kitten,
-  textblock,
   matchOverview,
   match,
   cat,
   catOverview,
   faq,
-  textImageCard,
   carousel,
   FAQOverview,
   contactInformation,
@@ -53,5 +48,4 @@ export const schemaTypes = [
   menu,
   externalLinks,
   socialLinks,
-  terms,
 ];

@@ -40,7 +40,6 @@ export default defineType({
             { type: 'introTextHome' },
             { type: 'textboxBordered' },
             { type: 'postContainer' },
-            { type: 'textImageCard' },
             { type: 'matchOverview' }, //ska ligga här
             { type: 'catOverview' },
             { type: 'FAQOverview' },

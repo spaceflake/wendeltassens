@@ -16,11 +16,11 @@ const Carousel = ({ imageList }: Props) => {
   }, [currentIndex]);
 
   return (
-    <div className="relative top-0 w-full md:w-2/4 m-auto mt-14">
-      <div className="top-0 relative aspect-video overflow-hidden">
+    <div className="relative top-0 w-full m-auto md:w-2/4 mt-14">
+      <div className="relative top-0 overflow-hidden aspect-video">
         {imageList.map((image, index) => {
           let className =
-            'object-contain w-full h-auto aspect-video absolute top-0';
+            'absolute top-0 object-contain w-full h-auto aspect-video';
 
           if (index === currentIndex) {
             className += ' animate-carousel-slide-current left-0';
@@ -32,7 +32,7 @@ const Carousel = ({ imageList }: Props) => {
 
           return (
             <Image
-              key={image}
+              key={index}
               src={image}
               width={1920}
               height={500}

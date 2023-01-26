@@ -86,13 +86,6 @@ interface IntroTextHome extends ComponentBase {
   text: string;
 }
 
-interface Textblock extends ComponentBase {
-  title: string;
-  page: string;
-  section: string;
-  text: string;
-}
-
 interface TextboxBordered extends ComponentBase {
   title: string;
   text: TextField;
@@ -100,12 +93,6 @@ interface TextboxBordered extends ComponentBase {
   buttonText?: string;
 }
 
-interface TextImageCard extends ComponentBase {
-  title: string;
-  text: string;
-  image: string;
-  link: string;
-}
 interface Litter extends ComponentBase {
   title: string;
   birthDate: string;
@@ -175,9 +162,7 @@ type Section =
   | KittenSection
   | Faq
   | IntroTextHome
-  | Textblock
   | TextboxBordered
-  | TextImageCard
   | Carousel
   | PostContainer
   | ContactInformation

@@ -1,4 +1,4 @@
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import paw from '../public/paw.svg';
 import Button from './Button';
 

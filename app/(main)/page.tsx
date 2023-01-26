@@ -7,7 +7,6 @@ import {
   sectionFragment,
 } from '../../cms/fragments';
 import BorderedTextbox from '../../components/BorderedTextbox';
-import Button from '../../components/Button';
 import ComponentSection from '../../components/ComponentSection';
 import Hero from '../../components/Hero';
 import IntroTextHome from '../../components/IntroTextHome';
@@ -50,7 +49,7 @@ const page = async ({ params }: Props) => {
 
             return (
               <Hero
-                key={index}
+                key={hero._id}
                 heroImgUrl={hero.heroImage}
                 alt={hero.alt}
                 isHomePage={hero.addButton}
@@ -80,7 +79,7 @@ const page = async ({ params }: Props) => {
           case 'introTextHome':
             const introTextHome = section as ComponentBase;
             return (
-              <Section>
+              <Section key={introTextHome._id}>
                 <IntroTextHome
                   title={introTextHome.title}
                   text={introTextHome.text}
@@ -91,7 +90,7 @@ const page = async ({ params }: Props) => {
           case 'postContainer':
             const postContainer = section as PostContainer;
             return (
-              <Section>
+              <Section key={postContainer._id}>
                 <PostContainer
                   title={postContainer?.title}
                   posts={postContainer.posts}
@@ -102,6 +101,7 @@ const page = async ({ params }: Props) => {
           case 'section':
             return (
               <ComponentSection
+                key={index}
                 componentSection={section as ComponentSection}
               />
             );

@@ -1,4 +1,3 @@
-import React from 'react';
 import KittenOverview from './KittenOverview';
 
 type Props = {

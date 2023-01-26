@@ -41,11 +41,6 @@ export const singletonDocuments = [
     _type: 'kittenSection',
     title: 'Aktuella kullar',
   },
-  {
-    _id: 'terms',
-    _type: 'terms',
-    title: 'Villkors innehåll',
-  },
 ];
 
 export function createSingletonDocumentsIfNotExists() {

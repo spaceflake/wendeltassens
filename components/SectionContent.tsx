@@ -62,7 +62,7 @@ const SectionContent = ({ components }: Props) => {
           case 'link':
             const link = component as Link;
             return (
-              <div className="justify-center flex mt-6">
+              <div key={link._id} className="flex justify-center mt-6">
                 <Button
                   key={component._id}
                   isInternalLink={link.isInternalLink}
