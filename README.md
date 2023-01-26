@@ -1,4 +1,4 @@
-# [Wendeltassens Ragdoll hemsida](#wendeltassens-ragdoll-hemsida)
+# [Wendeltassens Ragdoll hemsida](https://wendeltassens.vercel.app)
 
 - [Wendeltassens Ragdoll hemsida](#wendeltassens-ragdoll-hemsida)
   - [Beskrivning](#beskrivning)
@@ -18,7 +18,7 @@
 Ragdollkatter är älskade för sina unika personligheter och tillgivna natur, och detta är en webbplats dedikerad till att främja och koppla ihop ragdolluppfödaren med potentiella köpare. Webbplatsen är till för ragdolluppfödaren att visa upp sina katter, få kontakt med intresserade köpare.
 
 Detta projekt är byggt med hjälp av Next.js, ett populärt JavaScript-ramverk för att bygga webbapplikationer, och Sanity CMS, ett headless innehållshanteringssystem.
-Studion är intergrerad i sidan.
+Studion är integrerad i sidan.
 
 ## Design
 
@@ -38,7 +38,7 @@ Färgvalen är harmoniska och baserade på Ragdoll kattens naturliga färger.
 
 ## Demo
 
-[Wendeltassens Ragdolls](https://wendeltassen.vercel.app)
+[Wendeltassens Ragdolls](https://wendeltassens.vercel.app)
 ![image info](./public/site-img-preview.png)
 
 ## Skapare
