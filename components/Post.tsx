@@ -29,7 +29,7 @@ const Post = ({ title, text, imgUrl, date, alt }: Props) => {
         {imgUrl && (
           <Image
             src={imgUrl}
-            alt={alt}
+            alt={alt || ''}
             height={300}
             width={300}
             className="object-cover w-full h-full rounded-bl-md max-h-64"
