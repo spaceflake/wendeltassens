@@ -1,93 +1,89 @@
-# Wendeltassens Ragdoll hemsida
+# [Wendeltassens Ragdoll hemsida](#wendeltassens-ragdoll-hemsida)
 
-A brief description of what this project does and who it's for
+- [Wendeltassens Ragdoll hemsida](#wendeltassens-ragdoll-hemsida)
+  - [Beskrivning](#beskrivning)
+  - [Design](#design)
+  - [Tech Stack](#tech-stack)
+  - [Demo](#demo)
+  - [Skapare](#skapare)
+  - [Nycklar till projektet (Environment Variables)](#nycklar-till-projektet-environment-variables)
+  - [För att köra projektet lokalt](#för-att-köra-projektet-lokalt)
+  - [Repo](#repo)
+  - [Hosting](#hosting)
+
+---
+
+## Beskrivning
+
+Ragdollkatter är älskade för sina unika personligheter och tillgivna natur, och detta är en webbplats dedikerad till att främja och koppla ihop ragdolluppfödaren med potentiella köpare. Webbplatsen är till för ragdolluppfödaren att visa upp sina katter, få kontakt med intresserade köpare.
+
+Detta projekt är byggt med hjälp av Next.js, ett populärt JavaScript-ramverk för att bygga webbapplikationer, och Sanity CMS, ett headless innehållshanteringssystem.
+Studion är intergrerad i sidan.
+
+## Design
+
+En ren, professionell design som visar upp katterna och avelsprogrammet på ett visuellt tilltalande sätt.
+Skapat i Figma.  
+Färgvalen är harmoniska och baserade på Ragdoll kattens naturliga färger.
+
+![design](./public/design-preview.png)
 
 ## Tech Stack
 
-**Client:** React, Next, TailwindCSS
+**Client:** [React](https://reactjs.org/), [NextJS 13](https://beta.nextjs.org/docs), [Tailwind CSS](https://tailwindcss.com/)
 
-**CMS:** Sanity
+**CMS:** [Sanity](https://www.sanity.io/)
+
+**Övrigt:** Typescript, next-sanity, react-hook-form, portabletext-react
 
 ## Demo
 
 [Wendeltassens Ragdolls](https://wendeltassen.vercel.app)
+![image info](./public/site-img-preview.png)
 
-## Authors
+## Skapare
 
 - [Tomas Fridekrans](https://www.github.com/spaceflake)
 - [Olivia Isberg](https://github.com/OliviaIsberg)
 
-## Environment Variables
+## Nycklar till projektet (Environment Variables)
 
-To run this project, you will need to add the following environment variables to your .env file
+**OBS!!!** För att köra detta projekt krävs ett par api-nycklar och tokens.
+Förfrågan om dessa skickas till skaparna.
 
-`API_KEY`
+## För att köra projektet lokalt
 
-`ANOTHER_API_KEY`
-
-## Installation
-
-Install my-project with npm
+Klona repot
 
 ```bash
-  npm install my-project
-  cd my-project
+  git clone https://github.com/spaceflake/wendeltassens.git wendeltassens
 ```
 
-## Run Locally
-
-Clone the project
+Gå till projektets folder
 
 ```bash
-  git clone https://link-to-project
+  cd wendeltassens
 ```
 
-Go to the project directory
-
-```bash
-  cd my-project
-```
-
-Install dependencies
+Installera paket
 
 ```bash
   npm install
 ```
 
-Start the server
+Starta utvecklarläget
 
 ```bash
-  npm run start
+  npm run dev
 ```
 
 ## Repo
 
 [Repo](https://github.com/spaceflake/wendeltassens)
 
-# Next.js + Tailwind CSS Example
+## Hosting
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.2)](https://tailwindcss.com/blog/tailwindcss-v3-2) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+Projektet är hostat på Vercel.
 
-## Deploy your own
-
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
-
-## How to use
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
-
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-```
-
-```bash
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-```
-
-```bash
-pnpm create next-app --example with-tailwindcss with-tailwindcss-app
-```
-
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+För att läsa mer om vercel.
+[Vercel dokumentation](https://vercel.com/docs)
