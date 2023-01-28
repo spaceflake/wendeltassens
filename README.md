@@ -18,7 +18,7 @@
 Ragdollkatter är älskade för sina unika personligheter och tillgivna natur, och detta är en webbplats dedikerad till att främja och koppla ihop ragdolluppfödaren med potentiella köpare. Webbplatsen är till för ragdolluppfödaren att visa upp sina katter, få kontakt med intresserade köpare.
 
 Detta projekt är byggt med hjälp av Next.js, ett populärt JavaScript-ramverk för att bygga webbapplikationer, och Sanity CMS, ett headless innehållshanteringssystem.
-Studion är integrerad i sidan.
+Sanity Studion är integrerad i sidan och nås på routen "/studio" (lösenordsskyddad).
 
 ## Design
 
