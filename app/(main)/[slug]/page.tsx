@@ -43,7 +43,6 @@ const page = async ({ params }: Props) => {
   const queryParams = {
     slug: params.slug,
   };
-
   const page: Page = await client.fetch(pageQuery, queryParams);
 
   if (!page) {
@@ -127,4 +126,15 @@ const page = async ({ params }: Props) => {
   );
 };
 
+export async function generateStaticParams() {
+  const pageData: PageNav[] = await client.fetch(
+    groq`*[_type == "page" && slug.current != null]{"slug": slug.current}`
+  );
+
+  return pageData.map((page) => {
+    return {
+      slug: page.slug,
+    };
+  });
+}
 export default page;
