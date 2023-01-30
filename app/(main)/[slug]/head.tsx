@@ -30,6 +30,10 @@ export default async function Head({ params }: Props) {
 
   const data: HeadData = await client.fetch(pageQuery, queryParams);
 
+  if (!data) {
+    return null;
+  }
+
   return (
     <>
       <title>{`${data.title} | Wendeltassens`}</title>
@@ -43,4 +47,16 @@ export default async function Head({ params }: Props) {
       <link rel="icon" href="/favicon.ico" />
     </>
   );
+}
+
+export async function generateStaticParams() {
+  const pageData: PageNav[] = await client.fetch(
+    groq`*[_type == "page" && slug.current != null]{"slug": slug.current}`
+  );
+
+  return pageData.map((page) => {
+    return {
+      slug: page.slug,
+    };
+  });
 }

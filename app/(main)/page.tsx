@@ -37,8 +37,18 @@ const pageQuery = groq`*[_type == "page" && slug.current == null] {
   }
 }[0]`;
 
-const page = async ({ params }: Props) => {
+async function getPageData() {
   const page: Page = await client.fetch(pageQuery);
+
+  if (!page) {
+    throw new Error('No page found');
+  }
+
+  return page;
+}
+
+const page = async ({ params }: Props) => {
+  const page: Page = await getPageData();
 
   return (
     <div className="text-DarkBrown">
