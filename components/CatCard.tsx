@@ -10,11 +10,11 @@ type Props = {
 const CatCard = ({ cat, inverted }: Props) => {
   return (
     <article
-      className={` relative font-Montserrat p-5 lg:p-9 bg-WhiteBG  rounded-xl shadow-lg flex flex-col lg:max-h-[500px] w-full max-w-[1000px] ${
+      className={` relative font-Montserrat p-5 lg:p-9 bg-WhiteBG  rounded-xl shadow-lg flex flex-col lg:h-auto w-full max-w-[1000px] ${
         inverted ? 'lg:flex-row-reverse' : 'lg:flex-row'
       }`}
     >
-      <div className="relative w-auto overflow-hidden lg:w-1/3 h-72 lg:h-auto grow-0">
+      <div className="relative w-full max-w-md overflow-hidden min-w-1/3 h-72 lg:h-auto grow-0 shrink-0">
         <Image
           src={cat.catImgUrl}
           alt={`Bild på katten ${cat.name}`}
@@ -34,20 +34,20 @@ const CatCard = ({ cat, inverted }: Props) => {
             </span>
           </div>
           <div className="flex justify-between gap-3 py-2">
-            <span className="font-medium text-">Mor</span>
+            <span className="font-medium">Mor</span>
             <span className="font-bold text-right">{cat.motherName}</span>
           </div>
           <div className="flex justify-between gap-3 py-2">
-            <span className="font-medium text-">Fader</span>
+            <span className="font-medium">Fader</span>
             <span className="font-bold text-right">{cat.fatherName}</span>
           </div>
           <div className="flex justify-between gap-3 py-2">
-            <span className="font-medium text-">Täckning</span>
+            <span className="font-medium">Täckning</span>
             <span className="font-bold text-right">{cat.colorCode}</span>
           </div>
           <div className="flex flex-col py-2">
-            <span className="font-medium text-">Övrigt</span>
-            <span className="font-bold text-right">{cat.information}</span>
+            <span className="mb-2 font-medium">Övrigt</span>
+            <span className="font-bold">{cat.information}</span>
           </div>
         </div>
         <div className="self-end mt-4">
