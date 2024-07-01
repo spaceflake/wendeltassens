@@ -7,6 +7,7 @@ type Props = {
   mother: string;
   father: string;
   kittens?: Kitten[];
+  linkUrl?: string;
 };
 
 const KittenOverview = ({
@@ -15,6 +16,7 @@ const KittenOverview = ({
   mother,
   father,
   kittens,
+  linkUrl,
 }: Props) => {
   return (
     <div className="gap-8 px-4 py-8 sm:p-8 space-y-4 shadow-lg h-fit sm:grid sm:grid-cols-2 rounded-xl bg-WhiteBG text-DarkBrown w-full max-w-[800px]">
@@ -39,7 +41,7 @@ const KittenOverview = ({
           </div>
         </div>
         <div className="flex gap-2 mx-auto mt-4 lg:mr-auto lg:ml-0">
-          <Button text="Stamtavla" goTo="https://google.com" />
+          <Button text="Stamtavla" goTo={linkUrl} />
           <Button isInternalLink text="Förfrågan" goTo="/kontakt" />
         </div>
       </div>

@@ -36,7 +36,7 @@ export default defineType({
     defineField({
       name: 'pedigreeUrl',
       title: 'Länk till stamtavla',
-      type: 'string',
+      type: 'url',
       validation: (Rule) => Rule.required(),
     }),
     defineField({

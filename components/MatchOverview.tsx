@@ -17,6 +17,7 @@ const MatchOverview = ({ matches }: Props) => {
             femaleImg={match.motherImgUrl}
             maleImg={match.fatherImgUrl}
             description={match.description}
+            linkUrl={match.pedigreeUrl}
           />
         ))}
       </div>

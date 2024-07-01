@@ -10,6 +10,7 @@ type Props = {
   femaleImg: string | StaticImageData;
   maleImg: string | StaticImageData;
   description?: string;
+  linkUrl?: string;
 };
 
 const CatMatchCard = ({
@@ -18,6 +19,7 @@ const CatMatchCard = ({
   femaleImg,
   maleImg,
   description,
+  linkUrl,
 }: Props) => {
   return (
     <div className="flex-none p-2 basis-1/2">
@@ -71,10 +73,7 @@ const CatMatchCard = ({
         </div>
 
         <div className="flex justify-center col-span-2">
-          <Button
-            text="Stamtavla"
-            goTo="https://stambok.sverak.se/Stambok/Visa/506242"
-          />
+          <Button text="Stamtavla" goTo={linkUrl} />
         </div>
       </div>
     </div>

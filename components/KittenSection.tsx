@@ -18,6 +18,7 @@ const KittenSection = ({ litters }: Props) => {
               mother={litter.mother}
               title={litter.title}
               kittens={litter.kittens}
+              linkUrl={litter.pedigreeUrl}
             />
           ))
         ) : (
